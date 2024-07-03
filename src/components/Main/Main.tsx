@@ -5,7 +5,7 @@ export default class Main extends Component {
   render() {
     return (
       <>
-        <div className="main">Main</div>
+        <div className="main"></div>
       </>
     );
   }

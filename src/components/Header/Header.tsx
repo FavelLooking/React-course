@@ -5,7 +5,10 @@ export default class Header extends Component {
   render() {
     return (
       <>
-        <div className="header">Header</div>
+        <div className="header">
+          <input type="text" placeholder='search' />
+          <button type='submit'>Search</button>
+        </div>
       </>
     );
   }
