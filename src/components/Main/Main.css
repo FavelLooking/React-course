@@ -4,10 +4,12 @@
   border: 1px solid rgba(0, 0, 0, 0.164);
   border-radius: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
+  gap: 10%;
 }
 
 .main::before {
