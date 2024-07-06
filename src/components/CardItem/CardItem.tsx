@@ -4,17 +4,24 @@ import ItemProps from '../../interfaces/interfaces';
 
 export default class CardItem extends Component<ItemProps> {
   render() {
+    const { title, location } = this.props;
+
     return (
       <div className="card-item">
         <span className="name-title">
-          Name: <span className="title">{this.props.title}</span>
+          Name: <span className="title">{title}</span>
         </span>
-        {this.props.location ? (
+
+        {location && (
           <span className="location-title">
-            Location: <span className="location">{this.props.location}</span>
+            Location: <span className="location">{location}</span>
           </span>
-        ) : (
-          <span className="location"></span>
+        )}
+
+        {!location && (
+          <span className="location-title">
+            Location: <span className="location">Unknown</span>
+          </span>
         )}
       </div>
     );

@@ -72,7 +72,7 @@ export default class Header extends Component<HeaderProps, HeaderState> {
         <input
           className="header__search"
           type="text"
-          placeholder="Search"
+          placeholder="Enter planet or star name"
           onChange={this.handleInputChange}
         />
         <button type="submit" onClick={this.handleSearch}>
