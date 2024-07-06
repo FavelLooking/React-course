@@ -6,4 +6,19 @@
   justify-content: center;
   align-items: center;
   gap: 5%;
+  background-color: rgba(2, 2, 27, 0.048);
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../src/assets/fonts/D3Euronism.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyFontBold';
+  src: url('../src/assets/fonts/D3Euronism_b.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

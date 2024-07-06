@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './Main.css';
+import planet from './../../assets/planet.gif';
 import CardItem from '../CardItem/CardItem';
 import { MainProps } from '../../interfaces/interfaces';
 
@@ -8,7 +9,13 @@ export default class Main extends Component<MainProps> {
     const { searchResults } = this.props;
 
     if (!searchResults) {
-      return <p>Loading...</p>;
+      return (
+        <div className="main">
+          <div className="loader">
+            <img src={planet} alt="loader" />
+          </div>
+        </div>
+      );
     }
 
     const { astronomicalObjects } = searchResults;
@@ -25,7 +32,7 @@ export default class Main extends Component<MainProps> {
             />
           ))
         ) : (
-          <p>No search results found</p>
+          <p className="no-results">No search results found</p>
         )}
       </div>
     );
