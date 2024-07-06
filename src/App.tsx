@@ -7,17 +7,28 @@ import { ApiResponse } from './interfaces/interfaces';
 class App extends Component {
   state = {
     searchResults: null,
+    isLoading: false,
   };
 
   updateSearchResults = (results: ApiResponse) => {
     this.setState({ searchResults: results });
   };
+
+  setLoading = (isLoading: boolean) => {
+    this.setState({ isLoading });
+  };
   render() {
     return (
       <>
         <div className="wrapper">
-          <Header updateResults={this.updateSearchResults}></Header>
-          <Main searchResults={this.state.searchResults}></Main>
+          <Header
+            updateResults={this.updateSearchResults}
+            setLoading={this.setLoading}
+          ></Header>
+          <Main
+            searchResults={this.state.searchResults}
+            isLoading={this.state.isLoading}
+          ></Main>
         </div>
       </>
     );

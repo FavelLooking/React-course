@@ -35,4 +35,5 @@ export interface ApiResponse {
 
 export interface MainProps {
   searchResults?: ApiResponse | null;
+  isLoading: boolean;
 }

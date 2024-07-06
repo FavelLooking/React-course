@@ -4,6 +4,7 @@ import { ApiResponse } from '../../interfaces/interfaces';
 
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
+  setLoading: (isLoading: boolean) => void;
 }
 
 interface HeaderState {
@@ -43,6 +44,7 @@ export default class Header extends Component<HeaderProps, HeaderState> {
   };
 
   getSearchResult = (searchItem: string) => {
+    this.props.setLoading(true);
     fetch(
       'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
       {
@@ -58,11 +60,12 @@ export default class Header extends Component<HeaderProps, HeaderState> {
     )
       .then((response) => response.json())
       .then((data: ApiResponse) => {
-        console.log(data);
         this.props.updateResults(data);
+        this.props.setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        this.props.setLoading(false);
       });
   };
 

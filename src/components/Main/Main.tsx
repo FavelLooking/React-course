@@ -6,9 +6,9 @@ import { MainProps } from '../../interfaces/interfaces';
 
 export default class Main extends Component<MainProps> {
   render() {
-    const { searchResults } = this.props;
+    const { searchResults, isLoading } = this.props;
 
-    if (!searchResults) {
+    if (!searchResults || isLoading) {
       return (
         <div className="main">
           <div className="loader">
@@ -19,7 +19,6 @@ export default class Main extends Component<MainProps> {
     }
 
     const { astronomicalObjects } = searchResults;
-    console.log(astronomicalObjects);
 
     return (
       <div className="main">
