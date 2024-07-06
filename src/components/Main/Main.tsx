@@ -21,7 +21,7 @@ export default class Main extends Component<MainProps> {
             <CardItem
               key={item.uid}
               title={item.name}
-              location={item.location.name || ''}
+              location={item?.location?.name || ''}
             />
           ))
         ) : (

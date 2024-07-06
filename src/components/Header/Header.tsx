@@ -43,16 +43,19 @@ export default class Header extends Component<HeaderProps, HeaderState> {
   };
 
   getSearchResult = (searchItem: string) => {
-    fetch('https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=4', {
-      method: 'POST',
-      headers: {
-        accept: 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded',
+    fetch(
+      'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          name: searchItem,
+        }),
       },
-      body: new URLSearchParams({
-        name: searchItem,
-      }),
-    })
+    )
       .then((response) => response.json())
       .then((data: ApiResponse) => {
         console.log(data);

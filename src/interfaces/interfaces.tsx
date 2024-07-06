@@ -12,7 +12,7 @@ export interface AstronomicalObject {
   uid: string;
   name: string;
   astronomicalObjectType: string;
-  location: Location;
+  location: Location | null;
 }
 
 export interface Page {
