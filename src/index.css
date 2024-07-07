@@ -52,9 +52,8 @@ button:hover {
   letter-spacing: 0.1rem;
 }
 button:active {
-outline: 3px solid  #1a1a1a28;
-transition: 0.5s;
-
+  outline: 3px solid #1a1a1a28;
+  transition: 0.5s;
 }
 
 @media (prefers-color-scheme: light) {
@@ -70,3 +69,6 @@ transition: 0.5s;
   }
 }
 
+.error {
+  font-family: MyFontBold;
+}

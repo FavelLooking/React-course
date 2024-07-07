@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import { ApiResponse } from './interfaces/interfaces';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   state = {
@@ -21,10 +22,12 @@ class App extends Component {
     return (
       <>
         <div className="wrapper">
-          <Header
-            updateResults={this.updateSearchResults}
-            setLoading={this.setLoading}
-          ></Header>
+          <ErrorBoundary>
+            <Header
+              updateResults={this.updateSearchResults}
+              setLoading={this.setLoading}
+            ></Header>
+          </ErrorBoundary>
           <Main
             searchResults={this.state.searchResults}
             isLoading={this.state.isLoading}

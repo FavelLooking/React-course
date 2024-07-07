@@ -9,6 +9,7 @@ interface HeaderProps {
 
 interface HeaderState {
   lastSearch: string;
+  errorOccured: boolean;
 }
 
 export default class Header extends Component<HeaderProps, HeaderState> {
@@ -16,6 +17,7 @@ export default class Header extends Component<HeaderProps, HeaderState> {
     super(props);
     this.state = {
       lastSearch: '',
+      errorOccured: false,
     };
   }
 
@@ -69,7 +71,14 @@ export default class Header extends Component<HeaderProps, HeaderState> {
       });
   };
 
+  getError = () => {
+    this.setState({ errorOccured: !this.state.errorOccured });
+  };
+
   render() {
+    if (this.state.errorOccured) {
+      throw new Error('Universe error');
+    }
     return (
       <div className="header">
         <input
@@ -80,6 +89,9 @@ export default class Header extends Component<HeaderProps, HeaderState> {
         />
         <button type="submit" onClick={this.handleSearch}>
           Search
+        </button>
+        <button type="submit" onClick={this.getError}>
+          Get Error
         </button>
       </div>
     );
