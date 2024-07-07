@@ -26,6 +26,10 @@
   border-radius: 1rem;
 }
 
+.header__search {
+  width: 15rem;
+}
+
 .header__search::placeholder {
   color: #757575;
   font-style: italic;

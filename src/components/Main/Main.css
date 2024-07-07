@@ -29,4 +29,21 @@
 
 .no-results {
   color: antiquewhite;
+  font-family: MyFontBold;
+  letter-spacing: 1rem;
+  animation: search 30s ease-out;
+}
+
+@keyframes search {
+  0% {
+    letter-spacing: 1rem;
+  }
+  50% {
+    letter-spacing: 0.1rem;
+    font-size: x-small;
+  }
+  100% {
+    letter-spacing: 1rem;
+    font-size: x-large;
+  }
 }

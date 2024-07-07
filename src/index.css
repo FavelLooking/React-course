@@ -44,7 +44,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  min-width: 10rem;
+  min-width: 11rem;
 }
 button:hover {
   background-color: rgba(250, 235, 215, 0.596);
@@ -71,4 +71,5 @@ button:active {
 
 .error {
   font-family: MyFontBold;
+  min-height: 77px;
 }
