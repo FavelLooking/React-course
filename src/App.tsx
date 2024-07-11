@@ -1,41 +1,35 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import { ApiResponse } from './interfaces/interfaces';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
-class App extends Component {
-  state = {
-    searchResults: null,
-    isLoading: false,
-  };
+export function App() {
+  const [searchResults, setSearchResults] = useState<ApiResponse | null>(null);
+  const [isLoading, setLoadingStatus] = useState(false);
 
-  updateSearchResults = (results: ApiResponse) => {
-    this.setState({ searchResults: results });
-  };
-
-  setLoading = (isLoading: boolean) => {
-    this.setState({ isLoading });
-  };
-  render() {
-    return (
-      <>
-        <div className="wrapper">
-          <ErrorBoundary>
-            <Header
-              updateResults={this.updateSearchResults}
-              setLoading={this.setLoading}
-            ></Header>
-          </ErrorBoundary>
-          <Main
-            searchResults={this.state.searchResults}
-            isLoading={this.state.isLoading}
-          ></Main>
-        </div>
-      </>
-    );
+  function updateSearchResults(results: ApiResponse | null) {
+    setSearchResults(results);
   }
+
+  function setLoading(isLoading: boolean) {
+    setLoadingStatus(isLoading);
+  }
+
+  return (
+    <>
+      <div className="wrapper">
+        <ErrorBoundary>
+          <Header
+            updateResults={updateSearchResults}
+            setLoading={setLoading}
+          ></Header>
+        </ErrorBoundary>
+        <Main searchResults={searchResults} isLoading={isLoading}></Main>
+      </div>
+    </>
+  );
 }
 
 export default App;
