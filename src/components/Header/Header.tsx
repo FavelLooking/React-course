@@ -1,4 +1,4 @@
-import { Component, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useEffect } from 'react';
 import './Header.css';
 import { ApiResponse } from '../../interfaces/interfaces';
 
@@ -7,46 +7,31 @@ interface HeaderProps {
   setLoading: (isLoading: boolean) => void;
 }
 
-interface HeaderState {
-  lastSearch: string;
-  errorOccured: boolean;
-}
+export default function Header(props: HeaderProps) {
+  const [lastSearchResults, setLastSearchResults] = useState('');
+  const [errorOccured, setErrorSwitcher] = useState(false);
 
-export default class Header extends Component<HeaderProps, HeaderState> {
-  constructor(props: HeaderProps) {
-    super(props);
-    this.state = {
-      lastSearch: '',
-      errorOccured: false,
-    };
+  useEffect(() => {
+    const savedSearch = localStorage.getItem('lastSearch') || '';
+    setLastSearchResults(savedSearch);
+    getSearchResult(savedSearch);
+  }, []);
+
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+    setLastSearchResults(event.target.value.trim());
   }
 
-  componentDidMount() {
-    const savedSearch = localStorage.getItem('lastSearch');
-    if (savedSearch) {
-      this.setState({ lastSearch: savedSearch });
-      this.getSearchResult(savedSearch);
-    } else {
-      this.getSearchResult('');
+  async function handleSearch() {
+    try {
+      localStorage.setItem('lastSearch', lastSearchResults);
+      await getSearchResult(lastSearchResults);
+    } catch (error) {
+      console.error('Error searching:', error);
     }
   }
 
-  handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    this.setState({ lastSearch: event.target.value.trim() });
-  };
-
-  handleSearch = () => {
-    const { lastSearch } = this.state;
-    if (!lastSearch) {
-      this.getSearchResult('');
-    } else {
-      localStorage.setItem('lastSearch', lastSearch);
-      this.getSearchResult(lastSearch);
-    }
-  };
-
-  getSearchResult = (searchItem: string) => {
-    this.props.setLoading(true);
+  function getSearchResult(searchItem: string) {
+    props.setLoading(true);
     fetch(
       'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
       {
@@ -62,38 +47,36 @@ export default class Header extends Component<HeaderProps, HeaderState> {
     )
       .then((response) => response.json())
       .then((data: ApiResponse) => {
-        this.props.updateResults(data);
-        this.props.setLoading(false);
+        props.updateResults(data);
+        props.setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        this.props.setLoading(false);
+        props.setLoading(false);
       });
-  };
-
-  getError = () => {
-    this.setState({ errorOccured: !this.state.errorOccured });
-  };
-
-  render() {
-    if (this.state.errorOccured) {
-      throw new Error('Universe error');
-    }
-    return (
-      <div className="header">
-        <input
-          className="header__search"
-          type="text"
-          placeholder="Enter planet or star name"
-          onChange={this.handleInputChange}
-        />
-        <button type="submit" onClick={this.handleSearch}>
-          Search
-        </button>
-        <button type="submit" onClick={this.getError}>
-          Get Error
-        </button>
-      </div>
-    );
   }
+
+  function getError() {
+    setErrorSwitcher(!errorOccured);
+  }
+
+  if (errorOccured) {
+    throw new Error('Universe error');
+  }
+  return (
+    <div className="header">
+      <input
+        className="header__search"
+        type="text"
+        placeholder="Enter planet or star name"
+        onChange={handleInputChange}
+      />
+      <button type="submit" onClick={handleSearch}>
+        Search
+      </button>
+      <button type="submit" onClick={getError}>
+        Get Error
+      </button>
+    </div>
+  );
 }
