@@ -26,6 +26,7 @@ export default function Main(props: MainProps) {
             key={item.uid}
             title={item.name}
             location={item?.location?.name || ''}
+            astronomicalObjectType={item.astronomicalObjectType}
           />
         ))
       ) : (

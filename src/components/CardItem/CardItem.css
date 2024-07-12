@@ -31,11 +31,13 @@
 }
 
 .name-title,
-.location-title {
+.location-title,
+.type-title {
   font-family: MyFontBold;
 }
 
 .title,
-.location {
+.location,
+.type {
   font-family: MyFont;
 }

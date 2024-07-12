@@ -2,7 +2,7 @@ import './CardItem.css';
 import ItemProps from '../../interfaces/interfaces';
 
 export default function CardItem(props: ItemProps) {
-  const { title, location } = props;
+  const { title, location, astronomicalObjectType } = props;
 
   return (
     <div className="card-item">
@@ -21,6 +21,9 @@ export default function CardItem(props: ItemProps) {
           Location: <span className="location">Unknown</span>
         </span>
       )}
+      <span className="type-title">
+        Object Type: <span className="type">{astronomicalObjectType}</span>
+      </span>
     </div>
   );
 }
