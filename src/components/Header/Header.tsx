@@ -1,82 +1,81 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Header.css';
 import { ApiResponse } from '../../interfaces/interfaces';
+import useSearchQuery from '../CustomHooks/useSearch';
 
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
   setLoading: (isLoading: boolean) => void;
 }
 
-export default function Header(props: HeaderProps) {
-  const [lastSearchResults, setLastSearchResults] = useState('');
-  const [errorOccured, setErrorSwitcher] = useState(false);
+export default function Header({ updateResults, setLoading }: HeaderProps) {
+  const [errorOccured, setErrorOccured] = useState(false);
+  const [searchQuery, setSearchQuery] = useSearchQuery('');
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSearchQuery(inputValue);
+  };
+
+  const getSearchResult = useCallback(
+    async (searchItem: string) => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
+          {
+            method: 'POST',
+            headers: {
+              accept: 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              name: searchItem,
+            }),
+          },
+        );
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data: ApiResponse = await response.json();
+        updateResults(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [updateResults, setLoading],
+  );
 
   useEffect(() => {
-    const savedSearch = localStorage.getItem('lastSearch') || '';
-    setLastSearchResults(savedSearch);
-    getSearchResult(savedSearch);
-  }, []);
+    if (searchQuery !== '') {
+      getSearchResult(searchQuery);
+    } else getSearchResult('');
+  }, [searchQuery, getSearchResult]);
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    setLastSearchResults(event.target.value.trim());
-  }
-
-  async function handleSearch() {
-    try {
-      localStorage.setItem('lastSearch', lastSearchResults);
-      await getSearchResult(lastSearchResults);
-    } catch (error) {
-      console.error('Error searching:', error);
-    }
-  }
-
-  function getSearchResult(searchItem: string) {
-    props.setLoading(true);
-    fetch(
-      'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          name: searchItem,
-        }),
-      },
-    )
-      .then((response) => response.json())
-      .then((data: ApiResponse) => {
-        props.updateResults(data);
-        props.setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        props.setLoading(false);
-      });
-  }
-
-  function getError() {
-    setErrorSwitcher(!errorOccured);
-  }
+  const getError = () => {
+    setErrorOccured(!errorOccured);
+  };
 
   if (errorOccured) {
     throw new Error('Universe error');
   }
+
   return (
-    <div className="header">
+    <form className="header" onSubmit={handleSubmit}>
       <input
         className="header__search"
         type="text"
         placeholder="Enter planet or star name"
-        onChange={handleInputChange}
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
       />
-      <button type="submit" onClick={handleSearch}>
-        Search
-      </button>
-      <button type="submit" onClick={getError}>
+      <button type="submit">Search</button>
+      <button type="button" onClick={getError}>
         Get Error
       </button>
-    </div>
+    </form>
   );
 }
