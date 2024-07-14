@@ -14,15 +14,30 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<number>(
     parseInt(page || '1', 10),
   );
+  const [maxPage, setMaxPage] = useState<number | null>(null);
 
   useEffect(() => {
-    if (page) {
-      setCurrentPage(parseInt(page, 10));
+    if (!page) {
+      navigate('/search/1');
+    } else {
+      const pageNumber = parseInt(page, 10);
+      if (
+        isNaN(pageNumber) ||
+        pageNumber <= 0 ||
+        (maxPage && pageNumber > maxPage)
+      ) {
+        navigate('/not-found');
+      } else {
+        setCurrentPage(pageNumber);
+      }
     }
-  }, [page]);
+  }, [page, navigate, maxPage]);
 
   const updateSearchResults = useCallback((results: ApiResponse | null) => {
     setSearchResults(results);
+    if (results) {
+      setMaxPage(results.page.totalPages);
+    }
   }, []);
 
   const setLoading = useCallback((isLoading: boolean) => {
