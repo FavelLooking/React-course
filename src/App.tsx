@@ -1,20 +1,24 @@
 import { useState, useCallback, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
+import Details from './components/Details/Details';
 import { ApiResponse } from './interfaces/interfaces';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 export default function App() {
   const { page } = useParams<{ page: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchResults, setSearchResults] = useState<ApiResponse | null>(null);
   const [isLoading, setLoadingStatus] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(
     parseInt(page || '1', 10),
   );
   const [maxPage, setMaxPage] = useState<number | null>(null);
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+  const [isDetailsLoading, setDetailsLoadingStatus] = useState(false);
 
   useEffect(() => {
     if (!page) {
@@ -52,6 +56,16 @@ export default function App() {
     [navigate],
   );
 
+  const handleItemClick = (itemId: string) => {
+    setSelectedItemId(itemId);
+    navigate(`${location.pathname}&details=${itemId}`);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedItemId(null);
+    navigate(`/search/${currentPage}`);
+  };
+
   return (
     <div className="wrapper">
       <ErrorBoundary>
@@ -62,12 +76,24 @@ export default function App() {
           setCurrentPage={changePage}
         />
       </ErrorBoundary>
-      <Main
-        searchResults={searchResults}
-        isLoading={isLoading}
-        currentPage={currentPage}
-        setCurrentPage={changePage}
-      />
+      <div className="main-content">
+        <Main
+          searchResults={searchResults}
+          isLoading={isLoading}
+          currentPage={currentPage}
+          setCurrentPage={changePage}
+          onItemClick={handleItemClick}
+          hideDetails={handleCloseDetails}
+        />
+        {selectedItemId && (
+          <Details
+            itemId={selectedItemId}
+            onClose={handleCloseDetails}
+            setLoading={setDetailsLoadingStatus}
+            isLoading={isDetailsLoading}
+          />
+        )}
+      </div>
     </div>
   );
 }

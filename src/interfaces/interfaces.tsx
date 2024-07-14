@@ -2,6 +2,8 @@ export default interface ItemProps {
   title: string;
   location: string;
   astronomicalObjectType: string;
+
+  onClick: () => void;
 }
 
 export interface Location {

@@ -8,6 +8,8 @@ import {
 import App from './App.tsx';
 import './index.css';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage.tsx';
+import { ClickedProvider } from './context/context';
+// import { DetailsProvider } from './context/DetailsContext';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <DetailsProvider> */}
+    <ClickedProvider>
+      <RouterProvider router={router} />
+    </ClickedProvider>
+    {/* </DetailsProvider>    */}
   </React.StrictMode>,
 );

@@ -2,10 +2,10 @@ import './CardItem.css';
 import ItemProps from '../../interfaces/interfaces';
 
 export default function CardItem(props: ItemProps) {
-  const { title, location, astronomicalObjectType } = props;
+  const { title, location, astronomicalObjectType, onClick } = props;
 
   return (
-    <div className="card-item">
+    <div className="card-item" onClick={onClick}>
       <span className="name-title">
         Name:{' '}
         <span className={title.length > 30 ? 'title-small' : 'title'}>

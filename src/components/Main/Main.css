@@ -48,3 +48,14 @@
     font-size: x-large;
   }
 }
+
+.main.details-active {
+  width: 45%;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.main.details-active > div {
+  font-size: x-small;
+  padding: 0;
+}

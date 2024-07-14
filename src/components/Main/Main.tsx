@@ -3,14 +3,25 @@ import planet from './../../assets/planet.gif';
 import CardItem from '../CardItem/CardItem';
 import { MainProps, AstronomicalObject } from '../../interfaces/interfaces';
 import Pagination from '../Pagination/Pagination';
+import { useClicked } from '../../context/context';
 
 interface MainPropsExtended extends MainProps {
   currentPage: number;
   setCurrentPage: (page: number) => void;
+  onItemClick: (itemId: string) => void;
+  hideDetails: () => void;
 }
 
 export default function Main(props: MainPropsExtended) {
-  const { searchResults, isLoading, currentPage, setCurrentPage } = props;
+  const {
+    searchResults,
+    isLoading,
+    currentPage,
+    setCurrentPage,
+    onItemClick,
+    hideDetails,
+  } = props;
+  const { clicked, setClicked } = useClicked();
 
   if (!searchResults || isLoading) {
     return (
@@ -22,10 +33,25 @@ export default function Main(props: MainPropsExtended) {
     );
   }
 
+  const handleItemClick = (itemId: string) => {
+    setClicked(true);
+    onItemClick(itemId);
+  };
+
+  const handleCloseDetails = () => {
+    if (clicked) {
+      setClicked(false);
+      hideDetails();
+    }
+  };
+
   const { astronomicalObjects, page } = searchResults;
 
   return (
-    <div className="main">
+    <div
+      className={clicked ? 'main details-active' : 'main'}
+      onClick={handleCloseDetails}
+    >
       {astronomicalObjects.length > 0 ? (
         <>
           {astronomicalObjects.map((item: AstronomicalObject) => (
@@ -34,6 +60,7 @@ export default function Main(props: MainPropsExtended) {
               title={item.name}
               location={item?.location?.name || ''}
               astronomicalObjectType={item.astronomicalObjectType}
+              onClick={() => handleItemClick(item.uid)}
             />
           ))}
           <Pagination
