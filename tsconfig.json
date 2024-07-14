@@ -1,4 +1,12 @@
 {
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "types": ["vitest/globals"],
+    "moduleResolution": "node",
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx"
+  },
   "files": [],
   "references": [
     {

@@ -1,11 +1,11 @@
 import './Main.css';
-import planet from './../../assets/planet.gif';
+import planet from '../../assets/planet.gif';
 import CardItem from '../CardItem/CardItem';
 import { MainProps, AstronomicalObject } from '../../interfaces/interfaces';
 import Pagination from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
 
-interface MainPropsExtended extends MainProps {
+export interface MainPropsExtended extends MainProps {
   currentPage: number;
   setCurrentPage: (page: number) => void;
   onItemClick: (itemId: string) => void;
