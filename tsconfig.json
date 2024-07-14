@@ -9,6 +9,8 @@
     "noEmit": false
   },
   "files": [],
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+
   "references": [
     {
       "path": "./tsconfig.app.json"

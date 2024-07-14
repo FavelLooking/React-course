@@ -1,12 +1,21 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act } from 'react';
+import { renderHook, RenderHookResult } from '@testing-library/react-hooks';
 import useSearch from './useSearch';
 
 describe('useSearchQuery hook', () => {
   it('should initialize with initial value and save to localStorage', () => {
-    const { result } = renderHook(() => useSearch('initial'));
+    let hookResult: RenderHookResult<undefined, [string]>;
 
-    expect(result.current[0]).toBe('initial');
+    act(() => {
+      hookResult = renderHook(() => {
+        const [searchQuery] = useSearch('initial');
+        return [searchQuery];
+      });
+    });
 
+    const [searchQuery] = hookResult!.result.current;
+
+    expect(searchQuery).toBe('initial');
     expect(localStorage.getItem('lastSearch')).toBe('initial');
   });
 
