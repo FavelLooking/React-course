@@ -8,6 +8,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 export default function App() {
   const [searchResults, setSearchResults] = useState<ApiResponse | null>(null);
   const [isLoading, setLoadingStatus] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const updateSearchResults = useCallback((results: ApiResponse | null) => {
     setSearchResults(results);
@@ -21,9 +22,19 @@ export default function App() {
     <>
       <div className="wrapper">
         <ErrorBoundary>
-          <Header updateResults={updateSearchResults} setLoading={setLoading} />
+          <Header
+            updateResults={updateSearchResults}
+            setLoading={setLoading}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </ErrorBoundary>
-        <Main searchResults={searchResults} isLoading={isLoading} />
+        <Main
+          searchResults={searchResults}
+          isLoading={isLoading}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </>
   );

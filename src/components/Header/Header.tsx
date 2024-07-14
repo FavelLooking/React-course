@@ -6,9 +6,16 @@ import useSearchQuery from '../CustomHooks/useSearch';
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
   setLoading: (isLoading: boolean) => void;
+  setCurrentPage: (page: number) => void;
+  currentPage: number;
 }
 
-export default function Header({ updateResults, setLoading }: HeaderProps) {
+export default function Header({
+  updateResults,
+  setLoading,
+  setCurrentPage,
+  currentPage,
+}: HeaderProps) {
   const [errorOccured, setErrorOccured] = useState(false);
   const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
@@ -16,14 +23,15 @@ export default function Header({ updateResults, setLoading }: HeaderProps) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSearchQuery(inputValue);
+    setCurrentPage(1);
   };
 
   const getSearchResult = useCallback(
-    async (searchItem: string) => {
+    async (searchItem: string, page: number) => {
       setLoading(true);
       try {
         const response = await fetch(
-          'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
+          `https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10&pageNumber=${page}`,
           {
             method: 'POST',
             headers: {
@@ -51,9 +59,9 @@ export default function Header({ updateResults, setLoading }: HeaderProps) {
 
   useEffect(() => {
     if (searchQuery !== '') {
-      getSearchResult(searchQuery);
-    } else getSearchResult('');
-  }, [searchQuery, getSearchResult]);
+      getSearchResult(searchQuery, currentPage);
+    } else getSearchResult('', currentPage);
+  }, [searchQuery, currentPage, getSearchResult]);
 
   const getError = () => {
     setErrorOccured(!errorOccured);
