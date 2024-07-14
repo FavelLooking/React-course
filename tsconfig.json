@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "target": "esnext",
     "lib": ["dom", "esnext"],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noEmit": false
   },
   "files": [],
   "references": [

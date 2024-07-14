@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1720984588703" clover="3.2.0">
-  <project timestamp="1720984588703" name="All files">
-    <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1" elements="15" coveredelements="12" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
-    <file name="CardItem.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\components\CardItem\CardItem.tsx">
+<coverage generated="1720992063056" clover="3.2.0">
+  <project timestamp="1720992063056" name="All files">
+    <metrics statements="40" coveredstatements="30" conditionals="20" coveredconditionals="10" methods="12" coveredmethods="7" elements="72" coveredelements="47" complexity="0" loc="40" ncloc="40" packages="5" files="6" classes="6"/>
+    <package name="components.CardItem">
       <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="3" type="stmt"/>
-      <line num="7" count="3" type="stmt"/>
-    </file>
+      <file name="CardItem.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\components\CardItem\CardItem.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.CustomHooks">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="useSearch.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\components\CustomHooks\useSearch.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.NotFoundPage">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="NotFoundPage.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\components\NotFoundPage\NotFoundPage.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Pagination">
+      <metrics statements="10" coveredstatements="5" conditionals="7" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="Pagination.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\components\Pagination\Pagination.tsx">
+        <metrics statements="10" coveredstatements="5" conditionals="7" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="context">
+      <metrics statements="14" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <file name="context.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\context\context.tsx">
+        <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="useClicked.ts" path="C:\Users\Comic\Desktop\Учёба\react\src\context\useClicked.ts">
+        <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
