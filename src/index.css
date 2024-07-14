@@ -71,5 +71,7 @@ button:active {
 
 .error {
   font-family: MyFontBold;
-  min-height: 77px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
 }

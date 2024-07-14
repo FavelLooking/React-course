@@ -34,7 +34,7 @@ export default function Header({
       setLoading(true);
       try {
         const response = await fetch(
-          `https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10&pageNumber=${page}`,
+          `https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10&pageNumber=${page - 1}`,
           {
             method: 'POST',
             headers: {

@@ -26,11 +26,11 @@ export default function Pagination({
         Previous
       </button>
       <span>
-        {currentPage} of {totalPages - 1}
+        {currentPage} of {totalPages}
       </span>
       <button
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages - 1}
+        disabled={currentPage === totalPages}
       >
         Next
       </button>
