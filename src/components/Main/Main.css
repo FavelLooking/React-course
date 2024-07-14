@@ -1,5 +1,5 @@
 .main {
-  height: 80%;
+  height: 90%;
   width: 90%;
   border: 1px solid rgba(0, 0, 0, 0.164);
   border-radius: 2rem;
@@ -13,7 +13,8 @@
   padding-top: 1.5rem;
 }
 
-.main::before {
+.main::before,
+.details::before {
   content: '';
   position: absolute;
   top: 0;
