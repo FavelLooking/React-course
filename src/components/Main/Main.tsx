@@ -3,7 +3,7 @@ import planet from './../../assets/planet.gif';
 import CardItem from '../CardItem/CardItem';
 import { MainProps, AstronomicalObject } from '../../interfaces/interfaces';
 import Pagination from '../Pagination/Pagination';
-import { useClicked } from '../../context/context';
+import { useClicked } from '../../context/useClicked';
 
 interface MainPropsExtended extends MainProps {
   currentPage: number;

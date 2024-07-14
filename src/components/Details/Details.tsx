@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Details.css';
 import { AstronomicalObject } from '../../interfaces/interfaces';
 import planet from './../../assets/planet.gif';
-import { useClicked } from '../../context/context';
+import { useClicked } from '../../context/useClicked';
 
 interface DetailsProps {
   itemId: string;

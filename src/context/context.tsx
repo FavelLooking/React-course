@@ -1,12 +1,14 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
-interface ClickedContextType {
+export interface ClickedContextType {
   clicked: boolean;
   setClicked: React.Dispatch<React.SetStateAction<boolean>>;
   resetClicked: () => void;
 }
 
-const ClickedContext = createContext<ClickedContextType | undefined>(undefined);
+export const ClickedContext = createContext<ClickedContextType | undefined>(
+  undefined,
+);
 
 export const ClickedProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -22,12 +24,4 @@ export const ClickedProvider: React.FC<{ children: React.ReactNode }> = ({
       {children}
     </ClickedContext.Provider>
   );
-};
-
-export const useClicked = () => {
-  const context = useContext(ClickedContext);
-  if (!context) {
-    throw new Error('Error');
-  }
-  return context;
 };
