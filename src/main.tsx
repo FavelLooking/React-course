@@ -15,6 +15,10 @@ const router = createBrowserRouter([
         path: 'not-found',
         element: <NotFoundPage />,
       },
+      {
+        path: 'search/:page',
+        element: <App />,
+      },
     ],
   },
 ]);

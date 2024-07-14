@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './Header.css';
 import { ApiResponse } from '../../interfaces/interfaces';
 import useSearchQuery from '../CustomHooks/useSearch';
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
@@ -19,11 +20,13 @@ export default function Header({
   const [errorOccured, setErrorOccured] = useState(false);
   const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSearchQuery(inputValue);
     setCurrentPage(1);
+    navigate('/search/1');
   };
 
   const getSearchResult = useCallback(

@@ -1,6 +1,7 @@
 .card-item {
   display: flex;
   font-family: MyFont;
+  font-size: medium;
   flex-direction: column;
   align-items: center;
   gap: 45%;
@@ -8,7 +9,7 @@
   padding: 0.8rem;
   border-radius: 1rem;
   background-color: rgba(250, 235, 215, 0.363);
-  min-width: 370px;
+  min-width: 390px;
   min-height: 48px;
 }
 
