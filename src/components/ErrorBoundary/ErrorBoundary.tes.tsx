@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ErrorBoundary from './ErrorBoundary';
 
-const ChildComponent = () => {
+export const ChildComponent = () => {
   throw new Error('Test error');
 };
 
