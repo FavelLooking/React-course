@@ -12,7 +12,7 @@ export default function Pagination({
   onPageChange,
 }: PaginationProps) {
   const handlePageChange = (page: number) => {
-    if (page > 0 && page < totalPages) {
+    if (page > 0 && page < totalPages + 1) {
       onPageChange(page);
     }
   };
