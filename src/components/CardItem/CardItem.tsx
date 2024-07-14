@@ -7,12 +7,20 @@ export default function CardItem(props: ItemProps) {
   return (
     <div className="card-item">
       <span className="name-title">
-        Name: <span className="title">{title}</span>
+        Name:{' '}
+        <span className={title.length > 30 ? 'title-small' : 'title'}>
+          {title}
+        </span>
       </span>
 
       {location && (
         <span className="location-title">
-          Location: <span className="location">{location}</span>
+          Location:{' '}
+          <span
+            className={location.length > 20 ? 'location-small' : 'location'}
+          >
+            {location}
+          </span>
         </span>
       )}
 
@@ -22,7 +30,12 @@ export default function CardItem(props: ItemProps) {
         </span>
       )}
       <span className="type-title">
-        Object Type: <span className="type">{astronomicalObjectType}</span>
+        Object Type:{' '}
+        <span
+          className={astronomicalObjectType.length > 20 ? 'type-small' : 'type'}
+        >
+          {astronomicalObjectType}
+        </span>
       </span>
     </div>
   );

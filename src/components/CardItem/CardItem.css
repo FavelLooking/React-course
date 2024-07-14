@@ -1,7 +1,6 @@
 .card-item {
   display: flex;
   font-family: MyFont;
-  font-size: medium;
   flex-direction: column;
   align-items: center;
   gap: 45%;
@@ -41,4 +40,10 @@
 .location,
 .type {
   font-family: MyFont;
+}
+
+.title-small,
+.location-small,
+.type-small {
+  font-size: small;
 }

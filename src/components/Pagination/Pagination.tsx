@@ -12,7 +12,7 @@ export default function Pagination({
   onPageChange,
 }: PaginationProps) {
   const handlePageChange = (page: number) => {
-    if (page > 0 && page <= totalPages) {
+    if (page > 0 && page < totalPages) {
       onPageChange(page);
     }
   };
@@ -26,11 +26,11 @@ export default function Pagination({
         Previous
       </button>
       <span>
-        {currentPage} of {totalPages}
+        {currentPage} of {totalPages - 1}
       </span>
       <button
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        disabled={currentPage === totalPages - 1}
       >
         Next
       </button>
