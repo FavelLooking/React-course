@@ -1,5 +1,5 @@
 .main {
-  height: 60%;
+  height: 90%;
   width: 90%;
   border: 1px solid rgba(0, 0, 0, 0.164);
   border-radius: 2rem;
@@ -8,11 +8,13 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  gap: 3%;
+  gap: 2%;
   flex-wrap: wrap;
+  padding-top: 1.5rem;
 }
 
-.main::before {
+.main::before,
+.details::before {
   content: '';
   position: absolute;
   top: 0;
@@ -46,4 +48,15 @@
     letter-spacing: 1rem;
     font-size: x-large;
   }
+}
+
+.main.details-active {
+  width: 45%;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.main.details-active > div {
+  font-size: x-small;
+  padding: 0;
 }

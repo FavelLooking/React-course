@@ -1,5 +1,16 @@
 {
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "types": ["vitest/globals"],
+    "moduleResolution": "node",
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "noEmit": false
+  },
   "files": [],
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+
   "references": [
     {
       "path": "./tsconfig.app.json"

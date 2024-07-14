@@ -5,7 +5,7 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  gap: 1%;
   background-color: rgba(2, 2, 27, 0.034);
 }
 
@@ -21,4 +21,12 @@
   src: url('../src/assets/fonts/D3Euronism_b.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+.main-content {
+  display: flex;
+  height: 92%;
+  justify-content: center;
+  align-items: center;
+  gap: 7%;
 }

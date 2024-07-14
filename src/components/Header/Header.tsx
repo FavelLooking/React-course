@@ -1,99 +1,92 @@
-import { Component, ChangeEvent } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Header.css';
 import { ApiResponse } from '../../interfaces/interfaces';
+import useSearchQuery from '../CustomHooks/useSearch';
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
   setLoading: (isLoading: boolean) => void;
+  setCurrentPage: (page: number) => void;
+  currentPage: number;
 }
 
-interface HeaderState {
-  lastSearch: string;
-  errorOccured: boolean;
-}
+export default function Header({
+  updateResults,
+  setLoading,
+  setCurrentPage,
+  currentPage,
+}: HeaderProps) {
+  const [errorOccured, setErrorOccured] = useState(false);
+  const [searchQuery, setSearchQuery] = useSearchQuery('');
+  const [inputValue, setInputValue] = useState('');
+  const navigate = useNavigate();
 
-export default class Header extends Component<HeaderProps, HeaderState> {
-  constructor(props: HeaderProps) {
-    super(props);
-    this.state = {
-      lastSearch: '',
-      errorOccured: false,
-    };
-  }
-
-  componentDidMount() {
-    const savedSearch = localStorage.getItem('lastSearch');
-    if (savedSearch) {
-      this.setState({ lastSearch: savedSearch });
-      this.getSearchResult(savedSearch);
-    } else {
-      this.getSearchResult('');
-    }
-  }
-
-  handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    this.setState({ lastSearch: event.target.value.trim() });
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSearchQuery(inputValue);
+    setCurrentPage(1);
+    navigate('/search/1');
   };
 
-  handleSearch = () => {
-    const { lastSearch } = this.state;
-    if (!lastSearch) {
-      this.getSearchResult('');
-    } else {
-      localStorage.setItem('lastSearch', lastSearch);
-      this.getSearchResult(lastSearch);
-    }
-  };
-
-  getSearchResult = (searchItem: string) => {
-    this.props.setLoading(true);
-    fetch(
-      'https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10',
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          name: searchItem,
-        }),
-      },
-    )
-      .then((response) => response.json())
-      .then((data: ApiResponse) => {
-        this.props.updateResults(data);
-        this.props.setLoading(false);
-      })
-      .catch((error) => {
+  const getSearchResult = useCallback(
+    async (searchItem: string, page: number) => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10&pageNumber=${page - 1}`,
+          {
+            method: 'POST',
+            headers: {
+              accept: 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              name: searchItem,
+            }),
+          },
+        );
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data: ApiResponse = await response.json();
+        updateResults(data);
+      } catch (error) {
         console.error('Error fetching data:', error);
-        this.props.setLoading(false);
-      });
+      } finally {
+        setLoading(false);
+      }
+    },
+    [updateResults, setLoading],
+  );
+
+  useEffect(() => {
+    if (searchQuery !== '') {
+      getSearchResult(searchQuery, currentPage);
+    } else getSearchResult('', currentPage);
+  }, [searchQuery, currentPage, getSearchResult]);
+
+  const getError = () => {
+    setErrorOccured(!errorOccured);
   };
 
-  getError = () => {
-    this.setState({ errorOccured: !this.state.errorOccured });
-  };
-
-  render() {
-    if (this.state.errorOccured) {
-      throw new Error('Universe error');
-    }
-    return (
-      <div className="header">
-        <input
-          className="header__search"
-          type="text"
-          placeholder="Enter planet or star name"
-          onChange={this.handleInputChange}
-        />
-        <button type="submit" onClick={this.handleSearch}>
-          Search
-        </button>
-        <button type="submit" onClick={this.getError}>
-          Get Error
-        </button>
-      </div>
-    );
+  if (errorOccured) {
+    throw new Error('Universe error');
   }
+
+  return (
+    <form className="header" onSubmit={handleSubmit}>
+      <input
+        className="header__search"
+        type="text"
+        placeholder="Enter planet or star name"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button type="submit">Search</button>
+      <button type="button" onClick={getError}>
+        Get Error
+      </button>
+    </form>
+  );
 }
