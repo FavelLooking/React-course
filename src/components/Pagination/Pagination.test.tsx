@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { ClickedProvider } from '../../context/context';
 import Pagination from './Pagination';
 import { jest } from '@jest/globals';
 
@@ -11,11 +12,14 @@ describe('Pagination component', () => {
 
   it('disables Previous button on first page', () => {
     render(
-      <Pagination
-        currentPage={1}
-        totalPages={5}
-        onPageChange={mockOnPageChange}
-      />,
+      <ClickedProvider>
+        <Pagination
+          currentPage={1}
+          totalPages={5}
+          onPageChange={mockOnPageChange}
+        />
+        ,
+      </ClickedProvider>,
     );
 
     const previousButton = screen.getByRole('button', {
@@ -31,11 +35,14 @@ describe('Pagination component', () => {
 
   it('disables Next button on last page', () => {
     render(
-      <Pagination
-        currentPage={5}
-        totalPages={5}
-        onPageChange={mockOnPageChange}
-      />,
+      <ClickedProvider>
+        <Pagination
+          currentPage={5}
+          totalPages={5}
+          onPageChange={mockOnPageChange}
+        />
+        ,
+      </ClickedProvider>,
     );
 
     const previousButton = screen.getByRole('button', {
@@ -51,11 +58,14 @@ describe('Pagination component', () => {
 
   it('calls onPageChange with correct page number on button click', () => {
     render(
-      <Pagination
-        currentPage={3}
-        totalPages={5}
-        onPageChange={mockOnPageChange}
-      />,
+      <ClickedProvider>
+        <Pagination
+          currentPage={3}
+          totalPages={5}
+          onPageChange={mockOnPageChange}
+        />
+        ,
+      </ClickedProvider>,
     );
 
     const previousButton = screen.getByRole('button', { name: /previous/i });
