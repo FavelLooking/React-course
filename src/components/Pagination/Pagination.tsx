@@ -1,4 +1,5 @@
 import './Pagination.css';
+import { useClicked } from '../../context/useClicked';
 
 interface PaginationProps {
   currentPage: number;
@@ -17,11 +18,13 @@ export default function Pagination({
     }
   };
 
+  const { clicked } = useClicked();
+
   return (
     <div className="pagination">
       <button
         onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage === 1}
+        disabled={clicked || currentPage === 1}
       >
         Previous
       </button>
@@ -30,7 +33,7 @@ export default function Pagination({
       </span>
       <button
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        disabled={clicked || currentPage === totalPages}
       >
         Next
       </button>
