@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useSearchQuery = (initialSearch: string) => {
+export const useSearchQuery = (initialSearch: string) => {
   const [searchQuery, setSearchQuery] = useState<string>(() => {
     const savedSearchQuery = localStorage.getItem('lastSearch');
     return savedSearchQuery ?? initialSearch;
@@ -12,5 +12,3 @@ const useSearchQuery = (initialSearch: string) => {
 
   return [searchQuery, setSearchQuery] as const;
 };
-
-export default useSearchQuery;

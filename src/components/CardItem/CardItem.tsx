@@ -1,6 +1,6 @@
 import './CardItem.css';
 
-interface ItemProps {
+export interface ItemProps {
   title: string;
   location?: string;
   astronomicalObjectType: string;
@@ -8,7 +8,7 @@ interface ItemProps {
   onClick: () => void;
 }
 
-export default function CardItem(props: ItemProps) {
+export function CardItem(props: ItemProps) {
   const { title, location, astronomicalObjectType, onClick } = props;
 
   return (

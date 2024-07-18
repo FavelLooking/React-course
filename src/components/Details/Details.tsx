@@ -11,7 +11,7 @@ interface DetailsProps {
   isLoading: boolean;
 }
 
-export default function Details({
+export function Details({
   itemId,
   onClose,
   setLoading,

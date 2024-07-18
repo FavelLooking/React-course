@@ -1,6 +1,6 @@
 import './NotFoundPage.css';
 
-export default function NotFoundPage() {
+export function NotFoundPage() {
   return (
     <div className="not-found-page" data-testid="not-found-page">
       <h1>Lost in space?</h1>

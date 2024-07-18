@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Header.css';
 import { ApiResponse } from '../../interfaces/interfaces';
-import useSearchQuery from '../CustomHooks/useSearch';
+import { useSearchQuery } from '../CustomHooks/useSearch';
 import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
@@ -11,7 +11,7 @@ interface HeaderProps {
   currentPage: number;
 }
 
-export default function Header({
+export function Header({
   updateResults,
   setLoading,
   setCurrentPage,

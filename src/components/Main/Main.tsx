@@ -1,8 +1,8 @@
 import './Main.css';
 import planet from '../../assets/images/Planet.gif';
-import CardItem from '../CardItem/CardItem';
+import { CardItem } from '../CardItem/CardItem';
 import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
-import Pagination from '../Pagination/Pagination';
+import { Pagination } from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
 
 export interface MainProps {
@@ -17,7 +17,7 @@ export interface MainPropsExtended extends MainProps {
   hideDetails: () => void;
 }
 
-export default function Main(props: MainPropsExtended) {
+export function Main(props: MainPropsExtended) {
   const {
     searchResults,
     isLoading,

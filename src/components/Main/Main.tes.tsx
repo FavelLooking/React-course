@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Main, { MainPropsExtended } from './Main';
+import { Main, MainPropsExtended } from './Main';
 import { jest } from '@jest/globals';
 
 const mockProps: MainPropsExtended = {
