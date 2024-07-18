@@ -29,7 +29,7 @@ export interface Page {
 }
 
 export interface ApiResponse {
-  sort: string;
+  sort?: string;
   astronomicalObjects: AstronomicalObject[];
   page: {
     totalPages: number;

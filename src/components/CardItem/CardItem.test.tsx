@@ -36,7 +36,7 @@ describe('CardItem Component', () => {
     expect(screen.getByText(/Unknown/)).toBeInTheDocument();
   });
 
-  it('calls onClick handler when the card item is clicked', () => {
+  it('calls onClick handler when the card is clicked', () => {
     const handleClick = jest.fn();
     render(<CardItem {...mockItem} onClick={handleClick} />);
     const cardItemElement = screen.getByText(/Name:/);
