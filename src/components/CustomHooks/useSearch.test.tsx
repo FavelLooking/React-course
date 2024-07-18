@@ -1,6 +1,6 @@
 import { act } from 'react';
 import { renderHook, RenderHookResult } from '@testing-library/react-hooks';
-import useSearch from './useSearch';
+import { useSearchQuery } from './useSearch';
 
 describe('useSearchQuery hook', () => {
   it('should initialize with initial value and save to localStorage', () => {
@@ -8,7 +8,7 @@ describe('useSearchQuery hook', () => {
 
     act(() => {
       hookResult = renderHook(() => {
-        const [searchQuery] = useSearch('initial');
+        const [searchQuery] = useSearchQuery('initial');
         return [searchQuery];
       });
     });
@@ -20,7 +20,7 @@ describe('useSearchQuery hook', () => {
   });
 
   it('should update searchQuery and save to localStorage', () => {
-    const { result } = renderHook(() => useSearch('initial'));
+    const { result } = renderHook(() => useSearchQuery('initial'));
 
     act(() => {
       result.current[1]('new search');
@@ -33,7 +33,7 @@ describe('useSearchQuery hook', () => {
 
   it('should use saved searchQuery from localStorage if available', () => {
     localStorage.setItem('lastSearch', 'saved search');
-    const { result } = renderHook(() => useSearch('initial'));
+    const { result } = renderHook(() => useSearchQuery('initial'));
 
     expect(result.current[0]).toBe('saved search');
   });

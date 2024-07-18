@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ClickedProvider } from '../../context/context';
-import Pagination from './Pagination';
+import { Pagination } from './Pagination';
 import { jest } from '@jest/globals';
 
 describe('Pagination component', () => {
