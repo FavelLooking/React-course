@@ -1,11 +1,3 @@
-export default interface ItemProps {
-  title: string;
-  location?: string;
-  astronomicalObjectType: string;
-
-  onClick: () => void;
-}
-
 export interface Location {
   uid?: string;
   name: string;
@@ -34,9 +26,4 @@ export interface ApiResponse {
   page: {
     totalPages: number;
   };
-}
-
-export interface MainProps {
-  searchResults?: ApiResponse | null;
-  isLoading: boolean;
 }

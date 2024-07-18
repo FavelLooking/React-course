@@ -1,9 +1,14 @@
 import './Main.css';
-import planet from '../../assets/planet.gif';
+import planet from '../../assets/images/Planet.gif';
 import CardItem from '../CardItem/CardItem';
-import { MainProps, AstronomicalObject } from '../../interfaces/interfaces';
+import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
 import Pagination from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
+
+export interface MainProps {
+  searchResults?: ApiResponse | null;
+  isLoading: boolean;
+}
 
 export interface MainPropsExtended extends MainProps {
   currentPage: number;

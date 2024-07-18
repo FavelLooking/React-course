@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Details.css';
 import { AstronomicalObject } from '../../interfaces/interfaces';
-import planet from './../../assets/planet.gif';
+import planet from './../../assets/images/Planet.gif';
 import { useClicked } from '../../context/useClicked';
 
 interface DetailsProps {
