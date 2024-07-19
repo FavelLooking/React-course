@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { CardItem, ItemProps } from 'components/CardItem/CardItem';
+import { CardItem, ItemProps } from './CardItem';
 
 const mockItem: ItemProps = {
   title: 'Galaxy NGC 1300',
