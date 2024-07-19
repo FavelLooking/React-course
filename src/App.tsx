@@ -1,13 +1,13 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Details from './components/Details/Details';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
+import { Details } from './components/Details/Details';
 import { ApiResponse } from './interfaces/interfaces';
-import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 
-export default function App() {
+export function App() {
   const { page } = useParams<{ page: string }>();
   const navigate = useNavigate();
   const location = useLocation();

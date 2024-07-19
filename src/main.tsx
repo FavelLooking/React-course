@@ -5,9 +5,9 @@ import {
   RouterProvider,
   Navigate,
 } from 'react-router-dom';
-import App from './App.tsx';
+import { App } from './App.tsx';
 import './index.css';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage.tsx';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage.tsx';
 import { ClickedProvider } from './context/context';
 
 const router = createBrowserRouter([
