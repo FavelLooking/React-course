@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import './Header.css';
+import styles from './Header.module.scss';
 import { ApiResponse } from '../../interfaces/interfaces';
 import { useSearchQuery } from '../CustomHooks/useSearch';
 import { useNavigate } from 'react-router-dom';
@@ -75,9 +75,9 @@ export function Header({
   }
 
   return (
-    <form className="header" onSubmit={handleSubmit}>
+    <form className={styles[`header`]} onSubmit={handleSubmit}>
       <input
-        className="header__search"
+        className={styles[`header__search`]}
         type="text"
         placeholder="Enter planet or star name"
         value={inputValue}

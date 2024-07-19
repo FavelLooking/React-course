@@ -1,4 +1,4 @@
-import './Pagination.css';
+import styles from './Pagination.module.scss';
 import { useClicked } from '../../context/useClicked';
 
 interface PaginationProps {
@@ -21,7 +21,7 @@ export function Pagination({
   const { clicked } = useClicked();
 
   return (
-    <div className="pagination">
+    <div className={styles['pagination']}>
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={clicked || currentPage === 1}

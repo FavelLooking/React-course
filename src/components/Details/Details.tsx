@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Details.css';
+import styles from './Details.module.scss';
 import { AstronomicalObject } from '../../interfaces/interfaces';
 import planet from './../../assets/images/Planet.gif';
 import { useClicked } from '../../context/useClicked';
@@ -48,8 +48,8 @@ export function Details({
 
   if (isLoading) {
     return (
-      <div className="main-content">
-        <div className="loader">
+      <div className={styles[`main-content`]}>
+        <div className={styles[`loader`]}>
           <img src={planet} alt="loader" />
         </div>
       </div>
@@ -61,7 +61,7 @@ export function Details({
   }
 
   return (
-    <div className="details">
+    <div className={styles[`details`]}>
       <h2>{itemDetails.name}</h2>
       <p>{itemDetails.astronomicalObjectType}</p>
       <p>{itemDetails.location?.name || 'Unknown location'}</p>

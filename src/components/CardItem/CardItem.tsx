@@ -1,4 +1,4 @@
-import './CardItem.css';
+import styles from './CardItem.module.scss';
 
 export interface ItemProps {
   title: string;
@@ -12,19 +12,27 @@ export function CardItem(props: ItemProps) {
   const { title, location, astronomicalObjectType, onClick } = props;
 
   return (
-    <div className="card-item" onClick={onClick}>
-      <span className="name-title">
+    <div className={styles[`card-item`]} onClick={onClick}>
+      <span className={styles[`name-title`]}>
         Name:{' '}
-        <span className={title.length > 30 ? 'title-small' : 'title'}>
+        <span
+          className={
+            title.length > 30 ? styles[`title-small`] : styles[`title`]
+          }
+        >
           {title}
         </span>
       </span>
 
       {location && (
-        <span className="location-title">
+        <span className={styles[`location-title`]}>
           Location:{' '}
           <span
-            className={location.length > 20 ? 'location-small' : 'location'}
+            className={
+              location.length > 20
+                ? styles[`location-small`]
+                : styles[`location`]
+            }
           >
             {location}
           </span>
@@ -32,14 +40,18 @@ export function CardItem(props: ItemProps) {
       )}
 
       {!location && (
-        <span className="location-title">
-          Location: <span className="location">Unknown</span>
+        <span className={styles[`location-title`]}>
+          Location: <span className={styles[`location`]}>Unknown</span>
         </span>
       )}
-      <span className="type-title">
+      <span className={styles[`type-title`]}>
         Object Type:{' '}
         <span
-          className={astronomicalObjectType.length > 20 ? 'type-small' : 'type'}
+          className={
+            astronomicalObjectType.length > 20
+              ? styles[`type-small`]
+              : styles[`type`]
+          }
         >
           {astronomicalObjectType}
         </span>

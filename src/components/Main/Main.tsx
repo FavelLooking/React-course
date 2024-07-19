@@ -1,4 +1,4 @@
-import './Main.css';
+import styles from './Main.module.scss';
 import planet from '../../assets/images/Planet.gif';
 import { CardItem } from '../CardItem/CardItem';
 import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
@@ -54,7 +54,7 @@ export function Main(props: MainPropsExtended) {
 
   return (
     <div
-      className={clicked ? 'main details-active' : 'main'}
+      className={clicked ? styles['main details-active'] : styles['main']}
       onClick={handleCloseDetails}
     >
       {astronomicalObjects.length > 0 ? (
@@ -75,7 +75,7 @@ export function Main(props: MainPropsExtended) {
           />
         </>
       ) : (
-        <p className="no-results">No search results found</p>
+        <p className={styles['no-results']}>No search results found</p>
       )}
     </div>
   );

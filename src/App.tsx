@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import './App.css';
+import styles from './App.module.scss';
 import { Header } from './components/Header/Header';
 import { Main } from './components/Main/Main';
 import { Details } from './components/Details/Details';
@@ -67,7 +67,7 @@ export function App() {
   };
 
   return (
-    <div className="wrapper">
+    <div className={styles['wrapper']}>
       <ErrorBoundary>
         <Header
           updateResults={updateSearchResults}
@@ -76,7 +76,7 @@ export function App() {
           setCurrentPage={changePage}
         />
       </ErrorBoundary>
-      <div className="main-content">
+      <div className={styles['main-content']}>
         <Main
           searchResults={searchResults}
           isLoading={isLoading}
