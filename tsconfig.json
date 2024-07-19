@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {
-      "@components/*": ["components/*"]
-    },
     "esModuleInterop": true,
     "types": ["vitest/globals"],
     "moduleResolution": "node",
