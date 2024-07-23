@@ -10,8 +10,7 @@
     "format:fix": "prettier --write .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest",
-    "test:ci": "vitest run"
+    "test": "vitest run"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",

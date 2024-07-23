@@ -1,26 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
-interface SelectedItems {
-  itemId: string | undefined;
-  isSelect: boolean;
+export interface SelectedItemsState {
+  [title: string]: boolean;
 }
 
-const initialState: SelectedItems = {
-  itemId: undefined,
-  isSelect: false,
-};
+const initialState: SelectedItemsState = { '': false };
 
 export const selectedItemsSlice = createSlice({
   name: 'selectedItems',
   initialState,
   reducers: {
-    check: (state) => {
-      state.isSelect = true;
+    check: (state, action: PayloadAction<string>) => {
+      state[action.payload] = true;
     },
-    uncheck: (state) => {
-      state.isSelect = false;
+    uncheck: (state, action: PayloadAction<string>) => {
+      state[action.payload] = false;
     },
   },
 });
 
 export const { check, uncheck } = selectedItemsSlice.actions;
+export default selectedItemsSlice.reducer;

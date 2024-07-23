@@ -1,7 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
+import selectedItemsReducer from './selectedItemsSlice';
+import { SelectedItemsState } from './selectedItemsSlice';
 
-export const store = configureStore({
-  reducer: {},
+export const store: EnhancedStore<{
+  selectedItems: SelectedItemsState;
+}> = configureStore({
+  reducer: {
+    selectedItems: selectedItemsReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
