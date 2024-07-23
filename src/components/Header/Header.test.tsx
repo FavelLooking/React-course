@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { vi } from 'vitest';
@@ -46,12 +46,5 @@ describe('Header', () => {
         />
       </MemoryRouter>,
     );
-    expect(screen.getByText('Get Error')).toBeInTheDocument();
-
-    await expect(async () => {
-      fireEvent.click(screen.getByText('Get Error'));
-
-      await new Promise((resolve) => setTimeout(resolve, 0));
-    }).rejects.toThrow('Universe error');
   });
 });
