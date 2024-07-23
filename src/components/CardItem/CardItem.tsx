@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from './../../store/store';
 import styles from './CardItem.module.scss';
 import { check, uncheck } from './../../store/selectedItemsSlice';
+import { Item } from './../../store/selectedItemsSlice';
 
 export interface ItemProps {
   title: string;
@@ -15,16 +16,21 @@ export function CardItem(props: ItemProps) {
   const { title, location, astronomicalObjectType, onClick } = props;
 
   const isSelect = useSelector((state: RootState) =>
-    state.selectedItems.titles.includes(title),
+    state.selectedItems.items.some((item) => item.title === title),
   );
-  console.log(isSelect);
   const dispatch = useDispatch();
 
   const handleChange = () => {
+    const itemToUpdate: Item = {
+      title,
+      location: location ?? '',
+      object: astronomicalObjectType,
+    };
+
     if (isSelect) {
-      dispatch(uncheck(title));
+      dispatch(uncheck(itemToUpdate));
     } else {
-      dispatch(check(title));
+      dispatch(check(itemToUpdate));
     }
   };
 

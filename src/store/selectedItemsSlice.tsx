@@ -1,24 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface SelectedItemsState {
-  titles: string[];
+export interface Item {
+  title: string;
+  location: string;
+  object: string;
 }
 
-const initialState: SelectedItemsState = { titles: [''] };
+export interface SelectedItemsState {
+  items: Item[];
+}
 
-export const selectedItemsSlice = createSlice({
+const initialState: SelectedItemsState = {
+  items: [],
+};
+
+const selectedItemsSlice = createSlice({
   name: 'selectedItems',
   initialState,
   reducers: {
-    check: (state, action: PayloadAction<string>) => {
-      state.titles.push(action.payload);
+    check: (state, action: PayloadAction<Item>) => {
+      state.items.push(action.payload);
     },
-    uncheck: (state, action: PayloadAction<string>) => {
-      state.titles = state.titles.filter((title) => title !== action.payload);
+    uncheck: (state, action: PayloadAction<Item>) => {
+      state.items = state.items.filter(
+        (item) => item.title !== action.payload.title,
+      );
+    },
+    unselect: (state) => {
+      state.items = [];
     },
   },
 });
 
-export const { check, uncheck } = selectedItemsSlice.actions;
+export const { check, uncheck, unselect } = selectedItemsSlice.actions;
 export default selectedItemsSlice.reducer;
