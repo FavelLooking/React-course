@@ -9,6 +9,8 @@ import { App } from './App.tsx';
 import './index.css';
 import { NotFoundPage } from './components/NotFoundPage/NotFoundPage.tsx';
 import { ClickedProvider } from './context/context';
+import { Provider } from 'react-redux';
+import { store } from './store/store.tsx';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ClickedProvider>
-      <RouterProvider router={router} />
-    </ClickedProvider>
+    <Provider store={store}>
+      <ClickedProvider>
+        <RouterProvider router={router} />
+      </ClickedProvider>
+    </Provider>
   </React.StrictMode>,
 );
