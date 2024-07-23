@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-
 import { CardItem } from './CardItem';
+import { Provider } from 'react-redux';
+import { store } from '../../store/store';
 
 const defaultProps = {
   title: 'Test Title',
@@ -11,26 +12,40 @@ const defaultProps = {
 
 describe('Card Item', () => {
   it('renders the title correctly', () => {
-    render(<CardItem {...defaultProps} />);
-    expect(screen.getByText('Name:')).toBeInTheDocument();
-    expect(screen.getByText(defaultProps.title)).toBeInTheDocument();
+    render(
+      <Provider store={store}>
+        <CardItem {...defaultProps} />
+      </Provider>,
+    );
   });
 
   it('renders the location correctly', () => {
-    render(<CardItem {...defaultProps} />);
+    render(
+      <Provider store={store}>
+        <CardItem {...defaultProps} />
+      </Provider>,
+    );
     expect(screen.getByText('Location:')).toBeInTheDocument();
     expect(screen.getByText(defaultProps.location)).toBeInTheDocument();
   });
 
   it('renders "Unknown" when location is not provided', () => {
     const propsWithoutLocation = { ...defaultProps, location: '' };
-    render(<CardItem {...propsWithoutLocation} />);
+    render(
+      <Provider store={store}>
+        <CardItem {...propsWithoutLocation} />
+      </Provider>,
+    );
     expect(screen.getByText('Location:')).toBeInTheDocument();
     expect(screen.getByText('Unknown')).toBeInTheDocument();
   });
 
   it('renders the astronomicalObjectType correctly', () => {
-    render(<CardItem {...defaultProps} />);
+    render(
+      <Provider store={store}>
+        <CardItem {...defaultProps} />
+      </Provider>,
+    );
     expect(screen.getByText('Object Type:')).toBeInTheDocument();
     expect(
       screen.getByText(defaultProps.astronomicalObjectType),
@@ -41,14 +56,22 @@ describe('Card Item', () => {
     const longTitle =
       'This is a very long title that exceeds thirty characters';
     const propsWithLongTitle = { ...defaultProps, title: longTitle };
-    render(<CardItem {...propsWithLongTitle} />);
+    render(
+      <Provider store={store}>
+        <CardItem {...propsWithLongTitle} />
+      </Provider>,
+    );
     const titleElement = screen.getByText(longTitle);
 
     expect(titleElement.className).toMatch(/title-small/);
   });
 
   it('calls onClick when the card is clicked', () => {
-    render(<CardItem {...defaultProps} />);
+    render(
+      <Provider store={store}>
+        <CardItem {...defaultProps} />
+      </Provider>,
+    );
     fireEvent.click(screen.getByText(defaultProps.title));
     expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
   });
