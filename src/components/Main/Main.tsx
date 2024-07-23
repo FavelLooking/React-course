@@ -54,7 +54,11 @@ export function Main(props: MainPropsExtended) {
 
   return (
     <div
-      className={clicked ? styles['main details-active'] : styles['main']}
+      className={
+        clicked
+          ? `${styles.main} ${styles['details-active']} ${styles['card-small']}`
+          : styles.main
+      }
       onClick={handleCloseDetails}
     >
       {astronomicalObjects.length > 0 ? (

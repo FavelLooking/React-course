@@ -2,20 +2,20 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface SelectedItemsState {
-  [title: string]: boolean;
+  titles: string[];
 }
 
-const initialState: SelectedItemsState = { '': false };
+const initialState: SelectedItemsState = { titles: [''] };
 
 export const selectedItemsSlice = createSlice({
   name: 'selectedItems',
   initialState,
   reducers: {
     check: (state, action: PayloadAction<string>) => {
-      state[action.payload] = true;
+      state.titles.push(action.payload);
     },
     uncheck: (state, action: PayloadAction<string>) => {
-      state[action.payload] = false;
+      state.titles = state.titles.filter((title) => title !== action.payload);
     },
   },
 });

@@ -14,8 +14,8 @@ export interface ItemProps {
 export function CardItem(props: ItemProps) {
   const { title, location, astronomicalObjectType, onClick } = props;
 
-  const isSelect = useSelector(
-    (state: RootState) => state.selectedItems[title] ?? false,
+  const isSelect = useSelector((state: RootState) =>
+    state.selectedItems.titles.includes(title),
   );
   console.log(isSelect);
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export function CardItem(props: ItemProps) {
   };
 
   return (
-    <>
+    <div className={styles[`card-container`]}>
       <div className={styles[`card-item`]} onClick={onClick}>
         <span className={styles[`name-title`]}>
           Name:{' '}
@@ -82,6 +82,6 @@ export function CardItem(props: ItemProps) {
         checked={isSelect}
         onChange={handleChange}
       />
-    </>
+    </div>
   );
 }
