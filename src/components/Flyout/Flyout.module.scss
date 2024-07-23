@@ -1,0 +1,20 @@
+.flyout-container {
+  display: flex;
+  position: absolute;
+  bottom: 3%;
+  right: 2%;
+  min-width: 20rem;
+  min-height: 5rem;
+  background-color: black;
+  opacity: 0.5;
+  border: 1px solid rgba(240, 247, 213, 0.836);
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-family: MyFont;
+  color: aliceblue;
+}
+
+.flyout-container--hidden {
+  display: none;
+}

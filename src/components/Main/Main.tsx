@@ -4,6 +4,7 @@ import { CardItem } from '../CardItem/CardItem';
 import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
 import { Pagination } from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
+import { Flyout } from '../Flyout/Flyout';
 
 export interface MainProps {
   searchResults?: ApiResponse | null;
@@ -77,6 +78,7 @@ export function Main(props: MainPropsExtended) {
             totalPages={page.totalPages}
             onPageChange={(page) => setCurrentPage(page)}
           />
+          <Flyout></Flyout>
         </>
       ) : (
         <p className={styles['no-results']}>No search results found</p>
