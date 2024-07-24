@@ -1,4 +1,5 @@
 import styles from './Pagination.module.scss';
+import stylesButton from '../Button/Button.module.scss';
 import { useClicked } from '../../context/useClicked';
 
 interface PaginationProps {
@@ -23,6 +24,7 @@ export function Pagination({
   return (
     <div className={styles['pagination']}>
       <button
+        className={stylesButton.button}
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={clicked || currentPage === 1}
       >
@@ -32,6 +34,7 @@ export function Pagination({
         {currentPage} of {totalPages}
       </span>
       <button
+        className={stylesButton.button}
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={clicked || currentPage === totalPages}
       >

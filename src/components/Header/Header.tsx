@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './Header.module.scss';
+import stylesButton from '../Button/Button.module.scss';
 import { ApiResponse } from '../../interfaces/interfaces';
 import { useSearchQuery } from '../CustomHooks/useSearch';
 import { useNavigate } from 'react-router-dom';
@@ -83,8 +84,10 @@ export function Header({
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button type="submit">Search</button>
-      <button type="button" onClick={getError}>
+      <button className={stylesButton.button} type="submit">
+        Search
+      </button>
+      <button className={stylesButton.button} type="button" onClick={getError}>
         Get Error
       </button>
     </form>

@@ -26,3 +26,13 @@
   gap: 0.4rem;
   font-size: small;
 }
+
+button.button-container,
+.flyout__button {
+  color: rgba(240, 248, 255, 0.864);
+  letter-spacing: 0.1rem;
+}
+
+.download {
+  display: none;
+}
