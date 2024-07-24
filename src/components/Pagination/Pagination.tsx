@@ -1,6 +1,7 @@
 import styles from './Pagination.module.scss';
 import stylesButton from '../Button/Button.module.scss';
 import { useClicked } from '../../context/useClicked';
+import { useTheme } from './../../context/useTheme';
 
 interface PaginationProps {
   currentPage: number;
@@ -20,9 +21,12 @@ export function Pagination({
   };
 
   const { clicked } = useClicked();
+  const { isStandartTheme } = useTheme();
 
   return (
-    <div className={styles['pagination']}>
+    <div
+      className={`${styles.pagination} ${!isStandartTheme ? styles.alternative : ''}`}
+    >
       <button
         className={stylesButton.button}
         onClick={() => handlePageChange(currentPage - 1)}

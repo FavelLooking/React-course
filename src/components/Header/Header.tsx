@@ -4,6 +4,7 @@ import stylesButton from '../Button/Button.module.scss';
 import { ApiResponse } from '../../interfaces/interfaces';
 import { useSearchQuery } from '../CustomHooks/useSearch';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from './../../context/useTheme';
 
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
@@ -22,6 +23,8 @@ export function Header({
   const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
+
+  const { isStandartTheme, changeTheme } = useTheme();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -67,6 +70,11 @@ export function Header({
     } else getSearchResult('', currentPage);
   }, [searchQuery, currentPage, getSearchResult]);
 
+  const switchTheme = () => {
+    changeTheme();
+    console.log(isStandartTheme);
+  };
+
   const getError = () => {
     setErrorOccured(!errorOccured);
   };
@@ -76,7 +84,10 @@ export function Header({
   }
 
   return (
-    <form className={styles[`header`]} onSubmit={handleSubmit}>
+    <form
+      className={`${styles[`header`]}  ${!isStandartTheme ? styles[`alternative`] : ''}`}
+      onSubmit={handleSubmit}
+    >
       <input
         className={styles[`header__search`]}
         type="text"
@@ -89,6 +100,13 @@ export function Header({
       </button>
       <button className={stylesButton.button} type="button" onClick={getError}>
         Get Error
+      </button>
+      <button
+        className={stylesButton.button}
+        type="button"
+        onClick={switchTheme}
+      >
+        Next Theme
       </button>
     </form>
   );

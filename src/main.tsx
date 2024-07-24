@@ -9,6 +9,7 @@ import { App } from './App.tsx';
 import './index.css';
 import { NotFoundPage } from './components/NotFoundPage/NotFoundPage.tsx';
 import { ClickedProvider } from './context/context';
+import { ThemeProvider } from './context/contextTheme.tsx';
 import { Provider } from 'react-redux';
 import { store } from './store/store.tsx';
 
@@ -37,9 +38,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <React.StrictMode>
-      <ClickedProvider>
-        <RouterProvider router={router} />
-      </ClickedProvider>
+      <ThemeProvider>
+        <ClickedProvider>
+          <RouterProvider router={router} />
+        </ClickedProvider>
+      </ThemeProvider>
     </React.StrictMode>
   </Provider>,
 );

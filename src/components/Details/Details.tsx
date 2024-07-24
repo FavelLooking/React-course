@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import styles from './Details.module.scss';
+import stylesButton from '../Button/Button.module.scss';
 import { AstronomicalObject } from '../../interfaces/interfaces';
 import planet from './../../assets/images/Planet.gif';
 import { useClicked } from '../../context/useClicked';
+import { useTheme } from './../../context/useTheme';
 
 interface DetailsProps {
   itemId: string;
@@ -21,6 +23,7 @@ export function Details({
     null,
   );
   const { resetClicked } = useClicked();
+  const { isStandartTheme } = useTheme();
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -61,11 +64,15 @@ export function Details({
   }
 
   return (
-    <div className={styles[`details`]}>
+    <div
+      className={`${styles[`details`]} ${!isStandartTheme ? styles[`alternative`] : ''}`}
+    >
       <h2>{itemDetails.name}</h2>
       <p>{itemDetails.astronomicalObjectType}</p>
       <p>{itemDetails.location?.name || 'Unknown location'}</p>
-      <button onClick={handleOnClose}>Close</button>
+      <button className={stylesButton.button} onClick={handleOnClose}>
+        Close
+      </button>
     </div>
   );
 }

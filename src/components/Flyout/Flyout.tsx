@@ -83,7 +83,7 @@ export function Flyout() {
           <a
             className={styles.download}
             href={url}
-            download={`Asctronomical-objects-${itemNumber}.csv`}
+            download={`${itemNumber}-Asctronomical-objects.csv`}
             ref={linkRef}
           >
             Download

@@ -17,6 +17,13 @@
 }
 
 @font-face {
+  font-family: 'MyAlternativeFont';
+  src: url('./assets/fonts/D3Radicalism-DOmm.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'MyFontBold';
   src: url('../src/assets/fonts/D3Euronism_b.ttf') format('truetype');
   font-weight: normal;
@@ -25,8 +32,9 @@
 
 .main-content {
   display: flex;
-  height: 92%;
+  height: 100%;
+  min-width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 7%;
+  gap: 3%;
 }

@@ -18,3 +18,9 @@
   font-family: MyFont;
   font-size: small;
 }
+
+.pagination.alternative > button {
+  color: rgb(218, 212, 212);
+  transition: 2.5ms;
+  font-family: MyAlternativeFont;
+}

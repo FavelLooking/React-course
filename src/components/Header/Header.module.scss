@@ -35,3 +35,14 @@
   font-style: italic;
   background-color: rgba(250, 235, 215, 0.996);
 }
+
+.header.alternative > button {
+  color: rgb(218, 212, 212);
+  transition: 2.5ms;
+  font-family: MyAlternativeFont;
+}
+
+.header.alternative::before {
+  background-image: url('https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-8.jpg');
+  opacity: 1;
+}

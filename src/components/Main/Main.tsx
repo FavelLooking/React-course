@@ -1,10 +1,12 @@
 import styles from './Main.module.scss';
 import planet from '../../assets/images/Planet.gif';
+import planetAlt from '../../assets/images/Planet-alternative.gif';
 import { CardItem } from '../CardItem/CardItem';
 import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
 import { Pagination } from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
 import { Flyout } from '../Flyout/Flyout';
+import { useTheme } from './../../context/useTheme';
 
 export interface MainProps {
   searchResults?: ApiResponse | null;
@@ -28,12 +30,15 @@ export function Main(props: MainPropsExtended) {
     hideDetails,
   } = props;
   const { clicked, setClicked } = useClicked();
+  const { isStandartTheme } = useTheme();
 
   if (!searchResults || isLoading) {
     return (
-      <div className="main">
-        <div className="loader">
-          <img src={planet} alt="loader" />
+      <div
+        className={`${styles.main} ${!isStandartTheme ? styles['alternative'] : ''} `}
+      >
+        <div className={styles.loader}>
+          <img src={!isStandartTheme ? planetAlt : planet} alt="loader" />
         </div>
       </div>
     );
@@ -57,8 +62,8 @@ export function Main(props: MainPropsExtended) {
     <div
       className={
         clicked
-          ? `${styles.main} ${styles['details-active']} ${styles['card-small']}`
-          : styles.main
+          ? `${styles.main} ${styles['details-active']} ${styles['card-small']} ${!isStandartTheme ? styles['alternative'] : ''}`
+          : `${styles.main} ${!isStandartTheme ? styles['alternative'] : ''} `
       }
       onClick={handleCloseDetails}
     >
@@ -78,7 +83,7 @@ export function Main(props: MainPropsExtended) {
             totalPages={page.totalPages}
             onPageChange={(page) => setCurrentPage(page)}
           />
-          <Flyout></Flyout>
+          <Flyout />
         </>
       ) : (
         <p className={styles['no-results']}>No search results found</p>

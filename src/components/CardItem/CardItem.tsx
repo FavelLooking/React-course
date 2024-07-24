@@ -3,6 +3,7 @@ import type { RootState } from './../../store/store';
 import styles from './CardItem.module.scss';
 import { check, uncheck } from './../../store/selectedItemsSlice';
 import { Item } from './../../store/selectedItemsSlice';
+import { useTheme } from './../../context/useTheme';
 
 export interface ItemProps {
   title: string;
@@ -19,6 +20,7 @@ export function CardItem(props: ItemProps) {
     state.selectedItems.items.some((item) => item.title === title),
   );
   const dispatch = useDispatch();
+  const { isStandartTheme } = useTheme();
 
   const handleChange = () => {
     const itemToUpdate: Item = {
@@ -35,7 +37,9 @@ export function CardItem(props: ItemProps) {
   };
 
   return (
-    <div className={styles[`card-container`]}>
+    <div
+      className={`${styles[`card-container`]} ${!isStandartTheme ? styles[`alternative`] : ''}`}
+    >
       <div className={styles[`card-item`]} onClick={onClick}>
         <span className={styles[`name-title`]}>
           Name:{' '}
