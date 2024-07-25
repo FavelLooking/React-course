@@ -2,26 +2,18 @@ import styles from './Pagination.module.scss';
 import stylesButton from '../Button/Button.module.scss';
 import { useClicked } from '../../context/useClicked';
 import { useTheme } from './../../context/useTheme';
+import { useDispatch, useSelector } from 'react-redux';
+import { nextPage, previousPage } from '../../store/pageSlice';
+import { RootState } from 'src/store/store';
 
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
-
-export function Pagination({
-  currentPage,
-  totalPages,
-  onPageChange,
-}: PaginationProps) {
-  const handlePageChange = (page: number) => {
-    if (page > 0 && page < totalPages + 1) {
-      onPageChange(page);
-    }
-  };
-
+export function Pagination() {
   const { clicked } = useClicked();
   const { isStandartTheme } = useTheme();
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state: RootState) => state.pageSlice.page);
+  const totalPages = useSelector(
+    (state: RootState) => state.pageSlice.totalPages,
+  );
 
   return (
     <div
@@ -29,7 +21,7 @@ export function Pagination({
     >
       <button
         className={stylesButton.button}
-        onClick={() => handlePageChange(currentPage - 1)}
+        onClick={() => dispatch(previousPage())}
         disabled={clicked || currentPage === 1}
       >
         Previous
@@ -39,7 +31,7 @@ export function Pagination({
       </span>
       <button
         className={stylesButton.button}
-        onClick={() => handlePageChange(currentPage + 1)}
+        onClick={() => dispatch(nextPage())}
         disabled={clicked || currentPage === totalPages}
       >
         Next

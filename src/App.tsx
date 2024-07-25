@@ -6,19 +6,23 @@ import { Main } from './components/Main/Main';
 import { Details } from './components/Details/Details';
 import { ApiResponse } from './interfaces/interfaces';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
 
 export function App() {
   const { page } = useParams<{ page: string }>();
   const navigate = useNavigate();
   const location = useLocation();
   const [searchResults, setSearchResults] = useState<ApiResponse | null>(null);
-  const [isLoading, setLoadingStatus] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(
     parseInt(page || '1', 10),
   );
-  const [maxPage, setMaxPage] = useState<number | null>(null);
+
+  const totalPages = useSelector(
+    (state: RootState) => state.pageSlice.totalPages,
+  );
+
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
-  const [isDetailsLoading, setDetailsLoadingStatus] = useState(false);
 
   useEffect(() => {
     if (!page) {
@@ -28,24 +32,17 @@ export function App() {
       if (
         isNaN(pageNumber) ||
         pageNumber <= 0 ||
-        (maxPage && pageNumber > maxPage)
+        (totalPages && pageNumber > totalPages)
       ) {
         navigate('/not-found');
       } else {
         setCurrentPage(pageNumber);
       }
     }
-  }, [page, navigate, maxPage]);
+  }, [page, navigate, totalPages]);
 
   const updateSearchResults = useCallback((results: ApiResponse | null) => {
     setSearchResults(results);
-    if (results) {
-      setMaxPage(results.page.totalPages);
-    }
-  }, []);
-
-  const setLoading = useCallback((isLoading: boolean) => {
-    setLoadingStatus(isLoading);
   }, []);
 
   const changePage = useCallback(
@@ -69,29 +66,16 @@ export function App() {
   return (
     <div className={styles['wrapper']}>
       <ErrorBoundary>
-        <Header
-          updateResults={updateSearchResults}
-          setLoading={setLoading}
-          currentPage={currentPage}
-          setCurrentPage={changePage}
-        />
+        <Header updateResults={updateSearchResults} />
       </ErrorBoundary>
       <div className={styles['main-content']}>
         <Main
           searchResults={searchResults}
-          isLoading={isLoading}
-          currentPage={currentPage}
-          setCurrentPage={changePage}
           onItemClick={handleItemClick}
           hideDetails={handleCloseDetails}
         />
         {selectedItemId && (
-          <Details
-            itemId={selectedItemId}
-            onClose={handleCloseDetails}
-            setLoading={setDetailsLoadingStatus}
-            isLoading={isDetailsLoading}
-          />
+          <Details itemId={selectedItemId} onClose={handleCloseDetails} />
         )}
       </div>
     </div>

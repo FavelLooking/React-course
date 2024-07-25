@@ -8,14 +8,19 @@ export const planetsApi = createApi({
     getPlanetById: builder.query<ApiResponse, string>({
       query: (uid) => `astronomicalObject?uid=${uid}`,
     }),
-    searchPlanet: builder.mutation({
-      query: (body) => ({
-        url: '/astronomicalObject/search?pageSize=10&pageNumber=1',
+    searchPlanet: builder.query<
+      ApiResponse,
+      { searchItem: string; currentPage: number }
+    >({
+      query: ({ searchItem, currentPage }) => ({
+        url: `astronomicalObject/search?pageSize=10&pageNumber=${currentPage - 1}`,
         method: 'POST',
-        body,
+        body: new URLSearchParams({
+          name: searchItem,
+        }),
       }),
     }),
   }),
 });
 
-export const { useGetPlanetByIdQuery, useSearchPlanetMutation } = planetsApi;
+export const { useGetPlanetByIdQuery, useSearchPlanetQuery } = planetsApi;

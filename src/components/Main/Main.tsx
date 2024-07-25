@@ -7,32 +7,27 @@ import { Pagination } from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
 import { Flyout } from '../Flyout/Flyout';
 import { useTheme } from './../../context/useTheme';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 export interface MainProps {
   searchResults?: ApiResponse | null;
-  isLoading: boolean;
 }
 
 export interface MainPropsExtended extends MainProps {
-  currentPage: number;
-  setCurrentPage: (page: number) => void;
   onItemClick: (itemId: string) => void;
   hideDetails: () => void;
 }
 
 export function Main(props: MainPropsExtended) {
-  const {
-    searchResults,
-    isLoading,
-    currentPage,
-    setCurrentPage,
-    onItemClick,
-    hideDetails,
-  } = props;
+  const { searchResults, onItemClick, hideDetails } = props;
   const { clicked, setClicked } = useClicked();
   const { isStandartTheme } = useTheme();
+  const isLoadingNew = useSelector(
+    (state: RootState) => state.isLoading.isLoading,
+  );
 
-  if (!searchResults || isLoading) {
+  if (!searchResults || isLoadingNew) {
     return (
       <div
         className={`${styles.main} ${!isStandartTheme ? styles['alternative'] : ''} `}
@@ -56,7 +51,11 @@ export function Main(props: MainPropsExtended) {
     }
   };
 
-  const { astronomicalObjects, page } = searchResults;
+  const { astronomicalObjects } = searchResults;
+
+  if (!astronomicalObjects) {
+    return <div> sorry no results</div>;
+  }
 
   return (
     <div
@@ -78,11 +77,7 @@ export function Main(props: MainPropsExtended) {
               onClick={() => handleItemClick(item.uid)}
             />
           ))}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={page.totalPages}
-            onPageChange={(page) => setCurrentPage(page)}
-          />
+          <Pagination />
           <Flyout />
         </>
       ) : (

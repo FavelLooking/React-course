@@ -1,7 +1,5 @@
-// import { useEffect, useState } from 'react';
 import styles from './Details.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-// import { AstronomicalObject } from '../../interfaces/interfaces';
 import planet from './../../assets/images/Planet.gif';
 import { useClicked } from '../../context/useClicked';
 import { useTheme } from './../../context/useTheme';
@@ -10,8 +8,8 @@ import { useGetPlanetByIdQuery } from '../../services/planets';
 interface DetailsProps {
   itemId: string;
   onClose: () => void;
-  setLoading: (isLoadingDetails: boolean) => void;
-  isLoadingDetails: boolean;
+  //setLoading: (isLoadingDetails: boolean) => void;
+  //isLoadingDetails: boolean;
 }
 
 export function Details({ itemId, onClose }: DetailsProps) {

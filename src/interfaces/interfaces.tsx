@@ -24,5 +24,7 @@ export interface Page {
 export interface ApiResponse {
   sort?: string;
   astronomicalObject: AstronomicalObject;
-  page?: Page;
+  page: Page;
+
+  astronomicalObjects?: [];
 }
