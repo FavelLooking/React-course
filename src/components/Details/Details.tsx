@@ -1,15 +1,13 @@
 import styles from './Details.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import planet from './../../assets/images/Planet.gif';
 import { useClicked } from '../../context/useClicked';
 import { useTheme } from './../../context/useTheme';
 import { useGetPlanetByIdQuery } from '../../services/planets';
+import { Loader } from '../Loader/Loader';
 
 interface DetailsProps {
   itemId: string;
   onClose: () => void;
-  //setLoading: (isLoadingDetails: boolean) => void;
-  //isLoadingDetails: boolean;
 }
 
 export function Details({ itemId, onClose }: DetailsProps) {
@@ -21,13 +19,12 @@ export function Details({ itemId, onClose }: DetailsProps) {
     onClose();
     resetClicked();
   };
+  console.log(isLoading);
 
   if (isLoading) {
     return (
       <div className={styles[`main-content`]}>
-        <div className={styles[`loader`]}>
-          <img src={planet} alt="loader" />
-        </div>
+        <Loader />
       </div>
     );
   }

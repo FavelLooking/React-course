@@ -1,6 +1,4 @@
 import styles from './Main.module.scss';
-import planet from '../../assets/images/Planet.gif';
-import planetAlt from '../../assets/images/Planet-alternative.gif';
 import { CardItem } from '../CardItem/CardItem';
 import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
 import { Pagination } from '../Pagination/Pagination';
@@ -9,6 +7,7 @@ import { Flyout } from '../Flyout/Flyout';
 import { useTheme } from './../../context/useTheme';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { Loader } from '../Loader/Loader';
 
 export interface MainProps {
   searchResults?: ApiResponse | null;
@@ -23,18 +22,16 @@ export function Main(props: MainPropsExtended) {
   const { searchResults, onItemClick, hideDetails } = props;
   const { clicked, setClicked } = useClicked();
   const { isStandartTheme } = useTheme();
-  const isLoadingNew = useSelector(
+  const isLoading = useSelector(
     (state: RootState) => state.isLoading.isLoading,
   );
 
-  if (!searchResults || isLoadingNew) {
+  if (!searchResults || isLoading) {
     return (
       <div
         className={`${styles.main} ${!isStandartTheme ? styles['alternative'] : ''} `}
       >
-        <div className={styles.loader}>
-          <img src={!isStandartTheme ? planetAlt : planet} alt="loader" />
-        </div>
+        <Loader />
       </div>
     );
   }
@@ -53,10 +50,6 @@ export function Main(props: MainPropsExtended) {
 
   const { astronomicalObjects } = searchResults;
 
-  if (!astronomicalObjects) {
-    return <div> sorry no results</div>;
-  }
-
   return (
     <div
       className={
@@ -66,7 +59,7 @@ export function Main(props: MainPropsExtended) {
       }
       onClick={handleCloseDetails}
     >
-      {astronomicalObjects.length > 0 ? (
+      {astronomicalObjects && astronomicalObjects.length > 0 ? (
         <>
           {astronomicalObjects.map((item: AstronomicalObject) => (
             <CardItem

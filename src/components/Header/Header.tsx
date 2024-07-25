@@ -24,10 +24,12 @@ export function Header({ updateResults }: HeaderProps) {
   const dispatch = useDispatch();
   const page = useSelector((state: RootState) => state.pageSlice.page);
   const { isStandartTheme, changeTheme } = useTheme();
-  const { data, error, isLoading } = useSearchPlanetQuery({
+  const { data, error, isFetching } = useSearchPlanetQuery({
     searchItem: inputValue ?? '',
     currentPage: page,
   });
+
+  console.log(isFetching);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -44,8 +46,8 @@ export function Header({ updateResults }: HeaderProps) {
   }, [data, updateResults, dispatch]);
 
   useEffect(() => {
-    dispatch(switchLoading(isLoading));
-  }, [isLoading, dispatch]);
+    dispatch(switchLoading(isFetching));
+  }, [isFetching, dispatch]);
 
   const switchTheme = () => {
     changeTheme();
