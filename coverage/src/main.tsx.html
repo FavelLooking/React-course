@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>0/42</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>0/42</span>
             </div>
         
             
@@ -108,7 +108,10 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,29 +124,32 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,6 +170,7 @@ import {
 <span class="cstat-no" title="statement not covered" >import './index.css';</span>
 <span class="cstat-no" title="statement not covered" >import { NotFoundPage } from './components/NotFoundPage/NotFoundPage.tsx';</span>
 <span class="cstat-no" title="statement not covered" >import { ClickedProvider } from './context/context';</span>
+<span class="cstat-no" title="statement not covered" >import { ThemeProvider } from './context/contextTheme.tsx';</span>
 <span class="cstat-no" title="statement not covered" >import { Provider } from 'react-redux';</span>
 <span class="cstat-no" title="statement not covered" >import { store } from './store/store.tsx';</span>
 &nbsp;
@@ -192,9 +199,11 @@ import {
 <span class="cstat-no" title="statement not covered" >ReactDOM.createRoot(document.getElementById('root')!).render(</span>
 <span class="cstat-no" title="statement not covered" >  &lt;Provider store={store}&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;React.StrictMode&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;ClickedProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;RouterProvider router={router} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/ClickedProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;ThemeProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;ClickedProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;RouterProvider router={router} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/ClickedProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/ThemeProvider&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/React.StrictMode&gt;</span>
 <span class="cstat-no" title="statement not covered" >  &lt;/Provider&gt;,</span>
 <span class="cstat-no" title="statement not covered" >);</span>
@@ -205,7 +214,7 @@ import {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-23T16:05:58.616Z
+                at 2024-07-25T15:48:39.806Z
             </div>
         <script src="../prettify.js"></script>
         <script>

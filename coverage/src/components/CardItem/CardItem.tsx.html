@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.3% </span>
+                <span class="strong">81.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>55/63</span>
+                <span class='fraction'>57/70</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>6/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.3% </span>
+                <span class="strong">81.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>55/63</span>
+                <span class='fraction'>57/70</span>
             </div>
         
             
@@ -150,11 +150,23 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,7 +179,7 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -178,10 +190,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -241,6 +261,8 @@
 import type { RootState } from './../../store/store';
 import styles from './CardItem.module.scss';
 import { check, uncheck } from './../../store/selectedItemsSlice';
+import { Item } from './../../store/selectedItemsSlice';
+import { useTheme } from './../../context/useTheme';
 &nbsp;
 export interface ItemProps {
   title: string;
@@ -253,22 +275,30 @@ export interface ItemProps {
 export function CardItem(props: ItemProps) {
   const { title, location, astronomicalObjectType, onClick } = props;
 &nbsp;
-  const isSelect = useSelector(
-    (state: RootState) =&gt; state.selectedItems[title] ?? false,
+  const isSelect = useSelector((state: RootState) =&gt;
+    state.selectedItems.items.some((item) =&gt; item.title === title),
   );
-  console.log(isSelect);
   const dispatch = useDispatch();
+  const { isStandartTheme } = useTheme();
 &nbsp;
   const handleChange = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const itemToUpdate: Item = {</span>
+<span class="cstat-no" title="statement not covered" >      title,</span>
+<span class="cstat-no" title="statement not covered" >      location: location ?? '',</span>
+<span class="cstat-no" title="statement not covered" >      object: astronomicalObjectType,</span>
+<span class="cstat-no" title="statement not covered" >    };</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >    if (isSelect) {</span>
-<span class="cstat-no" title="statement not covered" >      dispatch(uncheck(title));</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(uncheck(itemToUpdate));</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
-<span class="cstat-no" title="statement not covered" >      dispatch(check(title));</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(check(itemToUpdate));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 &nbsp;
   return (
-    &lt;&gt;
+    &lt;div
+      className={`${styles[`card-container`]} ${!<span class="branch-0 cbranch-no" title="branch not covered" >isStandartTheme ? styles[`alternative`] : '</span>'}`}
+    &gt;
       &lt;div className={styles[`card-item`]} onClick={onClick}&gt;
         &lt;span className={styles[`name-title`]}&gt;
           Name:{' '}
@@ -321,7 +351,7 @@ export function CardItem(props: ItemProps) {
         checked={isSelect}
         onChange={handleChange}
       /&gt;
-    &lt;/&gt;
+    &lt;/div&gt;
   );
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -331,7 +361,7 @@ export function CardItem(props: ItemProps) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-23T16:05:58.616Z
+                at 2024-07-25T15:48:39.806Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

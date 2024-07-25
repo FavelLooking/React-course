@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import stylesButton from '../Button/Button.module.scss';
 import { ApiResponse } from '../../interfaces/interfaces';
-import { useSearchQuery } from '../CustomHooks/useSearch';
+//import { useSearchQuery } from '../CustomHooks/useSearch';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from './../../context/useTheme';
 import { useSearchPlanetQuery } from '../../services/planets';
@@ -17,11 +17,9 @@ interface HeaderProps {
 
 export function Header({ updateResults }: HeaderProps) {
   const [errorOccured, setErrorOccured] = useState(false);
-  const [searchQuery, setSearchQuery] = useSearchQuery('');
+  //const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
-
-  console.log(searchQuery);
 
   const dispatch = useDispatch();
   const page = useSelector((state: RootState) => state.pageSlice.page);
@@ -33,7 +31,7 @@ export function Header({ updateResults }: HeaderProps) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSearchQuery(inputValue);
+    //setSearchQuery(inputValue);
     dispatch(switchPage(1));
     navigate('/search/1');
   };

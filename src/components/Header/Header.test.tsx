@@ -3,23 +3,21 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import { Header } from './Header';
+import { Provider } from 'react-redux';
+import { store } from '../../store/store';
+store;
 
 describe('Header', () => {
   it('should submit correct form data', async () => {
     const user = userEvent.setup();
     const mockUpdateResults = vi.fn();
-    const mockSetLoading = vi.fn();
-    const mockSetCurrentPage = vi.fn();
 
     render(
-      <MemoryRouter>
-        <Header
-          updateResults={mockUpdateResults}
-          setLoading={mockSetLoading}
-          setCurrentPage={mockSetCurrentPage}
-          currentPage={1}
-        />
-      </MemoryRouter>,
+      <Provider store={store}>
+        <MemoryRouter>
+          <Header updateResults={mockUpdateResults} />
+        </MemoryRouter>
+      </Provider>,
     );
 
     await user.type(
@@ -27,24 +25,17 @@ describe('Header', () => {
       'Mars',
     );
     await user.click(screen.getByText('Search'));
-
-    expect(mockSetCurrentPage).toHaveBeenCalledWith(1);
   });
 
   it('should toggle error state on Get Error button click', async () => {
     const mockUpdateResults = vi.fn();
-    const mockSetLoading = vi.fn();
-    const mockSetCurrentPage = vi.fn();
 
     render(
-      <MemoryRouter>
-        <Header
-          updateResults={mockUpdateResults}
-          setLoading={mockSetLoading}
-          setCurrentPage={mockSetCurrentPage}
-          currentPage={1}
-        />
-      </MemoryRouter>,
+      <Provider store={store}>
+        <MemoryRouter>
+          <Header updateResults={mockUpdateResults} />
+        </MemoryRouter>
+      </Provider>,
     );
   });
 });
