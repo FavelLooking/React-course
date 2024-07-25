@@ -45,14 +45,6 @@ export function App() {
     setSearchResults(results);
   }, []);
 
-  // const changePage = useCallback(
-  //   (newPage: number) => {
-  //     setCurrentPage(newPage);
-  //     navigate(`/search/${newPage}`);
-  //   },
-  //   [navigate],
-  // );
-
   const handleItemClick = (itemId: string) => {
     setSelectedItemId(itemId);
     navigate(`${location.pathname}&details=${itemId}`);

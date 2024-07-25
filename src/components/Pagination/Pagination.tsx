@@ -5,6 +5,7 @@ import { useTheme } from './../../context/useTheme';
 import { useDispatch, useSelector } from 'react-redux';
 import { nextPage, previousPage } from '../../store/pageSlice';
 import { RootState } from 'src/store/store';
+import { useNavigate } from 'react-router-dom';
 
 export function Pagination() {
   const { clicked } = useClicked();
@@ -14,6 +15,7 @@ export function Pagination() {
   const totalPages = useSelector(
     (state: RootState) => state.pageSlice.totalPages,
   );
+  const navigate = useNavigate();
 
   return (
     <div
@@ -21,7 +23,10 @@ export function Pagination() {
     >
       <button
         className={stylesButton.button}
-        onClick={() => dispatch(previousPage())}
+        onClick={() => {
+          dispatch(previousPage());
+          navigate(`/search/${currentPage - 1}`);
+        }}
         disabled={clicked || currentPage === 1}
       >
         Previous
@@ -31,7 +36,10 @@ export function Pagination() {
       </span>
       <button
         className={stylesButton.button}
-        onClick={() => dispatch(nextPage())}
+        onClick={() => {
+          dispatch(nextPage());
+          navigate(`/search/${currentPage + 1}`);
+        }}
         disabled={clicked || currentPage === totalPages}
       >
         Next
