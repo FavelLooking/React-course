@@ -1,48 +1,23 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import styles from './Details.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import { AstronomicalObject } from '../../interfaces/interfaces';
+// import { AstronomicalObject } from '../../interfaces/interfaces';
 import planet from './../../assets/images/Planet.gif';
 import { useClicked } from '../../context/useClicked';
 import { useTheme } from './../../context/useTheme';
+import { useGetPlanetByIdQuery } from '../../services/planets';
 
 interface DetailsProps {
   itemId: string;
   onClose: () => void;
-  setLoading: (isLoading: boolean) => void;
-  isLoading: boolean;
+  setLoading: (isLoadingDetails: boolean) => void;
+  isLoadingDetails: boolean;
 }
 
-export function Details({
-  itemId,
-  onClose,
-  setLoading,
-  isLoading,
-}: DetailsProps) {
-  const [itemDetails, setItemDetails] = useState<AstronomicalObject | null>(
-    null,
-  );
+export function Details({ itemId, onClose }: DetailsProps) {
   const { resetClicked } = useClicked();
   const { isStandartTheme } = useTheme();
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `https://stapi.co/api/v2/rest/astronomicalObject?uid=${itemId}`,
-        );
-        const data = await response.json();
-        setItemDetails(data.astronomicalObject);
-      } catch (error) {
-        console.error('Error fetching details:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDetails();
-  }, [itemId, setLoading]);
+  const { data, error, isLoading } = useGetPlanetByIdQuery(itemId);
 
   const handleOnClose = () => {
     onClose();
@@ -59,7 +34,11 @@ export function Details({
     );
   }
 
-  if (!itemDetails) {
+  if (error) {
+    console.error('Error fetching details:', error);
+  }
+
+  if (!data) {
     return null;
   }
 
@@ -67,9 +46,9 @@ export function Details({
     <div
       className={`${styles[`details`]} ${!isStandartTheme ? styles[`alternative`] : ''}`}
     >
-      <h2>{itemDetails.name}</h2>
-      <p>{itemDetails.astronomicalObjectType}</p>
-      <p>{itemDetails.location?.name || 'Unknown location'}</p>
+      <h2>{data.astronomicalObject.name}</h2>
+      <p>{data.astronomicalObject.astronomicalObjectType}</p>
+      <p>{data.astronomicalObject.location?.name || 'Unknown location'}</p>
       <button className={stylesButton.button} onClick={handleOnClose}>
         Close
       </button>

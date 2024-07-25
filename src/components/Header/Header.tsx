@@ -72,7 +72,6 @@ export function Header({
 
   const switchTheme = () => {
     changeTheme();
-    console.log(isStandartTheme);
   };
 
   const getError = () => {

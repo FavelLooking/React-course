@@ -8,6 +8,7 @@ export interface AstronomicalObject {
   name: string;
   astronomicalObjectType: string;
   location: Location | null;
+  astronomicalObjects?: [];
 }
 
 export interface Page {
@@ -22,8 +23,6 @@ export interface Page {
 
 export interface ApiResponse {
   sort?: string;
-  astronomicalObjects: AstronomicalObject[];
-  page: {
-    totalPages: number;
-  };
+  astronomicalObject: AstronomicalObject;
+  page?: Page;
 }
