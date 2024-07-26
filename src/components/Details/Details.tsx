@@ -10,19 +10,21 @@ import { changeDetails } from '../../store/currentDetails';
 import { RootState } from '../../store/store';
 
 interface DetailsProps {
-  itemId: string;
   onClose: () => void;
 }
 
-export function Details({ itemId, onClose }: DetailsProps) {
-  const { resetClicked } = useClicked();
-  const { isStandartTheme } = useTheme();
-  const { data, error, isLoading } = useGetPlanetByIdQuery(itemId);
-  const dispatch = useDispatch();
-
+export function Details({ onClose }: DetailsProps) {
+  const item = useSelector(
+    (state: RootState) => state.currentDetails.currentId,
+  );
   const cachedData = useSelector(
     (state: RootState) => state.currentDetails.details,
   );
+  const { resetClicked } = useClicked();
+  const { isStandartTheme } = useTheme();
+  const { data, error, isLoading } = useGetPlanetByIdQuery(item);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (data) {
@@ -36,7 +38,7 @@ export function Details({ itemId, onClose }: DetailsProps) {
         }),
       );
     }
-  }, [itemId, data, dispatch]);
+  }, [item, data, dispatch]);
 
   const handleOnClose = () => {
     onClose();

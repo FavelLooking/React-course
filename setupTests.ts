@@ -5,5 +5,3 @@ import '@testing-library/jest-dom';
 afterEach(() => {
   cleanup();
 });
-
-console.log('setupTests.ts is running');

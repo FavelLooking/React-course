@@ -6,6 +6,7 @@ export interface CurrentDetailsState {
     location: string;
     type: string;
   };
+  currentId: string;
 }
 
 const initialState: CurrentDetailsState = {
@@ -14,6 +15,7 @@ const initialState: CurrentDetailsState = {
     location: '',
     type: '',
   },
+  currentId: '',
 };
 
 export const currentDetailsSlice = createSlice({
@@ -26,7 +28,10 @@ export const currentDetailsSlice = createSlice({
     ) => {
       state.details = action.payload;
     },
+    changeItemId: (state, action: PayloadAction<string>) => {
+      state.currentId = action.payload;
+    },
   },
 });
 
-export const { changeDetails } = currentDetailsSlice.actions;
+export const { changeDetails, changeItemId } = currentDetailsSlice.actions;
