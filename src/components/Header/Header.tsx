@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import stylesButton from '../Button/Button.module.scss';
 import { ApiResponse } from '../../interfaces/interfaces';
-//import { useSearchQuery } from '../CustomHooks/useSearch';
+import { useSearchQuery } from '../../hooks/useSearch';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from './../../context/useTheme';
 import { useSearchPlanetQuery } from '../../services/planets';
@@ -17,7 +17,7 @@ interface HeaderProps {
 
 export function Header({ updateResults }: HeaderProps) {
   const [errorOccured, setErrorOccured] = useState(false);
-  //const [searchQuery, setSearchQuery] = useSearchQuery('');
+  const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
 
@@ -25,15 +25,13 @@ export function Header({ updateResults }: HeaderProps) {
   const page = useSelector((state: RootState) => state.pageSlice.page);
   const { isStandartTheme, changeTheme } = useTheme();
   const { data, error, isFetching } = useSearchPlanetQuery({
-    searchItem: inputValue ?? '',
+    searchItem: searchQuery ?? '',
     currentPage: page,
   });
 
-  console.log(isFetching);
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    //setSearchQuery(inputValue);
+    setSearchQuery(inputValue);
     dispatch(switchPage(1));
     navigate('/search/1');
   };

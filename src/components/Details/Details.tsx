@@ -4,6 +4,10 @@ import { useClicked } from '../../context/useClicked';
 import { useTheme } from './../../context/useTheme';
 import { useGetPlanetByIdQuery } from '../../services/planets';
 import { Loader } from '../Loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { changeDetails } from '../../store/currentDetails';
+import { RootState } from '../../store/store';
 
 interface DetailsProps {
   itemId: string;
@@ -14,6 +18,25 @@ export function Details({ itemId, onClose }: DetailsProps) {
   const { resetClicked } = useClicked();
   const { isStandartTheme } = useTheme();
   const { data, error, isLoading } = useGetPlanetByIdQuery(itemId);
+  const dispatch = useDispatch();
+
+  const cachedData = useSelector(
+    (state: RootState) => state.currentDetails.details,
+  );
+
+  useEffect(() => {
+    if (data) {
+      dispatch(
+        changeDetails({
+          name: data.astronomicalObject.name,
+          location: data.astronomicalObject.location
+            ? data.astronomicalObject.location.name
+            : 'Unknown location',
+          type: data.astronomicalObject.astronomicalObjectType,
+        }),
+      );
+    }
+  }, [itemId, data]);
 
   const handleOnClose = () => {
     onClose();
@@ -40,9 +63,9 @@ export function Details({ itemId, onClose }: DetailsProps) {
     <div
       className={`${styles[`details`]} ${!isStandartTheme ? styles[`alternative`] : ''}`}
     >
-      <h2>{data.astronomicalObject.name}</h2>
-      <p>{data.astronomicalObject.astronomicalObjectType}</p>
-      <p>{data.astronomicalObject.location?.name || 'Unknown location'}</p>
+      <h2>{cachedData.name}</h2>
+      <p>{cachedData.type}</p>
+      <p>{cachedData.location}</p>
       <button className={stylesButton.button} onClick={handleOnClose}>
         Close
       </button>
