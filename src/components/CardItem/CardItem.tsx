@@ -13,13 +13,16 @@ export interface ItemProps {
   onClick: () => void;
 }
 
-export function CardItem(props: ItemProps) {
-  const { title, location, astronomicalObjectType, onClick } = props;
-
+export function CardItem({
+  title,
+  location,
+  astronomicalObjectType,
+  onClick,
+}: ItemProps) {
+  const dispatch = useDispatch();
   const isSelect = useSelector((state: RootState) =>
     state.selectedItems.items.some((item) => item.title === title),
   );
-  const dispatch = useDispatch();
   const { isStandartTheme } = useTheme();
 
   const handleChange = () => {
@@ -36,58 +39,61 @@ export function CardItem(props: ItemProps) {
     }
   };
 
+  const renderTitle = () => (
+    <span className={styles['name-title']}>
+      Name:{' '}
+      <span
+        className={title.length > 30 ? styles['title-small'] : styles['title']}
+      >
+        {title}
+      </span>
+    </span>
+  );
+
+  const renderLocation = () => (
+    <span className={styles['location-title']}>
+      Location:{' '}
+      <span
+        className={
+          location
+            ? location.length > 20
+              ? styles['location-small']
+              : styles['location']
+            : styles['location']
+        }
+      >
+        {location || 'Unknown'}
+      </span>
+    </span>
+  );
+
+  const renderAstronomicalObjectType = () => (
+    <span className={styles['type-title']}>
+      Object Type:{' '}
+      <span
+        className={
+          astronomicalObjectType.length > 20
+            ? styles['type-small']
+            : styles['type']
+        }
+      >
+        {astronomicalObjectType}
+      </span>
+    </span>
+  );
+
   return (
     <div
-      className={`${styles[`card-container`]} ${!isStandartTheme ? styles[`alternative`] : ''}`}
+      className={`${styles['card-container']} ${!isStandartTheme ? styles['alternative'] : ''}`}
     >
-      <div className={styles[`card-item`]} onClick={onClick}>
-        <span className={styles[`name-title`]}>
-          Name:{' '}
-          <span
-            className={
-              title.length > 30 ? styles[`title-small`] : styles[`title`]
-            }
-          >
-            {title}
-          </span>
-        </span>
-
-        {location && (
-          <span className={styles[`location-title`]}>
-            Location:{' '}
-            <span
-              className={
-                location.length > 20
-                  ? styles[`location-small`]
-                  : styles[`location`]
-              }
-            >
-              {location}
-            </span>
-          </span>
-        )}
-
-        {!location && (
-          <span className={styles[`location-title`]}>
-            Location: <span className={styles[`location`]}>Unknown</span>
-          </span>
-        )}
-        <span className={styles[`type-title`]}>
-          Object Type:{' '}
-          <span
-            className={
-              astronomicalObjectType.length > 20
-                ? styles[`type-small`]
-                : styles[`type`]
-            }
-          >
-            {astronomicalObjectType}
-          </span>
-        </span>
+      <div className={styles['card-item']} onClick={onClick}>
+        {renderTitle()}
+        {renderLocation()}
+        {renderAstronomicalObjectType()}
       </div>
       <input
         type="checkbox"
-        className={styles[`checkbox`]}
+        className={styles['checkbox']}
         title={title}
         checked={isSelect}
         onChange={handleChange}

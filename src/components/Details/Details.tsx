@@ -19,7 +19,6 @@ export function Details({ itemId, onClose }: DetailsProps) {
     onClose();
     resetClicked();
   };
-  console.log(isLoading);
 
   if (isLoading) {
     return (

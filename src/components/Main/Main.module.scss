@@ -95,18 +95,3 @@
   opacity: 1;
   min-width: 100%;
 }
-
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 25%;
-  height: 40%;
-}
-
-.loader img {
-  height: 100%;
-  transform: scale(2.3);
-}
