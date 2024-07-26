@@ -36,7 +36,7 @@ export function Details({ itemId, onClose }: DetailsProps) {
         }),
       );
     }
-  }, [itemId, data]);
+  }, [itemId, data, dispatch]);
 
   const handleOnClose = () => {
     onClose();
