@@ -60,11 +60,11 @@ export function App() {
   };
 
   return (
-    <div className={styles['wrapper']}>
+    <div className={styles['wrapper']} data-testid="app-wrapper">
       <ErrorBoundary>
         <Header updateResults={updateSearchResults} />
       </ErrorBoundary>
-      <div className={styles['main-content']}>
+      <div className={styles['main-content']} data-testid="main-content">
         <Main
           searchResults={searchResults}
           onItemClick={handleItemClick}

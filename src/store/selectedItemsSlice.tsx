@@ -15,7 +15,7 @@ const initialState: SelectedItemsState = {
   items: [],
 };
 
-const selectedItemsSlice = createSlice({
+export const selectedItemsSlice = createSlice({
   name: 'selectedItems',
   initialState,
   reducers: {

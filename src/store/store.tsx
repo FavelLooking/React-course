@@ -19,6 +19,7 @@ export const store: EnhancedStore<{
     currentDetails: currentDetailsSlice.reducer,
     [planetsApi.reducerPath]: planetsApi.reducer,
   },
+
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(planetsApi.middleware),
 });

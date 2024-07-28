@@ -7,10 +7,11 @@ const defaultProps = {
   title: 'Test Title',
   location: 'Test Location',
   astronomicalObjectType: 'Planet',
+  isSelect: false,
   onClick: vi.fn(),
 };
 
-describe('Card Item', () => {
+describe('CardItem', () => {
   it('renders the title correctly', () => {
     render(
       <Provider store={store}>

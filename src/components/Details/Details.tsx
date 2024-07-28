@@ -54,7 +54,7 @@ export function Details({ onClose }: DetailsProps) {
   }
 
   if (error) {
-    console.error('Error fetching details:', error);
+    return <div>Error</div>;
   }
 
   if (!data) {

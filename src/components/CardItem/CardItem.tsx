@@ -86,7 +86,11 @@ export function CardItem({
     <div
       className={`${styles['card-container']} ${!isStandartTheme ? styles['alternative'] : ''}`}
     >
-      <div className={styles['card-item']} onClick={onClick}>
+      <div
+        data-testid="card-item"
+        className={styles['card-item']}
+        onClick={onClick}
+      >
         {renderTitle()}
         {renderLocation()}
         {renderAstronomicalObjectType()}

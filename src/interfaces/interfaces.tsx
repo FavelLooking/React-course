@@ -26,5 +26,5 @@ export interface ApiResponse {
   astronomicalObject: AstronomicalObject;
   page: Page;
 
-  astronomicalObjects?: [];
+  astronomicalObjects?: AstronomicalObject[];
 }
