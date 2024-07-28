@@ -5,12 +5,14 @@ import { planetsApi } from '../services/planets';
 import { isLoadingSlice, LoadingState } from './loadingSlice';
 import { pageSlice, PageState } from './pageSlice';
 import { CurrentDetailsState, currentDetailsSlice } from './currentDetails';
+import { searchResultsSlice, SearchResultsState } from './searchResults';
 
 export const store: EnhancedStore<{
   selectedItems: SelectedItemsState;
   isLoading: LoadingState;
   pageSlice: PageState;
   currentDetails: CurrentDetailsState;
+  searchResults: SearchResultsState;
 }> = configureStore({
   reducer: {
     selectedItems: selectedItemsReducer,
@@ -18,6 +20,7 @@ export const store: EnhancedStore<{
     pageSlice: pageSlice.reducer,
     currentDetails: currentDetailsSlice.reducer,
     [planetsApi.reducerPath]: planetsApi.reducer,
+    searchResults: searchResultsSlice.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>

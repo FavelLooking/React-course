@@ -43,7 +43,7 @@ export function CardItem({
     <span className={styles['name-title']}>
       Name:{' '}
       <span
-        className={title.length > 30 ? styles['title-small'] : styles['title']}
+        className={title.length > 30 ? styles['title-small'] : styles.title}
       >
         {title}
       </span>
@@ -58,8 +58,8 @@ export function CardItem({
           location
             ? location.length > 20
               ? styles['location-small']
-              : styles['location']
-            : styles['location']
+              : styles.location
+            : styles.location
         }
       >
         {location || 'Unknown'}
@@ -74,7 +74,7 @@ export function CardItem({
         className={
           astronomicalObjectType.length > 20
             ? styles['type-small']
-            : styles['type']
+            : styles.type
         }
       >
         {astronomicalObjectType}

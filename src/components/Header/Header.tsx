@@ -10,6 +10,7 @@ import { useSearchPlanetQuery } from '../../services/planets';
 import { RootState } from '../../store/store';
 import { switchLoading } from '../../store/loadingSlice';
 import { setTotalPages, switchPage } from '../../store/pageSlice';
+import { setResults } from '../../store/searchResults';
 
 interface HeaderProps {
   updateResults: (results: ApiResponse) => void;
@@ -17,12 +18,13 @@ interface HeaderProps {
 
 export function Header({ updateResults }: HeaderProps) {
   const [errorOccured, setErrorOccured] = useState(false);
-  const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const page = useSelector((state: RootState) => state.pageSlice.page);
+
+  const [searchQuery, setSearchQuery] = useSearchQuery('');
   const { isStandartTheme, changeTheme } = useTheme();
   const { data, error, isFetching } = useSearchPlanetQuery({
     searchItem: searchQuery ?? '',
@@ -40,6 +42,7 @@ export function Header({ updateResults }: HeaderProps) {
     if (data) {
       updateResults(data);
       dispatch(setTotalPages(data.page.totalPages));
+      dispatch(setResults(data));
     }
   }, [data, updateResults, dispatch]);
 
@@ -55,11 +58,7 @@ export function Header({ updateResults }: HeaderProps) {
     setErrorOccured(!errorOccured);
   };
 
-  if (error) {
-    console.error('Error fetching data:', error);
-  }
-
-  if (errorOccured) {
+  if (errorOccured || error) {
     return <div>An error occurred. Please try again later.</div>;
   }
 

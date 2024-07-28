@@ -68,13 +68,13 @@ export function Flyout() {
         <button
           type="button"
           onClick={unselectAll}
-          className={`${styles['flyout__button']} ${stylesButton['button']}`}
+          className={`${styles['flyout__button']} ${stylesButton.button}`}
         >
           Unselect All
         </button>
         <button
           type="button"
-          className={`${styles['flyout__button']} ${stylesButton['button']}`}
+          className={`${styles['flyout__button']} ${stylesButton.button}`}
           onClick={downloadData}
         >
           Download

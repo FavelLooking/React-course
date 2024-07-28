@@ -63,7 +63,7 @@ export function Details({ onClose }: DetailsProps) {
 
   return (
     <div
-      className={`${styles[`details`]} ${!isStandartTheme ? styles[`alternative`] : ''}`}
+      className={`${styles.details} ${!isStandartTheme ? styles.alternative : ''}`}
     >
       <h2>{cachedData.name}</h2>
       <p>{cachedData.type}</p>

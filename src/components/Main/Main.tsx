@@ -1,6 +1,6 @@
 import styles from './Main.module.scss';
 import { CardItem } from '../CardItem/CardItem';
-import { ApiResponse, AstronomicalObject } from '../../interfaces/interfaces';
+import { AstronomicalObject } from '../../interfaces/interfaces';
 import { Pagination } from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
 import { Flyout } from '../Flyout/Flyout';
@@ -10,26 +10,25 @@ import { RootState } from '../../store/store';
 import { Loader } from '../Loader/Loader';
 
 export interface MainProps {
-  searchResults?: ApiResponse | null;
-}
-
-export interface MainPropsExtended extends MainProps {
   onItemClick: (itemId: string) => void;
   hideDetails: () => void;
 }
 
-export function Main(props: MainPropsExtended) {
-  const { searchResults, onItemClick, hideDetails } = props;
+export function Main(props: MainProps) {
+  const { onItemClick, hideDetails } = props;
   const { clicked, setClicked } = useClicked();
   const { isStandartTheme } = useTheme();
   const isLoading = useSelector(
     (state: RootState) => state.isLoading.isLoading,
   );
+  const searchResultsFromRedux = useSelector(
+    (state: RootState) => state.searchResults.results,
+  );
 
-  if (!searchResults || isLoading) {
+  if (!searchResultsFromRedux || isLoading) {
     return (
       <div
-        className={`${styles.main} ${!isStandartTheme ? styles['alternative'] : ''} `}
+        className={`${styles.main} ${!isStandartTheme ? styles.alternative : ''} `}
       >
         <Loader />
       </div>
@@ -48,14 +47,14 @@ export function Main(props: MainPropsExtended) {
     }
   };
 
-  const { astronomicalObjects } = searchResults;
+  const { astronomicalObjects } = searchResultsFromRedux;
 
   return (
     <div
       className={
         clicked
           ? `${styles.main} ${styles['details-active']} ${styles['card-small']} ${!isStandartTheme ? styles['alternative'] : ''}`
-          : `${styles.main} ${!isStandartTheme ? styles['alternative'] : ''} `
+          : `${styles.main} ${!isStandartTheme ? styles.alternative : ''} `
       }
       onClick={handleCloseDetails}
     >

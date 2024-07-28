@@ -1,10 +1,11 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import { Main, MainPropsExtended } from './Main';
+import { Main, MainProps } from './Main';
 import { RootState } from '../../store/store';
 import { PageState } from '../../store/pageSlice';
 import { SelectedItemsState } from '../../store/selectedItemsSlice';
 import { CurrentDetailsState } from '../../store/currentDetails';
+import configureStore from 'redux-mock-store';
 
 vi.mock('../../context/useClicked', () => ({
   useClicked: () => ({
@@ -39,19 +40,32 @@ vi.mock('../Flyout/Flyout', () => ({
   Flyout: () => <div>Flyout Component</div>,
 }));
 
+const mockStore = configureStore([]);
+
 describe('Main Component', () => {
-  const defaultProps: MainPropsExtended = {
-    searchResults: {
-      astronomicalObject: {
-        uid: '1',
-        name: 'Object 1',
-        location: { name: 'Location 1' },
-        astronomicalObjectType: 'Type 1',
+  beforeEach(() => {
+    mockStore({
+      searchResults: {
+        results: [
+          {
+            astronomicalObjects: [
+              {
+                uid: '1',
+                name: 'Object 1',
+                location: { name: 'Location 1' },
+                astronomicalObjectType: 'Type 1',
+              },
+            ],
+            page: {
+              totalPages: 1,
+            },
+          },
+        ],
       },
-      page: {
-        totalPages: 1,
-      },
-    },
+    });
+  });
+
+  const defaultProps: MainProps = {
     onItemClick: vi.fn(),
     hideDetails: vi.fn(),
   };
@@ -63,12 +77,15 @@ describe('Main Component', () => {
         isLoading: { isLoading: true } as RootState['isLoading'],
         pageSlice: {} as PageState,
         currentDetails: {} as CurrentDetailsState,
+        searchResults: {},
       } as RootState),
   }));
 
   it('renders Loader when isLoading is true', () => {
     render(<Main {...defaultProps} />);
-    expect(screen.getByText('Loader Component')).toBeInTheDocument();
+    waitFor(async () =>
+      expect(screen.getByText('Loader Component')).toBeInTheDocument(),
+    );
   });
 
   it('renders no results message when searchResults is empty', () => {
