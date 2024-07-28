@@ -7,20 +7,9 @@ import { App } from './App';
 import { switchPage } from './store/pageSlice';
 import { changeItemId } from './store/currentDetails';
 import { ApiResponse } from './interfaces/interfaces';
-import { useEffect } from 'react';
 
 vi.mock('./components/Header/Header', () => ({
-  Header: ({
-    updateResults,
-  }: {
-    updateResults: (results: ApiResponse) => void;
-  }) => {
-    useEffect(() => {
-      updateResults({ data: 'mockData' } as unknown as ApiResponse);
-    }, [updateResults]);
-
-    return <div>Header Component</div>;
-  },
+  Header: () => <div>Header Component</div>,
 }));
 
 vi.mock('./components/Main/Main', () => ({
@@ -62,6 +51,23 @@ describe('App Component', () => {
 
   beforeEach(() => {
     store = mockStore({
+      searchResults: {
+        results: [
+          {
+            astronomicalObjects: [
+              {
+                uid: '1',
+                name: 'Object 1',
+                location: { name: 'Location 1' },
+                astronomicalObjectType: 'Type 1',
+              },
+            ],
+            page: {
+              totalPages: 1,
+            },
+          },
+        ],
+      },
       pageSlice: { totalPages: 5, page: 1 },
       currentDetails: { currentId: '' },
     });

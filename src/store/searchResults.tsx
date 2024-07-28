@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ApiResponse } from 'src/interfaces/interfaces';
 
-export interface SearchResults {
+export interface SearchResultsState {
   results: ApiResponse | null;
 }
 
-const initialState: SearchResults = {
+const initialState: SearchResultsState = {
   results: null,
 };
 

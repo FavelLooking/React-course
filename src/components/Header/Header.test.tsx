@@ -28,13 +28,12 @@ const MockThemeProvider: React.FC<MockThemeProviderProps> = ({ children }) => {
 describe('Header', () => {
   it('should switch theme on Next Theme button click', async () => {
     const user = userEvent.setup();
-    const mockUpdateResults = vi.fn();
 
     render(
       <Provider store={store}>
         <MemoryRouter>
           <MockThemeProvider>
-            <Header updateResults={mockUpdateResults} />
+            <Header />
           </MockThemeProvider>
         </MemoryRouter>
       </Provider>,
@@ -47,12 +46,11 @@ describe('Header', () => {
 
   it('should submit correct form data', async () => {
     const user = userEvent.setup();
-    const mockUpdateResults = vi.fn();
 
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <Header updateResults={mockUpdateResults} />
+          <Header />
         </MemoryRouter>
       </Provider>,
     );
@@ -65,12 +63,10 @@ describe('Header', () => {
   });
 
   it('should toggle error state on Get Error button click', async () => {
-    const mockUpdateResults = vi.fn();
-
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <Header updateResults={mockUpdateResults} />
+          <Header />
         </MemoryRouter>
       </Provider>,
     );
@@ -78,12 +74,11 @@ describe('Header', () => {
 
   it('should toggle error state on Get Error button click', async () => {
     const user = userEvent.setup();
-    const mockUpdateResults = vi.fn();
 
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <Header updateResults={mockUpdateResults} />
+          <Header />
         </MemoryRouter>
       </Provider>,
     );

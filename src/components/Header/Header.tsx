@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import { ApiResponse } from '../../interfaces/interfaces';
 import { useSearchQuery } from '../../hooks/useSearch';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from './../../context/useTheme';
@@ -12,11 +11,7 @@ import { switchLoading } from '../../store/loadingSlice';
 import { setTotalPages, switchPage } from '../../store/pageSlice';
 import { setResults } from '../../store/searchResults';
 
-interface HeaderProps {
-  updateResults: (results: ApiResponse) => void;
-}
-
-export function Header({ updateResults }: HeaderProps) {
+export function Header() {
   const [errorOccured, setErrorOccured] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -40,11 +35,10 @@ export function Header({ updateResults }: HeaderProps) {
 
   useEffect(() => {
     if (data) {
-      updateResults(data);
       dispatch(setTotalPages(data.page.totalPages));
       dispatch(setResults(data));
     }
-  }, [data, updateResults, dispatch]);
+  }, [data, dispatch]);
 
   useEffect(() => {
     dispatch(switchLoading(isFetching));

@@ -1,10 +1,9 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import styles from './App.module.scss';
 import { Header } from './components/Header/Header';
 import { Main } from './components/Main/Main';
 import { Details } from './components/Details/Details';
-import { ApiResponse } from './interfaces/interfaces';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './store/store';
@@ -16,7 +15,6 @@ export function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const [searchResults, setSearchResults] = useState<ApiResponse | null>(null);
 
   const totalPages = useSelector(
     (state: RootState) => state.pageSlice.totalPages,
@@ -45,10 +43,6 @@ export function App() {
     }
   }, [page, navigate, totalPages, dispatch]);
 
-  const updateSearchResults = useCallback((results: ApiResponse | null) => {
-    setSearchResults(results);
-  }, []);
-
   const handleItemClick = (itemId: string) => {
     dispatch(changeItemId(itemId));
     navigate(`${location.pathname}&details=${itemId}`);
@@ -62,14 +56,10 @@ export function App() {
   return (
     <div className={styles['wrapper']} data-testid="app-wrapper">
       <ErrorBoundary>
-        <Header updateResults={updateSearchResults} />
+        <Header />
       </ErrorBoundary>
       <div className={styles['main-content']} data-testid="main-content">
-        <Main
-          searchResults={searchResults}
-          onItemClick={handleItemClick}
-          hideDetails={handleCloseDetails}
-        />
+        <Main onItemClick={handleItemClick} hideDetails={handleCloseDetails} />
         {item && <Details onClose={handleCloseDetails} />}
       </div>
     </div>
