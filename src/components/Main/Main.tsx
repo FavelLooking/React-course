@@ -1,34 +1,36 @@
-import './Main.css';
-import planet from '../../assets/planet.gif';
-import CardItem from '../CardItem/CardItem';
-import { MainProps, AstronomicalObject } from '../../interfaces/interfaces';
-import Pagination from '../Pagination/Pagination';
+import styles from './Main.module.scss';
+import { CardItem } from '../CardItem/CardItem';
+import { AstronomicalObject } from '../../interfaces/interfaces';
+import { Pagination } from '../Pagination/Pagination';
 import { useClicked } from '../../context/useClicked';
+import { Flyout } from '../Flyout/Flyout';
+import { useTheme } from './../../context/useTheme';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { Loader } from '../Loader/Loader';
 
-export interface MainPropsExtended extends MainProps {
-  currentPage: number;
-  setCurrentPage: (page: number) => void;
+export interface MainProps {
   onItemClick: (itemId: string) => void;
   hideDetails: () => void;
 }
 
-export default function Main(props: MainPropsExtended) {
-  const {
-    searchResults,
-    isLoading,
-    currentPage,
-    setCurrentPage,
-    onItemClick,
-    hideDetails,
-  } = props;
+export function Main(props: MainProps) {
+  const { onItemClick, hideDetails } = props;
   const { clicked, setClicked } = useClicked();
+  const { isStandartTheme } = useTheme();
+  const isLoading = useSelector(
+    (state: RootState) => state.isLoading.isLoading,
+  );
+  const searchResultsFromRedux = useSelector(
+    (state: RootState) => state.searchResults.results,
+  );
 
-  if (!searchResults || isLoading) {
+  if (!searchResultsFromRedux || isLoading) {
     return (
-      <div className="main">
-        <div className="loader">
-          <img src={planet} alt="loader" />
-        </div>
+      <div
+        className={`${styles.main} ${!isStandartTheme ? styles.alternative : ''} `}
+      >
+        <Loader />
       </div>
     );
   }
@@ -45,14 +47,18 @@ export default function Main(props: MainPropsExtended) {
     }
   };
 
-  const { astronomicalObjects, page } = searchResults;
+  const { astronomicalObjects } = searchResultsFromRedux;
 
   return (
     <div
-      className={clicked ? 'main details-active' : 'main'}
+      className={
+        clicked
+          ? `${styles.main} ${styles['details-active']} ${styles['card-small']} ${!isStandartTheme ? styles['alternative'] : ''}`
+          : `${styles.main} ${!isStandartTheme ? styles.alternative : ''} `
+      }
       onClick={handleCloseDetails}
     >
-      {astronomicalObjects.length > 0 ? (
+      {astronomicalObjects && astronomicalObjects.length > 0 ? (
         <>
           {astronomicalObjects.map((item: AstronomicalObject) => (
             <CardItem
@@ -63,14 +69,11 @@ export default function Main(props: MainPropsExtended) {
               onClick={() => handleItemClick(item.uid)}
             />
           ))}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={page.totalPages}
-            onPageChange={(page) => setCurrentPage(page)}
-          />
+          <Pagination />
+          <Flyout />
         </>
       ) : (
-        <p className="no-results">No search results found</p>
+        <p className={styles['no-results']}>No search results found</p>
       )}
     </div>
   );

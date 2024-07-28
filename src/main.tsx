@@ -5,11 +5,13 @@ import {
   RouterProvider,
   Navigate,
 } from 'react-router-dom';
-import App from './App.tsx';
+import { App } from './App.tsx';
 import './index.css';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage.tsx';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage.tsx';
 import { ClickedProvider } from './context/context';
-// import { DetailsProvider } from './context/DetailsContext';
+import { ThemeProvider } from './context/contextTheme.tsx';
+import { Provider } from 'react-redux';
+import { store } from './store/store.tsx';
 
 const router = createBrowserRouter([
   {
@@ -34,11 +36,13 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    {/* <DetailsProvider> */}
-    <ClickedProvider>
-      <RouterProvider router={router} />
-    </ClickedProvider>
-    {/* </DetailsProvider>    */}
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <ThemeProvider>
+        <ClickedProvider>
+          <RouterProvider router={router} />
+        </ClickedProvider>
+      </ThemeProvider>
+    </React.StrictMode>
+  </Provider>,
 );

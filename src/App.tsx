@@ -1,98 +1,66 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Details from './components/Details/Details';
-import { ApiResponse } from './interfaces/interfaces';
-import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import styles from './App.module.scss';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
+import { Details } from './components/Details/Details';
+import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from './store/store';
+import { switchPage } from './store/pageSlice';
+import { changeItemId } from './store/currentDetails';
 
-export default function App() {
+export function App() {
   const { page } = useParams<{ page: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchResults, setSearchResults] = useState<ApiResponse | null>(null);
-  const [isLoading, setLoadingStatus] = useState(false);
-  const [currentPage, setCurrentPage] = useState<number>(
-    parseInt(page || '1', 10),
+  const dispatch = useDispatch();
+
+  const totalPages = useSelector(
+    (state: RootState) => state.pageSlice.totalPages,
   );
-  const [maxPage, setMaxPage] = useState<number | null>(null);
-  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
-  const [isDetailsLoading, setDetailsLoadingStatus] = useState(false);
+  const item = useSelector(
+    (state: RootState) => state.currentDetails.currentId,
+  );
+  const currentPage = useSelector((state: RootState) => state.pageSlice.page);
 
   useEffect(() => {
     if (!page) {
       navigate('/search/1');
+      return;
+    }
+
+    const pageNumber = parseInt(page, 10);
+
+    if (
+      isNaN(pageNumber) ||
+      pageNumber <= 0 ||
+      (totalPages && pageNumber > totalPages)
+    ) {
+      navigate('/not-found');
     } else {
-      const pageNumber = parseInt(page, 10);
-      if (
-        isNaN(pageNumber) ||
-        pageNumber <= 0 ||
-        (maxPage && pageNumber > maxPage)
-      ) {
-        navigate('/not-found');
-      } else {
-        setCurrentPage(pageNumber);
-      }
+      dispatch(switchPage(pageNumber));
     }
-  }, [page, navigate, maxPage]);
-
-  const updateSearchResults = useCallback((results: ApiResponse | null) => {
-    setSearchResults(results);
-    if (results) {
-      setMaxPage(results.page.totalPages);
-    }
-  }, []);
-
-  const setLoading = useCallback((isLoading: boolean) => {
-    setLoadingStatus(isLoading);
-  }, []);
-
-  const changePage = useCallback(
-    (newPage: number) => {
-      setCurrentPage(newPage);
-      navigate(`/search/${newPage}`);
-    },
-    [navigate],
-  );
+  }, [page, navigate, totalPages, dispatch]);
 
   const handleItemClick = (itemId: string) => {
-    setSelectedItemId(itemId);
+    dispatch(changeItemId(itemId));
     navigate(`${location.pathname}&details=${itemId}`);
   };
 
   const handleCloseDetails = () => {
-    setSelectedItemId(null);
+    dispatch(changeItemId(''));
     navigate(`/search/${currentPage}`);
   };
 
   return (
-    <div className="wrapper">
+    <div className={styles['wrapper']} data-testid="app-wrapper">
       <ErrorBoundary>
-        <Header
-          updateResults={updateSearchResults}
-          setLoading={setLoading}
-          currentPage={currentPage}
-          setCurrentPage={changePage}
-        />
+        <Header />
       </ErrorBoundary>
-      <div className="main-content">
-        <Main
-          searchResults={searchResults}
-          isLoading={isLoading}
-          currentPage={currentPage}
-          setCurrentPage={changePage}
-          onItemClick={handleItemClick}
-          hideDetails={handleCloseDetails}
-        />
-        {selectedItemId && (
-          <Details
-            itemId={selectedItemId}
-            onClose={handleCloseDetails}
-            setLoading={setDetailsLoadingStatus}
-            isLoading={isDetailsLoading}
-          />
-        )}
+      <div className={styles['main-content']} data-testid="main-content">
+        <Main onItemClick={handleItemClick} hideDetails={handleCloseDetails} />
+        {item && <Details onClose={handleCloseDetails} />}
       </div>
     </div>
   );

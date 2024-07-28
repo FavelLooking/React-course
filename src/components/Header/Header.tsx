@@ -1,91 +1,85 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import './Header.css';
-import { ApiResponse } from '../../interfaces/interfaces';
-import useSearchQuery from '../CustomHooks/useSearch';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import styles from './Header.module.scss';
+import stylesButton from '../Button/Button.module.scss';
+import { useSearchQuery } from '../../hooks/useSearch';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from './../../context/useTheme';
+import { useSearchPlanetQuery } from '../../services/planets';
+import { RootState } from '../../store/store';
+import { switchLoading } from '../../store/loadingSlice';
+import { setTotalPages, switchPage } from '../../store/pageSlice';
+import { setResults } from '../../store/searchResults';
 
-interface HeaderProps {
-  updateResults: (results: ApiResponse) => void;
-  setLoading: (isLoading: boolean) => void;
-  setCurrentPage: (page: number) => void;
-  currentPage: number;
-}
-
-export default function Header({
-  updateResults,
-  setLoading,
-  setCurrentPage,
-  currentPage,
-}: HeaderProps) {
+export function Header() {
   const [errorOccured, setErrorOccured] = useState(false);
-  const [searchQuery, setSearchQuery] = useSearchQuery('');
   const [inputValue, setInputValue] = useState('');
-  const navigate = useNavigate();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const page = useSelector((state: RootState) => state.pageSlice.page);
+
+  const [searchQuery, setSearchQuery] = useSearchQuery('');
+  const { isStandartTheme, changeTheme } = useTheme();
+  const { data, error, isFetching } = useSearchPlanetQuery({
+    searchItem: searchQuery ?? '',
+    currentPage: page,
+  });
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSearchQuery(inputValue);
-    setCurrentPage(1);
+    dispatch(switchPage(1));
     navigate('/search/1');
   };
 
-  const getSearchResult = useCallback(
-    async (searchItem: string, page: number) => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10&pageNumber=${page - 1}`,
-          {
-            method: 'POST',
-            headers: {
-              accept: 'application/json',
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-              name: searchItem,
-            }),
-          },
-        );
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data: ApiResponse = await response.json();
-        updateResults(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    },
-    [updateResults, setLoading],
-  );
+  useEffect(() => {
+    if (data) {
+      dispatch(setTotalPages(data.page.totalPages));
+      dispatch(setResults(data));
+    }
+  }, [data, dispatch]);
 
   useEffect(() => {
-    if (searchQuery !== '') {
-      getSearchResult(searchQuery, currentPage);
-    } else getSearchResult('', currentPage);
-  }, [searchQuery, currentPage, getSearchResult]);
+    dispatch(switchLoading(isFetching));
+  }, [isFetching, dispatch]);
+
+  const switchTheme = () => {
+    changeTheme();
+  };
 
   const getError = () => {
     setErrorOccured(!errorOccured);
   };
 
-  if (errorOccured) {
-    throw new Error('Universe error');
+  if (errorOccured || error) {
+    return <div>An error occurred. Please try again later.</div>;
   }
 
   return (
-    <form className="header" onSubmit={handleSubmit}>
+    <form
+      className={`${styles.header} ${!isStandartTheme ? styles.alternative : ''}`}
+      onSubmit={handleSubmit}
+    >
       <input
-        className="header__search"
+        className={styles.header__search}
         type="text"
         placeholder="Enter planet or star name"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button type="submit">Search</button>
-      <button type="button" onClick={getError}>
+      <button className={stylesButton.button} type="submit">
+        Search
+      </button>
+      <button className={stylesButton.button} type="button" onClick={getError}>
         Get Error
+      </button>
+      <button
+        className={stylesButton.button}
+        type="button"
+        onClick={switchTheme}
+      >
+        Next Theme
       </button>
     </form>
   );

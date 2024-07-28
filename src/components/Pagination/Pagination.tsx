@@ -1,29 +1,32 @@
-import './Pagination.css';
+import styles from './Pagination.module.scss';
+import stylesButton from '../Button/Button.module.scss';
 import { useClicked } from '../../context/useClicked';
+import { useTheme } from './../../context/useTheme';
+import { useDispatch, useSelector } from 'react-redux';
+import { nextPage, previousPage } from '../../store/pageSlice';
+import { RootState } from 'src/store/store';
+import { useNavigate } from 'react-router-dom';
 
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
-
-export default function Pagination({
-  currentPage,
-  totalPages,
-  onPageChange,
-}: PaginationProps) {
-  const handlePageChange = (page: number) => {
-    if (page > 0 && page < totalPages + 1) {
-      onPageChange(page);
-    }
-  };
-
+export function Pagination() {
   const { clicked } = useClicked();
+  const { isStandartTheme } = useTheme();
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state: RootState) => state.pageSlice.page);
+  const totalPages = useSelector(
+    (state: RootState) => state.pageSlice.totalPages,
+  );
+  const navigate = useNavigate();
 
   return (
-    <div className="pagination">
+    <div
+      className={`${styles.pagination} ${!isStandartTheme ? styles.alternative : ''}`}
+    >
       <button
-        onClick={() => handlePageChange(currentPage - 1)}
+        className={stylesButton.button}
+        onClick={() => {
+          dispatch(previousPage());
+          navigate(`/search/${currentPage - 1}`);
+        }}
         disabled={clicked || currentPage === 1}
       >
         Previous
@@ -32,7 +35,11 @@ export default function Pagination({
         {currentPage} of {totalPages}
       </span>
       <button
-        onClick={() => handlePageChange(currentPage + 1)}
+        className={stylesButton.button}
+        onClick={() => {
+          dispatch(nextPage());
+          navigate(`/search/${currentPage + 1}`);
+        }}
         disabled={clicked || currentPage === totalPages}
       >
         Next

@@ -1,42 +1,107 @@
-import './CardItem.css';
-import ItemProps from '../../interfaces/interfaces';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from './../../store/store';
+import styles from './CardItem.module.scss';
+import { check, uncheck } from './../../store/selectedItemsSlice';
+import { Item } from './../../store/selectedItemsSlice';
+import { useTheme } from './../../context/useTheme';
 
-export default function CardItem(props: ItemProps) {
-  const { title, location, astronomicalObjectType, onClick } = props;
+export interface ItemProps {
+  title: string;
+  location?: string;
+  astronomicalObjectType: string;
+
+  onClick: () => void;
+}
+
+export function CardItem({
+  title,
+  location,
+  astronomicalObjectType,
+  onClick,
+}: ItemProps) {
+  const dispatch = useDispatch();
+  const isSelect = useSelector((state: RootState) =>
+    state.selectedItems.items.some((item) => item.title === title),
+  );
+  const { isStandartTheme } = useTheme();
+
+  const handleChange = () => {
+    const itemToUpdate: Item = {
+      title,
+      location: location ?? '',
+      object: astronomicalObjectType,
+    };
+
+    if (isSelect) {
+      dispatch(uncheck(itemToUpdate));
+    } else {
+      dispatch(check(itemToUpdate));
+    }
+  };
+
+  const renderTitle = () => (
+    <span className={styles['name-title']}>
+      Name:{' '}
+      <span
+        className={title.length > 30 ? styles['title-small'] : styles.title}
+      >
+        {title}
+      </span>
+    </span>
+  );
+
+  const renderLocation = () => (
+    <span className={styles['location-title']}>
+      Location:{' '}
+      <span
+        className={
+          location
+            ? location.length > 20
+              ? styles['location-small']
+              : styles.location
+            : styles.location
+        }
+      >
+        {location || 'Unknown'}
+      </span>
+    </span>
+  );
+
+  const renderAstronomicalObjectType = () => (
+    <span className={styles['type-title']}>
+      Object Type:{' '}
+      <span
+        className={
+          astronomicalObjectType.length > 20
+            ? styles['type-small']
+            : styles.type
+        }
+      >
+        {astronomicalObjectType}
+      </span>
+    </span>
+  );
 
   return (
-    <div className="card-item" onClick={onClick}>
-      <span className="name-title">
-        Name:{' '}
-        <span className={title.length > 30 ? 'title-small' : 'title'}>
-          {title}
-        </span>
-      </span>
-
-      {location && (
-        <span className="location-title">
-          Location:{' '}
-          <span
-            className={location.length > 20 ? 'location-small' : 'location'}
-          >
-            {location}
-          </span>
-        </span>
-      )}
-
-      {!location && (
-        <span className="location-title">
-          Location: <span className="location">Unknown</span>
-        </span>
-      )}
-      <span className="type-title">
-        Object Type:{' '}
-        <span
-          className={astronomicalObjectType.length > 20 ? 'type-small' : 'type'}
-        >
-          {astronomicalObjectType}
-        </span>
-      </span>
+    <div
+      className={`${styles['card-container']} ${!isStandartTheme ? styles['alternative'] : ''}`}
+    >
+      <div
+        data-testid="card-item"
+        className={styles['card-item']}
+        onClick={onClick}
+      >
+        {renderTitle()}
+        {renderLocation()}
+        {renderAstronomicalObjectType()}
+      </div>
+      <input
+        type="checkbox"
+        className={styles['checkbox']}
+        title={title}
+        checked={isSelect}
+        onChange={handleChange}
+      />
     </div>
   );
 }
