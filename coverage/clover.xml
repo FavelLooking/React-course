@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722180410878" clover="3.2.0">
-  <project timestamp="1722180410878" name="All files">
-    <metrics statements="717" coveredstatements="574" conditionals="105" coveredconditionals="78" methods="53" coveredmethods="35" elements="875" coveredelements="687" complexity="0" loc="717" ncloc="717" packages="14" files="22" classes="22"/>
+<coverage generated="1722182400852" clover="3.2.0">
+  <project timestamp="1722182400853" name="All files">
+    <metrics statements="717" coveredstatements="575" conditionals="106" coveredconditionals="79" methods="53" coveredmethods="35" elements="876" coveredelements="689" complexity="0" loc="717" ncloc="717" packages="14" files="22" classes="22"/>
     <package name="src">
-      <metrics statements="107" coveredstatements="52" conditionals="11" coveredconditionals="6" methods="4" coveredmethods="2"/>
+      <metrics statements="107" coveredstatements="53" conditionals="12" coveredconditionals="7" methods="4" coveredmethods="2"/>
       <file name="App.tsx" path="C:\Users\Comic\Desktop\Учёба\react\src\App.tsx">
-        <metrics statements="65" coveredstatements="52" conditionals="10" coveredconditionals="6" methods="3" coveredmethods="2"/>
+        <metrics statements="65" coveredstatements="53" conditionals="11" coveredconditionals="7" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -45,8 +45,8 @@
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="14" type="stmt"/>
-        <line num="48" count="14" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="48" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="49" count="4" type="stmt"/>
         <line num="50" count="14" type="stmt"/>
         <line num="52" count="14" type="cond" truecount="1" falsecount="0"/>
         <line num="53" count="1" type="stmt"/>

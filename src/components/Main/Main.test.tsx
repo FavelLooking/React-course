@@ -2,6 +2,9 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { Main, MainPropsExtended } from './Main';
 import { RootState } from '../../store/store';
+import { PageState } from '../../store/pageSlice';
+import { SelectedItemsState } from '../../store/selectedItemsSlice';
+import { CurrentDetailsState } from '../../store/currentDetails';
 
 vi.mock('../../context/useClicked', () => ({
   useClicked: () => ({
@@ -53,12 +56,17 @@ describe('Main Component', () => {
     hideDetails: vi.fn(),
   };
 
-  it('renders Loader when isLoading is true', () => {
-    vi.mock('react-redux', () => ({
-      useSelector: (selector: (state: RootState) => unknown) =>
-        selector({ isLoading: true } as unknown as RootState),
-    }));
+  vi.mock('react-redux', () => ({
+    useSelector: (selector: (state: RootState) => unknown) =>
+      selector({
+        selectedItems: {} as SelectedItemsState,
+        isLoading: { isLoading: true } as RootState['isLoading'],
+        pageSlice: {} as PageState,
+        currentDetails: {} as CurrentDetailsState,
+      } as RootState),
+  }));
 
+  it('renders Loader when isLoading is true', () => {
     render(<Main {...defaultProps} />);
     expect(screen.getByText('Loader Component')).toBeInTheDocument();
   });

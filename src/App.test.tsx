@@ -7,6 +7,7 @@ import { App } from './App';
 import { switchPage } from './store/pageSlice';
 import { changeItemId } from './store/currentDetails';
 import { ApiResponse } from './interfaces/interfaces';
+import { useEffect } from 'react';
 
 vi.mock('./components/Header/Header', () => ({
   Header: ({
@@ -14,7 +15,10 @@ vi.mock('./components/Header/Header', () => ({
   }: {
     updateResults: (results: ApiResponse) => void;
   }) => {
-    updateResults({ data: 'mockData' } as unknown as ApiResponse);
+    useEffect(() => {
+      updateResults({ data: 'mockData' } as unknown as ApiResponse);
+    }, [updateResults]);
+
     return <div>Header Component</div>;
   },
 }));
