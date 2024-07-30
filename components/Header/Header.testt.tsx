@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { Header } from './Header';
 import { Provider } from 'react-redux';
-import { store } from '../../store/store';
-import { ThemeContext } from '../../context/contextTheme';
+import { store } from '../../src/store/store';
+import { ThemeContext } from '../../src/context/contextTheme';
+import { vi } from 'vitest';
 
 const mockChangeTheme = vi.fn();
 const mockThemeContextValue = {

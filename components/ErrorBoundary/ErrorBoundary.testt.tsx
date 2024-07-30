@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { ErrorBoundary } from './ErrorBoundary';
+import React from 'react';
 
 const ErrorComponent = () => {
   throw new Error('Test error');

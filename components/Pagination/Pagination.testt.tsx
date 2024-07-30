@@ -4,10 +4,11 @@ import { Pagination } from './Pagination';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { combineReducers } from 'redux';
-import { pageSlice } from '../../store/pageSlice';
+import { pageSlice } from '../../src/store/pageSlice';
 import { MemoryRouter } from 'react-router-dom';
-import { RootState } from 'src/store/store';
-import { ClickedProvider } from '../../context/context';
+import { RootState } from '../../src/store/store';
+import { ClickedProvider } from '../../src/context/context';
+import React from 'react';
 
 const mockStore = (state: Partial<RootState>) => {
   return createStore(

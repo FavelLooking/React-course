@@ -2,10 +2,11 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { Details } from './Details';
-import { ClickedProvider } from '../../context/context';
-import { ThemeProvider } from '../../context/contextTheme';
-import { vi } from 'vitest';
-import { useGetPlanetByIdQuery } from '../../services/planets';
+import { ClickedProvider } from '../../src/context/context';
+import { ThemeProvider } from '../../src/context/contextTheme';
+import { vi, describe, it, beforeEach, expect } from 'vitest';
+import { useGetPlanetByIdQuery } from '../../src/services/planets';
+import React from 'react';
 
 const mockStore = configureStore([]);
 

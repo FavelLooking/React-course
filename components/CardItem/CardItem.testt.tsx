@@ -1,7 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { CardItem } from './CardItem';
 import { Provider } from 'react-redux';
-import { store } from '../../store/store';
+import { store } from '../../src/store/store';
+import { describe, it, vi, expect } from 'vitest';
+import React from 'react';
 
 const defaultProps = {
   title: 'Test Title',

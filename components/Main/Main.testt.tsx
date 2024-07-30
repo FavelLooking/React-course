@@ -1,11 +1,12 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { Main, MainProps } from './Main';
-import { RootState } from '../../store/store';
-import { PageState } from '../../store/pageSlice';
-import { SelectedItemsState } from '../../store/selectedItemsSlice';
-import { CurrentDetailsState } from '../../store/currentDetails';
+import { RootState } from '../../src/store/store';
+import { PageState } from '../../src/store/pageSlice';
+import { SelectedItemsState } from '../../src/store/selectedItemsSlice';
+import { CurrentDetailsState } from '../../src/store/currentDetails';
 import configureStore from 'redux-mock-store';
+import React from 'react';
 
 vi.mock('../../context/useClicked', () => ({
   useClicked: () => ({

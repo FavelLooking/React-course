@@ -3,10 +3,11 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { App } from './App';
-import { switchPage } from './store/pageSlice';
-import { changeItemId } from './store/currentDetails';
-import { ApiResponse } from './interfaces/interfaces';
+import App from './[page]';
+import { switchPage } from '../../src/store/pageSlice';
+import { changeItemId } from '../../src/store/currentDetails';
+import { ApiResponse } from '../../src/interfaces/interfaces';
+import React from 'react';
 
 vi.mock('./components/Header/Header', () => ({
   Header: () => <div>Header Component</div>,
