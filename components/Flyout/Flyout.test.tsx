@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { Flyout } from './Flyout';
 import { unselect } from '../../src/store/selectedItemsSlice';
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 
 const mockStore = configureStore([]);
@@ -27,7 +27,7 @@ describe('Flyout component', () => {
     store.dispatch = vi.fn();
   });
 
-  test('renders correctly with selected items', () => {
+  it('renders correctly with selected items', () => {
     render(
       <Provider store={store}>
         <Flyout />
@@ -39,7 +39,7 @@ describe('Flyout component', () => {
     expect(screen.getByText(/Download/i)).toBeInTheDocument();
   });
 
-  test('Unselect All button dispatches unselect action', () => {
+  it('Unselect All button dispatches unselect action', () => {
     render(
       <Provider store={store}>
         <Flyout />
@@ -52,7 +52,7 @@ describe('Flyout component', () => {
     expect(store.dispatch).toHaveBeenCalledWith(unselect());
   });
 
-  test('Download button triggers the download process', () => {
+  it('Download button triggers the download process', () => {
     render(
       <Provider store={store}>
         <Flyout />
@@ -63,5 +63,10 @@ describe('Flyout component', () => {
     fireEvent.click(downloadButton);
 
     expect(global.URL.createObjectURL).toHaveBeenCalled();
+  });
+
+  //! to Delete
+  it('placeholder test', () => {
+    expect(true).toBeTruthy;
   });
 });
