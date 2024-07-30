@@ -5,17 +5,22 @@
     "moduleResolution": "node",
     "target": "esnext",
     "lib": ["dom", "esnext"],
-    "jsx": "react-jsx",
-    "noEmit": false
+    "jsx": "preserve",
+    "noEmit": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "incremental": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "files": [],
-
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  "include": ["./dist/types/**/*.ts", "./next-env.d.ts"],
+  "exclude": ["./node_modules"]
 }

@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import { useSearchQuery } from '../../hooks/useSearch';
-import { useNavigate } from 'react-router-dom';
-import { useTheme } from './../../context/useTheme';
-import { useSearchPlanetQuery } from '../../services/planets';
-import { RootState } from '../../store/store';
-import { switchLoading } from '../../store/loadingSlice';
-import { setTotalPages, switchPage } from '../../store/pageSlice';
-import { setResults } from '../../store/searchResults';
+import { useSearchQuery } from '../../src/hooks/useSearch';
+//import { useNavigate } from 'react-router-dom';
+import { useTheme } from './../../src/context/useTheme';
+import { useSearchPlanetQuery } from '../../src/services/planets';
+import { RootState } from '../../src/store/store';
+import { switchLoading } from '../../src/store/loadingSlice';
+import { setTotalPages, switchPage } from '../../src/store/pageSlice';
+import { setResults } from '../../src/store/searchResults';
+import { useRouter } from 'next/router';
 
 export function Header() {
   const [errorOccured, setErrorOccured] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const router = useRouter();
 
-  const navigate = useNavigate();
+  //  const navigate = useNavigate();
   const dispatch = useDispatch();
   const page = useSelector((state: RootState) => state.pageSlice.page);
 
@@ -30,7 +32,7 @@ export function Header() {
     event.preventDefault();
     setSearchQuery(inputValue);
     dispatch(switchPage(1));
-    navigate('/search/1');
+    router.push('/search/1');
   };
 
   useEffect(() => {

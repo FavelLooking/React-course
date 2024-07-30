@@ -1,13 +1,15 @@
 import styles from './Loader.module.scss';
-import planet from './../../assets/images/Planet-trans.gif';
+import React from 'react';
 
 export function Loader() {
   return (
     <img
       className={styles.loader}
       data-testid="loader"
-      src={planet}
+      src="/images/Planet-trans.gif"
       alt="loader"
+      width="200"
+      height="200"
     />
   );
 }

@@ -1,11 +1,13 @@
 import styles from './Pagination.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import { useClicked } from '../../context/useClicked';
-import { useTheme } from './../../context/useTheme';
+import { useClicked } from '../../src/context/useClicked';
+import { useTheme } from './../../src/context/useTheme';
 import { useDispatch, useSelector } from 'react-redux';
-import { nextPage, previousPage } from '../../store/pageSlice';
-import { RootState } from 'src/store/store';
-import { useNavigate } from 'react-router-dom';
+import { nextPage, previousPage } from '../../src/store/pageSlice';
+import { RootState } from '../../src/store/store';
+//import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useRouter } from 'next/router';
 
 export function Pagination() {
   const { clicked } = useClicked();
@@ -15,7 +17,8 @@ export function Pagination() {
   const totalPages = useSelector(
     (state: RootState) => state.pageSlice.totalPages,
   );
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div
@@ -25,7 +28,7 @@ export function Pagination() {
         className={stylesButton.button}
         onClick={() => {
           dispatch(previousPage());
-          navigate(`/search/${currentPage - 1}`);
+          router.push(`/search/${currentPage - 1}`);
         }}
         disabled={clicked || currentPage === 1}
       >
@@ -38,7 +41,7 @@ export function Pagination() {
         className={stylesButton.button}
         onClick={() => {
           dispatch(nextPage());
-          navigate(`/search/${currentPage + 1}`);
+          router.push(`/search/${currentPage + 1}`);
         }}
         disabled={clicked || currentPage === totalPages}
       >

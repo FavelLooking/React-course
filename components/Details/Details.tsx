@@ -1,13 +1,14 @@
 import styles from './Details.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import { useClicked } from '../../context/useClicked';
-import { useTheme } from './../../context/useTheme';
-import { useGetPlanetByIdQuery } from '../../services/planets';
+import { useClicked } from '../../src/context/useClicked';
+import { useTheme } from './../../src/context/useTheme';
+import { useGetPlanetByIdQuery } from '../../src/services/planets';
 import { Loader } from '../Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { changeDetails } from '../../store/currentDetails';
-import { RootState } from '../../store/store';
+import { changeDetails } from '../../src/store/currentDetails';
+import { RootState } from '../../src/store/store';
+import React from 'react';
 
 interface DetailsProps {
   onClose: () => void;

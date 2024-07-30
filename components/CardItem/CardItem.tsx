@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState } from './../../store/store';
+import type { RootState } from './../../src/store/store';
 import styles from './CardItem.module.scss';
-import { check, uncheck } from './../../store/selectedItemsSlice';
-import { Item } from './../../store/selectedItemsSlice';
-import { useTheme } from './../../context/useTheme';
+import { check, uncheck } from './../../src/store/selectedItemsSlice';
+import { Item } from './../../src/store/selectedItemsSlice';
+import { useTheme } from './../../src/context/useTheme';
+import React from 'react';
 
 export interface ItemProps {
   title: string;

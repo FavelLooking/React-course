@@ -1,13 +1,14 @@
 import styles from './Main.module.scss';
 import { CardItem } from '../CardItem/CardItem';
-import { AstronomicalObject } from '../../interfaces/interfaces';
+import { AstronomicalObject } from '../../src/interfaces/interfaces';
 import { Pagination } from '../Pagination/Pagination';
-import { useClicked } from '../../context/useClicked';
+import { useClicked } from '../../src/context/useClicked';
 import { Flyout } from '../Flyout/Flyout';
-import { useTheme } from './../../context/useTheme';
+import { useTheme } from './../../src/context/useTheme';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../src/store/store';
 import { Loader } from '../Loader/Loader';
+import React from 'react';
 
 export interface MainProps {
   onItemClick: (itemId: string) => void;

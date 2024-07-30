@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Flyout.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import type { RootState } from './../../store/store';
-import { unselect } from './../../store/selectedItemsSlice';
+import type { RootState } from './../../src/store/store';
+import { unselect } from './../../src/store/selectedItemsSlice';
 import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 
 export function Flyout() {
   const dispatch = useDispatch();
