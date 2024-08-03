@@ -6,7 +6,7 @@ import { Header } from './Header';
 import { Provider } from 'react-redux';
 import { store } from '../../src/store/store';
 import { ThemeContext } from '../../src/context/contextTheme';
-import { vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 const mockChangeTheme = vi.fn();
 const mockThemeContextValue = {

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import stylesButton from '../Button/Button.module.scss';
 import { useSearchQuery } from '../../src/hooks/useSearch';
-//import { useNavigate } from 'react-router-dom';
 import { useTheme } from './../../src/context/useTheme';
 import { useSearchPlanetQuery } from '../../src/services/planets';
 import { RootState } from '../../src/store/store';
@@ -16,8 +15,6 @@ export function Header() {
   const [errorOccured, setErrorOccured] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const router = useRouter();
-
-  //  const navigate = useNavigate();
   const dispatch = useDispatch();
   const page = useSelector((state: RootState) => state.pageSlice.page);
 
