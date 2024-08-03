@@ -22,7 +22,7 @@
       },
       4258: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.r(t),
               r.d(t, {
@@ -33,13 +33,13 @@
                 getStaticProps: () => f,
                 reportWebVitals: () => m,
                 routeModule: () => S,
-                unstable_getServerProps: () => x,
+                unstable_getServerProps: () => v,
                 unstable_getServerSideProps: () => _,
-                unstable_getStaticParams: () => v,
-                unstable_getStaticPaths: () => b,
+                unstable_getStaticParams: () => b,
+                unstable_getStaticPaths: () => x,
                 unstable_getStaticProps: () => P,
               });
-            var n = r(7093),
+            var a = r(7093),
               i = r(5244),
               s = r(1323),
               o = r(2899),
@@ -55,11 +55,11 @@
               g = (0, s.l)(u, 'config'),
               m = (0, s.l)(u, 'reportWebVitals'),
               P = (0, s.l)(u, 'unstable_getStaticProps'),
-              b = (0, s.l)(u, 'unstable_getStaticPaths'),
-              v = (0, s.l)(u, 'unstable_getStaticParams'),
-              x = (0, s.l)(u, 'unstable_getServerProps'),
+              x = (0, s.l)(u, 'unstable_getStaticPaths'),
+              b = (0, s.l)(u, 'unstable_getStaticParams'),
+              v = (0, s.l)(u, 'unstable_getServerProps'),
               _ = (0, s.l)(u, 'unstable_getServerSideProps'),
-              S = new n.PagesRouteModule({
+              S = new a.PagesRouteModule({
                 definition: {
                   kind: i.x.PAGES,
                   page: '/_error',
@@ -70,9 +70,9 @@
                 components: { App: c.default, Document: l() },
                 userland: u,
               });
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
@@ -85,10 +85,10 @@
               return u;
             },
           });
-        let a = r(167),
-          n = r(997),
-          i = a._(r(6689)),
-          s = a._(r(7828)),
+        let n = r(167),
+          a = r(997),
+          i = n._(r(6689)),
+          s = n._(r(7828)),
           o = {
             400: 'Bad Request',
             404: 'This page could not be found',
@@ -130,20 +130,20 @@
             let { statusCode: e, withDarkMode: t = !0 } = this.props,
               r =
                 this.props.title || o[e] || 'An unexpected error has occurred';
-            return (0, n.jsxs)('div', {
+            return (0, a.jsxs)('div', {
               style: c.error,
               children: [
-                (0, n.jsx)(s.default, {
-                  children: (0, n.jsx)('title', {
+                (0, a.jsx)(s.default, {
+                  children: (0, a.jsx)('title', {
                     children: e
                       ? e + ': ' + r
                       : 'Application error: a client-side exception has occurred',
                   }),
                 }),
-                (0, n.jsxs)('div', {
+                (0, a.jsxs)('div', {
                   style: c.desc,
                   children: [
-                    (0, n.jsx)('style', {
+                    (0, a.jsx)('style', {
                       dangerouslySetInnerHTML: {
                         __html:
                           'body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}' +
@@ -153,20 +153,20 @@
                       },
                     }),
                     e
-                      ? (0, n.jsx)('h1', {
+                      ? (0, a.jsx)('h1', {
                           className: 'next-error-h1',
                           style: c.h1,
                           children: e,
                         })
                       : null,
-                    (0, n.jsx)('div', {
+                    (0, a.jsx)('div', {
                       style: c.wrap,
-                      children: (0, n.jsxs)('h2', {
+                      children: (0, a.jsxs)('h2', {
                         style: c.h2,
                         children: [
                           this.props.title || e
                             ? r
-                            : (0, n.jsx)(n.Fragment, {
+                            : (0, a.jsx)(a.Fragment, {
                                 children:
                                   'Application error: a client-side exception has occurred (see the browser console for more information)',
                               }),
@@ -196,9 +196,9 @@
           let {
             ampFirst: t = !1,
             hybrid: r = !1,
-            hasQuery: a = !1,
+            hasQuery: n = !1,
           } = void 0 === e ? {} : e;
-          return t || (r && a);
+          return t || (r && n);
         }
         Object.defineProperty(t, '__esModule', { value: !0 }),
           Object.defineProperty(t, 'isInAmpMode', {
@@ -222,11 +222,11 @@
               return d;
             },
           });
-        let a = r(167),
-          n = r(8760),
+        let n = r(167),
+          a = r(8760),
           i = r(997),
-          s = n._(r(6689)),
-          o = a._(r(7215)),
+          s = a._(r(6689)),
+          o = n._(r(7215)),
           l = r(8039),
           c = r(1988),
           u = r(5495);
@@ -272,35 +272,35 @@
                 let e = new Set(),
                   t = new Set(),
                   r = new Set(),
-                  a = {};
-                return (n) => {
+                  n = {};
+                return (a) => {
                   let i = !0,
                     s = !1;
                   if (
-                    n.key &&
-                    'number' != typeof n.key &&
-                    n.key.indexOf('$') > 0
+                    a.key &&
+                    'number' != typeof a.key &&
+                    a.key.indexOf('$') > 0
                   ) {
                     s = !0;
-                    let t = n.key.slice(n.key.indexOf('$') + 1);
+                    let t = a.key.slice(a.key.indexOf('$') + 1);
                     e.has(t) ? (i = !1) : e.add(t);
                   }
-                  switch (n.type) {
+                  switch (a.type) {
                     case 'title':
                     case 'base':
-                      t.has(n.type) ? (i = !1) : t.add(n.type);
+                      t.has(a.type) ? (i = !1) : t.add(a.type);
                       break;
                     case 'meta':
                       for (let e = 0, t = f.length; e < t; e++) {
                         let t = f[e];
-                        if (n.props.hasOwnProperty(t)) {
+                        if (a.props.hasOwnProperty(t)) {
                           if ('charSet' === t) r.has(t) ? (i = !1) : r.add(t);
                           else {
-                            let e = n.props[t],
-                              r = a[t] || new Set();
+                            let e = a.props[t],
+                              r = n[t] || new Set();
                             ('name' !== t || !s) && r.has(e)
                               ? (i = !1)
-                              : (r.add(e), (a[t] = r));
+                              : (r.add(e), (n[t] = r));
                           }
                         }
                       }
@@ -311,7 +311,7 @@
             )
             .reverse()
             .map((e, t) => {
-              let a = e.key || t;
+              let n = e.key || t;
               if (
                 !r &&
                 'link' === e.type &&
@@ -329,16 +329,16 @@
                   s.default.cloneElement(e, t)
                 );
               }
-              return s.default.cloneElement(e, { key: a });
+              return s.default.cloneElement(e, { key: n });
             });
         }
         let y = function (e) {
           let { children: t } = e,
             r = (0, s.useContext)(l.AmpStateContext),
-            a = (0, s.useContext)(c.HeadManagerContext);
+            n = (0, s.useContext)(c.HeadManagerContext);
           return (0, i.jsx)(o.default, {
             reduceComponentsToState: h,
-            headManager: a,
+            headManager: n,
             inAmpMode: (0, u.isInAmpMode)(r),
             children: t,
           });
@@ -359,15 +359,15 @@
               return s;
             },
           });
-        let a = r(6689),
-          n = () => {},
+        let n = r(6689),
+          a = () => {},
           i = () => {};
         function s(e) {
           var t;
           let { headManager: r, reduceComponentsToState: s } = e;
           function o() {
             if (r && r.mountedInstances) {
-              let t = a.Children.toArray(
+              let t = n.Children.toArray(
                 Array.from(r.mountedInstances).filter(Boolean),
               );
               r.updateHead(s(t, e));
@@ -376,7 +376,7 @@
           return (
             null == r || null == (t = r.mountedInstances) || t.add(e.children),
             o(),
-            n(() => {
+            a(() => {
               var t;
               return (
                 null == r ||
@@ -390,7 +390,7 @@
                 }
               );
             }),
-            n(
+            a(
               () => (
                 r && (r._pendingUpdate = o),
                 () => {
@@ -427,39 +427,51 @@
       },
       6814: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
-            r.r(t), r.d(t, { default: () => c });
-            var n = r(997);
+            r.r(t), r.d(t, { default: () => d });
+            var a = r(997);
             r(6689);
             var i = r(1597),
-              s = r(8112);
+              s = r(8112),
+              o = r(968),
+              l = r.n(o);
             r(9517);
-            var o = r(6896),
-              l = e([i]);
-            let c = (i = (l.then ? (await l)() : l)[0]).Y.withRedux(function ({
+            var c = r(6896),
+              u = e([i]);
+            let d = (i = (u.then ? (await u)() : u)[0]).Y.withRedux(function ({
               Component: e,
               pageProps: t,
             }) {
-              return n.jsx(s.f, {
-                children: n.jsx(o.$, { children: n.jsx(e, { ...t }) }),
+              return (0, a.jsxs)(a.Fragment, {
+                children: [
+                  a.jsx(l(), {
+                    children: a.jsx('link', {
+                      rel: 'shortcut icon',
+                      href: '../images/favicon.ico',
+                    }),
+                  }),
+                  a.jsx(s.f, {
+                    children: a.jsx(c.$, { children: a.jsx(e, { ...t }) }),
+                  }),
+                ],
               });
             });
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       6896: (e, t, r) => {
         'use strict';
         r.d(t, { $: () => s, z: () => i });
-        var a = r(997),
-          n = r(6689);
-        let i = (0, n.createContext)(void 0),
+        var n = r(997),
+          a = r(6689);
+        let i = (0, a.createContext)(void 0),
           s = ({ children: e }) => {
-            let [t, r] = (0, n.useState)(!1);
-            return a.jsx(i.Provider, {
+            let [t, r] = (0, a.useState)(!1);
+            return n.jsx(i.Provider, {
               value: {
                 clicked: t,
                 setClicked: r,
@@ -474,15 +486,15 @@
       8112: (e, t, r) => {
         'use strict';
         r.d(t, { N: () => i, f: () => s });
-        var a = r(997),
-          n = r(6689);
-        let i = (0, n.createContext)({
+        var n = r(997),
+          a = r(6689);
+        let i = (0, a.createContext)({
             isStandartTheme: !0,
             changeTheme: () => {},
           }),
           s = ({ children: e }) => {
-            let [t, r] = (0, n.useState)(!0);
-            return a.jsx(i.Provider, {
+            let [t, r] = (0, a.useState)(!0);
+            return n.jsx(i.Provider, {
               value: {
                 isStandartTheme: t,
                 changeTheme: () => {
@@ -495,15 +507,15 @@
       },
       8011: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { EJ: () => s, bT: () => o, f5: () => l });
-            var n = r(9943),
-              i = e([n]);
-            n = (i.then ? (await i)() : i)[0];
-            let s = (0, n.createApi)({
+            var a = r(9943),
+              i = e([a]);
+            a = (i.then ? (await i)() : i)[0];
+            let s = (0, a.createApi)({
                 reducerPath: 'planetsApi',
-                baseQuery: (0, n.fetchBaseQuery)({
+                baseQuery: (0, a.fetchBaseQuery)({
                   baseUrl: 'https://stapi.co/api/v2/rest/',
                 }),
                 endpoints: (e) => ({
@@ -520,21 +532,21 @@
                 }),
               }),
               { useGetPlanetByIdQuery: o, useSearchPlanetQuery: l } = s;
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       7010: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { Hf: () => l, hp: () => s });
-            var n = r(3258),
-              i = e([n]);
-            n = (i.then ? (await i)() : i)[0];
-            let s = (0, n.createSlice)({
+            var a = r(3258),
+              i = e([a]);
+            a = (i.then ? (await i)() : i)[0];
+            let s = (0, a.createSlice)({
                 name: 'currentDetails',
                 initialState: {
                   details: { name: '', location: '', type: '' },
@@ -550,21 +562,21 @@
                 },
               }),
               { changeDetails: o, changeItemId: l } = s.actions;
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       4996: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { B: () => s });
-            var n = r(3258),
-              i = e([n]);
-            n = (i.then ? (await i)() : i)[0];
-            let s = (0, n.createSlice)({
+            var a = r(3258),
+              i = e([a]);
+            a = (i.then ? (await i)() : i)[0];
+            let s = (0, a.createSlice)({
                 name: 'selectedItems',
                 initialState: { isLoading: !0 },
                 reducers: {
@@ -574,37 +586,37 @@
                 },
               }),
               { switchLoading: o } = s.actions;
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       1597: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { Y: () => o });
-            var n = r(5648),
+            var a = r(5648),
               i = r(5259),
               s = e([i]);
             i = (s.then ? (await s)() : s)[0];
-            let o = (0, n.createWrapper)(() => i.h);
-            a();
+            let o = (0, a.createWrapper)(() => i.h);
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       2598: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { IT: () => c, VE: () => s, fz: () => l, o_: () => o });
-            var n = r(3258),
-              i = e([n]);
-            n = (i.then ? (await i)() : i)[0];
-            let s = (0, n.createSlice)({
+            var a = r(3258),
+              i = e([a]);
+            a = (i.then ? (await i)() : i)[0];
+            let s = (0, a.createSlice)({
                 name: 'page',
                 initialState: { page: 1, totalPages: 0 },
                 reducers: {
@@ -628,21 +640,21 @@
                 previousPage: c,
                 setTotalPages: u,
               } = s.actions;
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       5306: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { Q: () => s });
-            var n = r(3258),
-              i = e([n]);
-            n = (i.then ? (await i)() : i)[0];
-            let s = (0, n.createSlice)({
+            var a = r(3258),
+              i = e([a]);
+            a = (i.then ? (await i)() : i)[0];
+            let s = (0, a.createSlice)({
                 name: 'searchResults',
                 initialState: { results: null },
                 reducers: {
@@ -652,21 +664,21 @@
                 },
               }),
               { setResults: o } = s.actions;
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       7960: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { BF: () => o, ZP: () => u, cl: () => l, hF: () => c });
-            var n = r(3258),
-              i = e([n]);
-            n = (i.then ? (await i)() : i)[0];
-            let s = (0, n.createSlice)({
+            var a = r(3258),
+              i = e([a]);
+            a = (i.then ? (await i)() : i)[0];
+            let s = (0, a.createSlice)({
                 name: 'selectedItems',
                 initialState: { items: [] },
                 reducers: {
@@ -685,27 +697,27 @@
               }),
               { check: o, uncheck: l, unselect: c } = s.actions,
               u = s.reducer;
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
       5259: (e, t, r) => {
         'use strict';
-        r.a(e, async (e, a) => {
+        r.a(e, async (e, n) => {
           try {
             r.d(t, { h: () => p });
-            var n = r(3258),
+            var a = r(3258),
               i = r(7960),
               s = r(8011),
               o = r(4996),
               l = r(2598),
               c = r(7010),
               u = r(5306),
-              d = e([n, i, s, o, l, c, u]);
-            [n, i, s, o, l, c, u] = d.then ? (await d)() : d;
-            let p = (0, n.configureStore)({
+              d = e([a, i, s, o, l, c, u]);
+            [a, i, s, o, l, c, u] = d.then ? (await d)() : d;
+            let p = (0, a.configureStore)({
               reducer: {
                 selectedItems: i.ZP,
                 isLoading: o.B.reducer,
@@ -716,9 +728,9 @@
               },
               middleware: (e) => e().concat(s.EJ.middleware),
             });
-            a();
+            n();
           } catch (e) {
-            a(e);
+            n(e);
           }
         });
       },
@@ -755,6 +767,10 @@
         'use strict';
         e.exports = require('next/dist/compiled/next-server/pages.runtime.prod.js');
       },
+      968: (e) => {
+        'use strict';
+        e.exports = require('next/head');
+      },
       6689: (e) => {
         'use strict';
         e.exports = require('react');
@@ -780,33 +796,33 @@
         function r(e) {
           if ('function' != typeof WeakMap) return null;
           var t = new WeakMap(),
-            a = new WeakMap();
+            n = new WeakMap();
           return (r = function (e) {
-            return e ? a : t;
+            return e ? n : t;
           })(e);
         }
         t._ = t._interop_require_wildcard = function (e, t) {
           if (!t && e && e.__esModule) return e;
           if (null === e || ('object' != typeof e && 'function' != typeof e))
             return { default: e };
-          var a = r(t);
-          if (a && a.has(e)) return a.get(e);
-          var n = { __proto__: null },
+          var n = r(t);
+          if (n && n.has(e)) return n.get(e);
+          var a = { __proto__: null },
             i = Object.defineProperty && Object.getOwnPropertyDescriptor;
           for (var s in e)
             if ('default' !== s && Object.prototype.hasOwnProperty.call(e, s)) {
               var o = i ? Object.getOwnPropertyDescriptor(e, s) : null;
               o && (o.get || o.set)
-                ? Object.defineProperty(n, s, o)
-                : (n[s] = e[s]);
+                ? Object.defineProperty(a, s, o)
+                : (a[s] = e[s]);
             }
-          return (n.default = e), a && a.set(e, n), n;
+          return (a.default = e), n && n.set(e, a), a;
         };
       },
     });
   var t = require('../webpack-runtime.js');
   t.C(e);
   var r = (e) => t((t.s = e)),
-    a = t.X(0, [899], () => r(4258));
-  module.exports = a;
+    n = t.X(0, [899], () => r(4258));
+  module.exports = n;
 })();

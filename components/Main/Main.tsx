@@ -9,24 +9,26 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../src/store/store';
 import { Loader } from '../Loader/Loader';
 import React from 'react';
+import { ApiResponse } from '../../src/interfaces/interfaces';
 
 export interface MainProps {
   onItemClick: (itemId: string) => void;
   hideDetails: () => void;
+  serversideData: ApiResponse;
 }
 
 export function Main(props: MainProps) {
-  const { onItemClick, hideDetails } = props;
+  const { onItemClick, hideDetails, serversideData } = props;
   const { clicked, setClicked } = useClicked();
   const { isStandartTheme } = useTheme();
   const isLoading = useSelector(
     (state: RootState) => state.isLoading.isLoading,
   );
-  const searchResultsFromRedux = useSelector(
-    (state: RootState) => state.searchResults.results,
-  );
+  // const searchResultsFromRedux = useSelector(
+  //   (state: RootState) => state.searchResults.results,
+  // );
 
-  if (!searchResultsFromRedux || isLoading) {
+  if (!serversideData || isLoading) {
     return (
       <div
         className={`${styles.main} ${!isStandartTheme ? styles.alternative : ''} `}
@@ -48,7 +50,7 @@ export function Main(props: MainProps) {
     }
   };
 
-  const { astronomicalObjects } = searchResultsFromRedux;
+  const { astronomicalObjects } = serversideData;
 
   return (
     <div

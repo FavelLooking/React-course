@@ -29,13 +29,26 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
+      "page": "/404",
+      "regex": "^/404(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/404(?:/)?$"
+    },
+    {
       "page": "/loading",
       "regex": "^/loading(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/loading(?:/)?$"
     }
   ],
-  "dataRoutes": [],
+  "dataRoutes": [
+    {
+      "page": "/search/[page]",
+      "routeKeys": { "nxtPpage": "nxtPpage" },
+      "dataRouteRegex": "^/_next/data/8ibSqEbWvDLxvoWLV9iQ0/search/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/8ibSqEbWvDLxvoWLV9iQ0/search/(?<nxtPpage>[^/]+?)\\.json$"
+    }
+  ],
   "rsc": {
     "header": "RSC",
     "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",

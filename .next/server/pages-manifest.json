@@ -1,9 +1,9 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/404": "pages/404.html",
   "/": "pages/index.html",
   "/loading": "pages/loading.html",
-  "/search/[page]": "pages/search/[page].html",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/search/[page]": "pages/search/[page].js",
+  "/_document": "pages/_document.js"
 }

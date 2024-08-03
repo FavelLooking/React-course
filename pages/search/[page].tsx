@@ -1,81 +1,62 @@
-import React, { useEffect } from 'react';
-import styles from '../../styles/App.module.scss';
-import { Header } from '../../components/Header/Header';
-import { Main } from '../../components/Main/Main';
-import { Details } from '../../components/Details/Details';
-import { ErrorBoundary } from '../../components/ErrorBoundary/ErrorBoundary';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../src/store/store';
-import { switchPage } from '../../src/store/pageSlice';
-import { changeItemId } from '../../src/store/currentDetails';
-import { Provider } from 'react-redux';
-import { store } from '../../src/store/store';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { ApiResponse } from '../../src/interfaces/interfaces';
+import App from '../../components/App/App';
+import React from 'react';
 
-import localFont from 'next/font/local';
-import { useRouter } from 'next/router';
-const myFont = localFont({ src: '../../public/fonts/D3Euronism.ttf' });
+export const getStaticPaths: GetStaticPaths = async () => {
+  try {
+    const totalPages = 100;
 
-const App = () => {
-  const router = useRouter();
-  const { page } = router.query;
-  const dispatch = useDispatch();
+    const paths = Array.from({ length: totalPages }, (_, i) => ({
+      params: { page: (i + 1).toString() },
+    }));
 
-  const totalPages = useSelector(
-    (state: RootState) => state.pageSlice.totalPages,
-  );
-  const item = useSelector(
-    (state: RootState) => state.currentDetails.currentId,
-  );
-  const currentPage = useSelector((state: RootState) => state.pageSlice.page);
-
-  useEffect(() => {
-    if (!page) {
-      router.push('/search/1');
-      return;
-    }
-
-    const pageNumber = parseInt(page as string, 10);
-
-    if (
-      isNaN(pageNumber) ||
-      pageNumber <= 0 ||
-      (totalPages && pageNumber > totalPages)
-    ) {
-      router.push('/not-found');
-    } else {
-      dispatch(switchPage(pageNumber));
-    }
-  }, [page, router, totalPages, dispatch]);
-
-  const handleItemClick = (itemId: string) => {
-    dispatch(changeItemId(itemId));
-    router.push(`${location.pathname}&details=${itemId}`);
-  };
-
-  const handleCloseDetails = () => {
-    dispatch(changeItemId(''));
-    router.push(`/search/${currentPage}`);
-  };
-
-  return (
-    <Provider store={store}>
-      <div
-        className={`${styles.wrapper} ${myFont.className}`}
-        data-testid="app-wrapper"
-      >
-        <ErrorBoundary>
-          <Header />
-        </ErrorBoundary>
-        <div className={styles['main-content']} data-testid="main-content">
-          <Main
-            onItemClick={handleItemClick}
-            hideDetails={handleCloseDetails}
-          />
-          {item && <Details onClose={handleCloseDetails} />}
-        </div>
-      </div>
-    </Provider>
-  );
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error('Error fetching data for paths:', error);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 };
 
-export default App;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { page } = context.params!;
+
+  try {
+    if (!page) {
+      throw new Error(`Sorry, no page`);
+    }
+    const res = await fetch(
+      `https://stapi.co/api/v2/rest/astronomicalObject/search?pageSize=10&pageNumber=${Number(page) - 1}`,
+    );
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.statusText}`);
+    }
+    const serversideData: ApiResponse = await res.json();
+
+    return {
+      props: { serversideData },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: { serversideData: { astronomicalObjects: [] } },
+    };
+  }
+};
+
+interface PageProps {
+  serversideData: ApiResponse;
+}
+
+const SearchPage: React.FC<PageProps> = ({ serversideData }) => {
+  return <App serversideData={serversideData} />;
+};
+
+export default SearchPage;

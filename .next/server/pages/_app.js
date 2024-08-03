@@ -7,20 +7,32 @@
         'use strict';
         a.a(e, async (e, r) => {
           try {
-            a.r(t), a.d(t, { default: () => u });
+            a.r(t), a.d(t, { default: () => o });
             var s = a(997);
             a(6689);
             var c = a(1597),
-              i = a(8112);
+              i = a(8112),
+              n = a(968),
+              l = a.n(n);
             a(9517);
-            var l = a(6896),
-              n = e([c]);
-            let u = (c = (n.then ? (await n)() : n)[0]).Y.withRedux(function ({
+            var u = a(6896),
+              d = e([c]);
+            let o = (c = (d.then ? (await d)() : d)[0]).Y.withRedux(function ({
               Component: e,
               pageProps: t,
             }) {
-              return s.jsx(i.f, {
-                children: s.jsx(l.$, { children: s.jsx(e, { ...t }) }),
+              return (0, s.jsxs)(s.Fragment, {
+                children: [
+                  s.jsx(l(), {
+                    children: s.jsx('link', {
+                      rel: 'shortcut icon',
+                      href: '../images/favicon.ico',
+                    }),
+                  }),
+                  s.jsx(i.f, {
+                    children: s.jsx(u.$, { children: s.jsx(e, { ...t }) }),
+                  }),
+                ],
               });
             });
             r();
@@ -75,7 +87,7 @@
         'use strict';
         a.a(e, async (e, r) => {
           try {
-            a.d(t, { EJ: () => i, bT: () => l, f5: () => n });
+            a.d(t, { EJ: () => i, bT: () => n, f5: () => l });
             var s = a(9943),
               c = e([s]);
             s = (c.then ? (await c)() : c)[0];
@@ -97,7 +109,7 @@
                   }),
                 }),
               }),
-              { useGetPlanetByIdQuery: l, useSearchPlanetQuery: n } = i;
+              { useGetPlanetByIdQuery: n, useSearchPlanetQuery: l } = i;
             r();
           } catch (e) {
             r(e);
@@ -108,7 +120,7 @@
         'use strict';
         a.a(e, async (e, r) => {
           try {
-            a.d(t, { Hf: () => n, hp: () => i });
+            a.d(t, { Hf: () => l, hp: () => i });
             var s = a(3258),
               c = e([s]);
             s = (c.then ? (await c)() : c)[0];
@@ -127,7 +139,7 @@
                   },
                 },
               }),
-              { changeDetails: l, changeItemId: n } = i.actions;
+              { changeDetails: n, changeItemId: l } = i.actions;
             r();
           } catch (e) {
             r(e);
@@ -151,7 +163,7 @@
                   },
                 },
               }),
-              { switchLoading: l } = i.actions;
+              { switchLoading: n } = i.actions;
             r();
           } catch (e) {
             r(e);
@@ -162,12 +174,12 @@
         'use strict';
         a.a(e, async (e, r) => {
           try {
-            a.d(t, { Y: () => l });
+            a.d(t, { Y: () => n });
             var s = a(5648),
               c = a(5259),
               i = e([c]);
             c = (i.then ? (await i)() : i)[0];
-            let l = (0, s.createWrapper)(() => c.h);
+            let n = (0, s.createWrapper)(() => c.h);
             r();
           } catch (e) {
             r(e);
@@ -178,7 +190,7 @@
         'use strict';
         a.a(e, async (e, r) => {
           try {
-            a.d(t, { IT: () => u, VE: () => i, fz: () => n, o_: () => l });
+            a.d(t, { IT: () => u, VE: () => i, fz: () => l, o_: () => n });
             var s = a(3258),
               c = e([s]);
             s = (c.then ? (await c)() : c)[0];
@@ -201,8 +213,8 @@
                 },
               }),
               {
-                switchPage: l,
-                nextPage: n,
+                switchPage: n,
+                nextPage: l,
                 previousPage: u,
                 setTotalPages: d,
               } = i.actions;
@@ -229,7 +241,7 @@
                   },
                 },
               }),
-              { setResults: l } = i.actions;
+              { setResults: n } = i.actions;
             r();
           } catch (e) {
             r(e);
@@ -240,7 +252,7 @@
         'use strict';
         a.a(e, async (e, r) => {
           try {
-            a.d(t, { BF: () => l, ZP: () => d, cl: () => n, hF: () => u });
+            a.d(t, { BF: () => n, ZP: () => d, cl: () => l, hF: () => u });
             var s = a(3258),
               c = e([s]);
             s = (c.then ? (await c)() : c)[0];
@@ -261,7 +273,7 @@
                   },
                 },
               }),
-              { check: l, uncheck: n, unselect: u } = i.actions,
+              { check: n, uncheck: l, unselect: u } = i.actions,
               d = i.reducer;
             r();
           } catch (e) {
@@ -277,17 +289,17 @@
             var s = a(3258),
               c = a(7960),
               i = a(8011),
-              l = a(4996),
-              n = a(2598),
+              n = a(4996),
+              l = a(2598),
               u = a(7010),
               d = a(5306),
-              o = e([s, c, i, l, n, u, d]);
-            [s, c, i, l, n, u, d] = o.then ? (await o)() : o;
+              o = e([s, c, i, n, l, u, d]);
+            [s, c, i, n, l, u, d] = o.then ? (await o)() : o;
             let h = (0, s.configureStore)({
               reducer: {
                 selectedItems: c.ZP,
-                isLoading: l.B.reducer,
-                pageSlice: n.VE.reducer,
+                isLoading: n.B.reducer,
+                pageSlice: l.VE.reducer,
                 currentDetails: u.hp.reducer,
                 [i.EJ.reducerPath]: i.EJ.reducer,
                 searchResults: d.Q.reducer,
@@ -304,6 +316,10 @@
       5648: (e) => {
         'use strict';
         e.exports = require('next-redux-wrapper');
+      },
+      968: (e) => {
+        'use strict';
+        e.exports = require('next/head');
       },
       6689: (e) => {
         'use strict';
