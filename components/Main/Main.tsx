@@ -24,9 +24,6 @@ export function Main(props: MainProps) {
   const isLoading = useSelector(
     (state: RootState) => state.isLoading.isLoading,
   );
-  // const searchResultsFromRedux = useSelector(
-  //   (state: RootState) => state.searchResults.results,
-  // );
 
   if (!serversideData || isLoading) {
     return (

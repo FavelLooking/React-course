@@ -2,7 +2,6 @@ import styles from './Details.module.scss';
 import stylesButton from '../Button/Button.module.scss';
 import { useClicked } from '../../src/context/useClicked';
 import { useTheme } from './../../src/context/useTheme';
-import { useGetPlanetByIdQuery } from '../../src/services/planets';
 import { Loader } from '../Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';

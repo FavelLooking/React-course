@@ -39,7 +39,7 @@ describe('Flyout component', () => {
     expect(screen.getByText(/Download/i)).toBeInTheDocument();
   });
 
-  it('Unselect All button dispatches unselect action', () => {
+  it('Use unselect all button', () => {
     render(
       <Provider store={store}>
         <Flyout />
@@ -63,10 +63,5 @@ describe('Flyout component', () => {
     fireEvent.click(downloadButton);
 
     expect(global.URL.createObjectURL).toHaveBeenCalled();
-  });
-
-  //! to Delete
-  it('placeholder test', () => {
-    expect(true).toBeTruthy;
   });
 });
