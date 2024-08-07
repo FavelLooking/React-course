@@ -1,47 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './Header.module.scss';
 import stylesButton from '../Button/Button.module.scss';
-import { useSearchQuery } from '../../src/hooks/useSearch';
 import { useTheme } from './../../src/context/useTheme';
-import { useSearchPlanetQuery } from '../../src/services/planets';
-import { RootState } from '../../src/store/store';
 import { switchLoading } from '../../src/store/loadingSlice';
-import { setTotalPages, switchPage } from '../../src/store/pageSlice';
+import { setTotalPages } from '../../src/store/pageSlice';
 import { setResults } from '../../src/store/searchResults';
 import { useRouter } from 'next/router';
+import { ApiResponse } from '../../src/interfaces/interfaces';
 
-export function Header() {
+interface HeaderProps {
+  serversideData: ApiResponse;
+}
+
+export const Header: React.FC<HeaderProps> = ({ serversideData }) => {
   const [errorOccured, setErrorOccured] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  const page = useSelector((state: RootState) => state.pageSlice.page);
-
-  const [searchQuery, setSearchQuery] = useSearchQuery('');
   const { isStandartTheme, changeTheme } = useTheme();
-  const { data, error, isFetching } = useSearchPlanetQuery({
-    searchItem: searchQuery ?? '',
-    currentPage: page,
-  });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSearchQuery(inputValue);
-    dispatch(switchPage(1));
-    router.push('/search/1');
-  };
-
-  useEffect(() => {
-    if (data) {
-      dispatch(setTotalPages(data.page.totalPages));
-      dispatch(setResults(data));
+    setIsLoading(true);
+    try {
+      await router.push(`/search/1?q=${encodeURIComponent(inputValue)}`);
+    } finally {
+      setIsLoading(false);
     }
-  }, [data, dispatch]);
+  };
+  useEffect(() => {
+    if (serversideData) {
+      dispatch(setTotalPages(serversideData.page.totalPages));
+      dispatch(setResults(serversideData));
+    }
+  }, [serversideData, dispatch]);
 
   useEffect(() => {
-    dispatch(switchLoading(isFetching));
-  }, [isFetching, dispatch]);
+    dispatch(switchLoading(isLoading));
+  }, [isLoading, dispatch]);
 
   const switchTheme = () => {
     changeTheme();
@@ -51,7 +49,7 @@ export function Header() {
     setErrorOccured(!errorOccured);
   };
 
-  if (errorOccured || error) {
+  if (errorOccured) {
     return <div>An error occurred. Please try again later.</div>;
   }
 
@@ -82,4 +80,4 @@ export function Header() {
       </button>
     </form>
   );
-}
+};

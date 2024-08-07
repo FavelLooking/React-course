@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ApiResponse } from 'src/interfaces/interfaces';
+import { ApiResponse } from '../interfaces/interfaces';
 
 export interface SearchResultsState {
   results: ApiResponse | null;

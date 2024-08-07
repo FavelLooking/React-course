@@ -1,2 +1,0 @@
-self.__PRERENDER_MANIFEST =
-  '{"version":4,"routes":{},"dynamicRoutes":{"/search/[page]":{"routeRegex":"^/search/([^/]+?)(?:/)?$","dataRoute":"/_next/data/8ibSqEbWvDLxvoWLV9iQ0/search/[page].json","fallback":null,"dataRouteRegex":"^/_next/data/8ibSqEbWvDLxvoWLV9iQ0/search/([^/]+?)\\\\.json$"}},"notFoundRoutes":[],"preview":{"previewModeId":"process.env.__NEXT_PREVIEW_MODE_ID","previewModeSigningKey":"process.env.__NEXT_PREVIEW_MODE_SIGNING_KEY","previewModeEncryptionKey":"process.env.__NEXT_PREVIEW_MODE_ENCRYPTION_KEY"}}';

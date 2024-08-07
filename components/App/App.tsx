@@ -33,7 +33,7 @@ const App: React.FC<AppProps> = ({ serversideData }) => {
 
   React.useEffect(() => {
     if (!page) {
-      router.push('/search/1');
+      router.push('/search/1?q=');
       return;
     }
 
@@ -57,7 +57,7 @@ const App: React.FC<AppProps> = ({ serversideData }) => {
 
   const handleCloseDetails = () => {
     dispatch(changeItemId(''));
-    router.push(`/search/${currentPage}`);
+    router.push(`/search/${currentPage}?q=`);
   };
 
   return (
@@ -66,7 +66,7 @@ const App: React.FC<AppProps> = ({ serversideData }) => {
       data-testid="app-wrapper"
     >
       <ErrorBoundary>
-        <Header />
+        <Header serversideData={serversideData} />
       </ErrorBoundary>
       <div className={styles['main-content']} data-testid="main-content">
         <Main
@@ -74,7 +74,12 @@ const App: React.FC<AppProps> = ({ serversideData }) => {
           hideDetails={handleCloseDetails}
           serversideData={serversideData}
         />
-        {item && <Details onClose={handleCloseDetails} />}
+        {item && (
+          <Details
+            onClose={handleCloseDetails}
+            serversideData={serversideData}
+          />
+        )}
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { nextPage, previousPage } from '../../src/store/pageSlice';
 import { RootState } from '../../src/store/store';
 import React from 'react';
 import { useRouter } from 'next/router';
+import { switchLoading } from '../../src/store/loadingSlice';
 
 export function Pagination() {
   const { clicked } = useClicked();
@@ -18,6 +19,16 @@ export function Pagination() {
   );
   const router = useRouter();
 
+  const handleNavigation = async (page: number) => {
+    const query = router.query.q
+      ? `?q=${encodeURIComponent(router.query.q as string)}`
+      : '?q=';
+    const newUrl = `/search/${page}${query}`;
+    dispatch(switchLoading(true));
+    await router.push(newUrl);
+    dispatch(switchLoading(false));
+  };
+
   return (
     <div
       className={`${styles.pagination} ${!isStandartTheme ? styles.alternative : ''}`}
@@ -26,7 +37,7 @@ export function Pagination() {
         className={stylesButton.button}
         onClick={() => {
           dispatch(previousPage());
-          router.push(`/search/${currentPage - 1}`);
+          handleNavigation(currentPage - 1);
         }}
         disabled={clicked || currentPage === 1}
       >
@@ -39,7 +50,7 @@ export function Pagination() {
         className={stylesButton.button}
         onClick={() => {
           dispatch(nextPage());
-          router.push(`/search/${currentPage + 1}`);
+          handleNavigation(currentPage + 1);
         }}
         disabled={clicked || currentPage === totalPages}
       >

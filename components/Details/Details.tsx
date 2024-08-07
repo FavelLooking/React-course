@@ -5,16 +5,18 @@ import { useTheme } from './../../src/context/useTheme';
 import { useGetPlanetByIdQuery } from '../../src/services/planets';
 import { Loader } from '../Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { changeDetails } from '../../src/store/currentDetails';
 import { RootState } from '../../src/store/store';
 import React from 'react';
+import { ApiResponse } from '../../src/interfaces/interfaces';
 
 interface DetailsProps {
   onClose: () => void;
+  serversideData: ApiResponse;
 }
 
-export function Details({ onClose }: DetailsProps) {
+export function Details({ onClose, serversideData }: DetailsProps) {
   const item = useSelector(
     (state: RootState) => state.currentDetails.currentId,
   );
@@ -23,23 +25,30 @@ export function Details({ onClose }: DetailsProps) {
   );
   const { resetClicked } = useClicked();
   const { isStandartTheme } = useTheme();
-  const { data, error, isLoading } = useGetPlanetByIdQuery(item);
+  const [isLoading, setIsLoading] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (data) {
-      dispatch(
-        changeDetails({
-          name: data.astronomicalObject.name,
-          location: data.astronomicalObject.location
-            ? data.astronomicalObject.location.name
-            : 'Unknown location',
-          type: data.astronomicalObject.astronomicalObjectType,
-        }),
+    if (serversideData && serversideData.astronomicalObjects && item) {
+      const selectedObject = serversideData.astronomicalObjects.find(
+        (obj) => obj.uid === item,
       );
+
+      if (selectedObject) {
+        dispatch(
+          changeDetails({
+            name: selectedObject.name,
+            location: selectedObject.location
+              ? selectedObject.location.name
+              : 'Unknown location',
+            type: selectedObject.astronomicalObjectType,
+          }),
+        );
+        setIsLoading(false);
+      }
     }
-  }, [item, data, dispatch]);
+  }, [item, serversideData, dispatch]);
 
   const handleOnClose = () => {
     onClose();
@@ -54,11 +63,7 @@ export function Details({ onClose }: DetailsProps) {
     );
   }
 
-  if (error) {
-    return <div>Error</div>;
-  }
-
-  if (!data) {
+  if (!serversideData) {
     return null;
   }
 
