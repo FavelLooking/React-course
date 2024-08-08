@@ -8,7 +8,7 @@ import React from 'react';
 
 const mockStore = configureStore([]);
 
-global.URL.createObjectURL = vi.fn(() => 'blob:http://localhost:3000/abc123');
+global.URL.createObjectURL = vi.fn(() => 'blob:http://localhost:3000/test');
 global.URL.revokeObjectURL = vi.fn();
 
 describe('Flyout component', () => {

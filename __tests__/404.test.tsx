@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { NotFoundPage } from './404';
+import { NotFoundPage } from '../pages/404';
 import { describe, expect, it } from 'vitest';
 import React from 'react';
 
