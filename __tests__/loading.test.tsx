@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import Loading from './loading';
+import Loading from '../pages/loading';
 import React from 'react';
 
 vi.mock('../components/Loader/Loader', () => ({
