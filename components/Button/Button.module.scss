@@ -1,0 +1,27 @@
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.1em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: MyFontBold;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  min-width: 12rem;
+}
+.button:hover {
+  background-color: rgba(250, 235, 215, 0.596);
+  transition: 0.3s;
+  letter-spacing: 0.1rem;
+}
+.button:active {
+  outline: 3px solid #1a1a1a28;
+  transition: 0.5s;
+}
+
+@media (prefers-color-scheme: light) {
+  .button {
+    background-color: rgba(250, 235, 215, 0.363);
+  }
+}
