@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 60,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000229659",
+          "name": "Dewa",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000165927",
+          "name": "Dikon Alpha",
+          "astronomicalObjectType": "STAR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000020768",
+          "name": "Dimorus",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000026768",
+          "name": "Dinaal",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000229697",
+          "name": "Dinasia",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009875",
+          "name": "Diomedian system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000226286",
+          "name": "Doctari Alpha",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009322",
+          "name": "Dominion space",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000002016", "name": "Gamma Quadrant" }
+        },
+        {
+          "uid": "ASMA0000288040",
+          "name": "Donatra sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000264641",
+          "name": "Donatu",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

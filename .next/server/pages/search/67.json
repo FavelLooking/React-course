@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 66,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000013714",
+          "name": "Elba II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000229699",
+          "name": "Elora",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000059483",
+          "name": "Elysia",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000024803", "name": "Delta Triangle" }
+        },
+        {
+          "uid": "ASMA0000014950",
+          "name": "Emila II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011000",
+          "name": "Eminiar",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000012317", "name": "NGC 321" }
+        },
+        {
+          "uid": "ASMA0000012240",
+          "name": "Eminiar VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000011000", "name": "Eminiar" }
+        },
+        {
+          "uid": "ASMA0000009394",
+          "name": "Enara Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010362",
+          "name": "Endicor system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000260047",
+          "name": "Endicronimas V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000174420",
+          "name": "Enke's Komet",
+          "astronomicalObjectType": "COMET",
+          "location": { "uid": "ASMA0000020577", "name": "Earth" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

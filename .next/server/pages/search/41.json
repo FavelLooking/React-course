@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 40,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000009325",
+          "name": "Callinon VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000009324", "name": "Callinon system" }
+        },
+        {
+          "uid": "ASMA0000009324",
+          "name": "Callinon system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002016", "name": "Gamma Quadrant" }
+        },
+        {
+          "uid": "ASMA0000075571",
+          "name": "Calondia IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000130613",
+          "name": "Cambra system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000050978",
+          "name": "Camor V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000050979", "name": "Camor system" }
+        },
+        {
+          "uid": "ASMA0000050979",
+          "name": "Camor system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000039291",
+          "name": "Campor III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000262939",
+          "name": "Camus",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011025",
+          "name": "Camus II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000262939", "name": "Camus" }
+        },
+        {
+          "uid": "ASMA0000166388",
+          "name": "Cancer",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

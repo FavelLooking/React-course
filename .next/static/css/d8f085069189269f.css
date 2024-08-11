@@ -1,0 +1,54 @@
+:root {
+  font-family: MyFont, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: hsla(0, 0%, 100%, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: MyFont;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #fff;
+  }
+}
+.error {
+  font-family: MyFontBold;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+@font-face {
+  font-family: MyFont;
+  src: url(/_next/static/media/D3Euronism.eed4b5ce.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: MyAlternativeFont;
+  src: url(/_next/static/media/D3Radicalism-DOmm.15e5812d.ttf)
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: MyFontBold;
+  src: url(/_next/static/media/D3Euronism_b.a75af1f3.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

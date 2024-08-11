@@ -1,0 +1,85 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 81,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000022661",
+          "name": "Gamma II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000009010", "name": "Gamma system" }
+        },
+        {
+          "uid": "ASMA0000288942",
+          "name": "Gamma Ophiuchi",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000051555",
+          "name": "Gamma Orionis",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000002016",
+          "name": "Gamma Quadrant",
+          "astronomicalObjectType": "QUADRANT",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000286138",
+          "name": "Gamma Serpentis",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000012884", "name": "Federation space" }
+        },
+        {
+          "uid": "ASMA0000280589",
+          "name": "Gamma Tauri",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000000743",
+          "name": "Gamma Tauri IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000280589", "name": "Gamma Tauri" }
+        },
+        {
+          "uid": "ASMA0000064911",
+          "name": "Gamma Towles II",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000189988",
+          "name": "Gamma Trianguli IV",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000024817",
+            "name": "Gamma Trianguli sector"
+          }
+        },
+        {
+          "uid": "ASMA0000018923",
+          "name": "Gamma Trianguli VI",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000024817",
+            "name": "Gamma Trianguli sector"
+          }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

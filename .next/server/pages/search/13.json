@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 12,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000000389",
+          "name": "Andoria",
+          "astronomicalObjectType": "MOON",
+          "location": { "uid": "ASMA0000028722", "name": "Andorian system" }
+        },
+        {
+          "uid": "ASMA0000180337",
+          "name": "Andoria Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000273605",
+          "name": "Andorian sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000239410",
+          "name": "Andorian space",
+          "astronomicalObjectType": "REGION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000028722",
+          "name": "Andorian system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000287785",
+          "name": "Andreus V",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000107155",
+          "name": "Andromeda",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": { "uid": "ASMA0000011323", "name": "Andromeda Galaxy" }
+        },
+        {
+          "uid": "ASMA0000011323",
+          "name": "Andromeda Galaxy",
+          "astronomicalObjectType": "GALAXY",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000050534",
+          "name": "Andros III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000227853",
+          "name": "Aneto system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

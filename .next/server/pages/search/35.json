@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 34,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000031107",
+          "name": "Bolian sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000211435",
+          "name": "Bootes III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000267904",
+          "name": "Bopak",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000009685", "name": "Bopak system" }
+        },
+        {
+          "uid": "ASMA0000009684",
+          "name": "Bopak III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000009685", "name": "Bopak system" }
+        },
+        {
+          "uid": "ASMA0000009685",
+          "name": "Bopak system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002016", "name": "Gamma Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010851",
+          "name": "Boraal II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000072042",
+          "name": "Boradis III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000031510", "name": "Boradis system" }
+        },
+        {
+          "uid": "ASMA0000031510",
+          "name": "Boradis system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000047444",
+          "name": "Boranis III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000010653",
+          "name": "Borderland",
+          "astronomicalObjectType": "REGION",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

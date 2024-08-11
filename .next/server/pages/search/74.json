@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 73,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000246319",
+          "name": "Ferengi Territory",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000000667",
+          "name": "Ferenginar",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000267753", "name": "Ferenginar system" }
+        },
+        {
+          "uid": "ASMA0000267753",
+          "name": "Ferenginar system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000246319", "name": "Ferengi Territory" }
+        },
+        {
+          "uid": "ASMA0000166029",
+          "name": "Ferris VI",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000281803",
+          "name": "Fesarius",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000005231",
+          "name": "Ficus sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000009404",
+          "name": "Fima system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000029983",
+          "name": "Fina Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000281025",
+          "name": "Finibus I",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000280989", "name": "Finibus system" }
+        },
+        {
+          "uid": "ASMA0000281026",
+          "name": "Finibus II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000280989", "name": "Finibus system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

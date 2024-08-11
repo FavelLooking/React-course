@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 46,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000004583",
+          "name": "Ceti Alpha star system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000189955", "name": "Sector 25712" }
+        },
+        {
+          "uid": "ASMA0000166377",
+          "name": "Cetus",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000010065",
+          "name": "Chalna",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000281177",
+          "name": "Chaltok",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000005967",
+          "name": "Chaltok IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000281177", "name": "Chaltok" }
+        },
+        {
+          "uid": "ASMA0000024964",
+          "name": "Chamra Vortex",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000046394", "name": "Rakhari sector" }
+        },
+        {
+          "uid": "ASMA0000045475",
+          "name": "Chandra V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000006942",
+          "name": "Chaotic space",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000015035",
+          "name": "Chaya VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000027064",
+          "name": "Cheron",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000027057", "name": "Coalsack Nebula" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

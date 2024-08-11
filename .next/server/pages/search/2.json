@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 1,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000288988",
+          "name": "39 Serpentis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000001073",
+          "name": "40 Eridani A",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000229674", "name": "Vulcan system" }
+        },
+        {
+          "uid": "ASMA0000068435",
+          "name": "47 Tucanae",
+          "astronomicalObjectType": "CLUSTER",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000288983",
+          "name": "58 Ophiuchi",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000052604",
+          "name": "61 Cygni",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000032818",
+          "name": "61 Ursae Majoris",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000264532",
+          "name": "81 Cancri",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000015188",
+          "name": "892-IV",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000018602", "name": "System 892" }
+        },
+        {
+          "uid": "ASMA0000248899",
+          "name": "99 Pegasi",
+          "astronomicalObjectType": "STAR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000003232",
+          "name": "AR-558",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000091061", "name": "Chin'toka system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 47,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000091061",
+          "name": "Chin'toka system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000057031",
+          "name": "Chronister II",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000041535",
+          "name": "Cirrus IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000051755",
+          "name": "Clarius system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010378",
+          "name": "Clarus",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000031799",
+          "name": "Cleon system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000008551", "name": "Phoenix Cluster" }
+        },
+        {
+          "uid": "ASMA0000070742",
+          "name": "Clevari system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000027057",
+          "name": "Coalsack Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000120333",
+          "name": "Cole's Star",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011054",
+          "name": "Coltar IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

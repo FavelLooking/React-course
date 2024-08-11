@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: './dist',
+  distDir: 'dist',
   images: {
     loader: 'custom',
     loaderFile: 'pages/loading.tsx',

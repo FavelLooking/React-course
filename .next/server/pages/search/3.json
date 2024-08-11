@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 2,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000093814",
+          "name": "Aaamazzara",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000274753",
+          "name": "Abronian homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000219455",
+          "name": "Acamar",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000019864", "name": "Acamar system" }
+        },
+        {
+          "uid": "ASMA0000009835",
+          "name": "Acamar III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000019864", "name": "Acamar system" }
+        },
+        {
+          "uid": "ASMA0000019864",
+          "name": "Acamar system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000264533",
+          "name": "Achernar",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000014071",
+          "name": "Achrady VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000273602",
+          "name": "Actium sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000007891",
+          "name": "Adarak Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000228528",
+          "name": "Adelphous",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

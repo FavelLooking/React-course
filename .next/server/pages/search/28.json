@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 27,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000050269",
+          "name": "Beta 071",
+          "astronomicalObjectType": "ASTEROID",
+          "location": { "uid": "ASMA0000006563", "name": "Devolin system" }
+        },
+        {
+          "uid": "ASMA0000049863",
+          "name": "Beta Agni II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000165803", "name": "Beta Agni system" }
+        },
+        {
+          "uid": "ASMA0000165803",
+          "name": "Beta Agni system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000001056", "name": "Sector 30" }
+        },
+        {
+          "uid": "ASMA0000033222",
+          "name": "Beta Antares IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000052482",
+          "name": "Beta Aquilae II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010809",
+          "name": "Beta Aurigae binary system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000193493",
+          "name": "Beta Berman I",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000006953",
+          "name": "Beta Canopus",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000072019",
+          "name": "Beta Cassius",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000289043",
+          "name": "Beta Circini",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

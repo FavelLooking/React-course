@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 77,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000011917",
+          "name": "Galactic Cluster 8",
+          "astronomicalObjectType": "BORG_SPATIAL_DESIGNATION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000007355",
+          "name": "Galactic barrier",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000011702",
+          "name": "Galactic core",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000075567",
+          "name": "Galador II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000258174",
+          "name": "Galar system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000269453",
+          "name": "Galardon",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000258174", "name": "Galar system" }
+        },
+        {
+          "uid": "ASMA0000171847",
+          "name": "Galaxy Quadrant YX-12-114",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000012086", "name": "Sector Z-6" }
+        },
+        {
+          "uid": "ASMA0000010095",
+          "name": "Galdonterre",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000007660",
+          "name": "Galen IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000280252", "name": "Galen system" }
+        },
+        {
+          "uid": "ASMA0000280252",
+          "name": "Galen system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 69,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000010546",
+          "name": "Epsilon Nel system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000289042",
+          "name": "Epsilon Pavonis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000289024",
+          "name": "Epsilon Phoenicis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012194",
+          "name": "Epsilon Pulsar Cluster",
+          "astronomicalObjectType": "CLUSTER",
+          "location": { "uid": "ASMA0000012193", "name": "Epsilon IX sector" }
+        },
+        {
+          "uid": "ASMA0000287287",
+          "name": "Epsilon Serpentis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010366",
+          "name": "Epsilon Silar system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000056936",
+          "name": "Epsilon West IV",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000193483",
+          "name": "Epsilon Wiltz IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010396",
+          "name": "Erabus Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002016", "name": "Gamma Quadrant" }
+        },
+        {
+          "uid": "ASMA0000282016",
+          "name": "Erb'oh",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000243796", "name": "Kaminar system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 7,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000012103",
+          "name": "Alpha Carinae II",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000010991", "name": "Canopus" }
+        },
+        {
+          "uid": "ASMA0000189983",
+          "name": "Alpha Carinae V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000010991", "name": "Canopus" }
+        },
+        {
+          "uid": "ASMA0000001049",
+          "name": "Alpha Centauri",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000230202",
+          "name": "Alpha Centauri",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000001049", "name": "Alpha Centauri" }
+        },
+        {
+          "uid": "ASMA0000287247",
+          "name": "Alpha Circini",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000189984",
+          "name": "Alpha Cygnus IX",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000174393",
+          "name": "Alpha Delphi IX",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000252658",
+          "name": "Alpha Doradus system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000064910",
+          "name": "Alpha Drapanas",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000065737",
+          "name": "Alpha Echevarria IV",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

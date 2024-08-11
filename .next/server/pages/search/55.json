@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 54,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000016877",
+          "name": "Decos Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012977",
+          "name": "Dedestris",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000168886",
+          "name": "Deimos",
+          "astronomicalObjectType": "MOON",
+          "location": { "uid": "ASMA0000000683", "name": "Mars" }
+        },
+        {
+          "uid": "ASMA0000012642",
+          "name": "Deinonychus VII",
+          "astronomicalObjectType": "GAS_GIANT_PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000033788",
+          "name": "Dekendi III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012746",
+          "name": "Delb II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000023648",
+          "name": "Delinia II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000080071",
+          "name": "Delios VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000007458",
+          "name": "Delos IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000211665",
+          "name": "Delos sun",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000020049", "name": "Delos system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

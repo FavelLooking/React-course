@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 42,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000009295",
+          "name": "Capella IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000010998", "name": "Capella" }
+        },
+        {
+          "uid": "ASMA0000166182",
+          "name": "Cardassia I",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000520", "name": "Cardassian system" }
+        },
+        {
+          "uid": "ASMA0000003679",
+          "name": "Cardassia III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000520", "name": "Cardassian system" }
+        },
+        {
+          "uid": "ASMA0000003678",
+          "name": "Cardassia IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000520", "name": "Cardassian system" }
+        },
+        {
+          "uid": "ASMA0000000519",
+          "name": "Cardassia Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000520", "name": "Cardassian system" }
+        },
+        {
+          "uid": "ASMA0000003677",
+          "name": "Cardassia V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000520", "name": "Cardassian system" }
+        },
+        {
+          "uid": "ASMA0000262931",
+          "name": "Cardassian Zone",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000100091",
+          "name": "Cardassian sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000162359",
+          "name": "Cardassian space",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000081104",
+          "name": "Cardassian sun",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000000520", "name": "Cardassian system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

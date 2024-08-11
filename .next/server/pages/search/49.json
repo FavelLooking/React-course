@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 48,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000166384",
+          "name": "Columba",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000142490",
+          "name": "Component 37329",
+          "astronomicalObjectType": "COMET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000064903",
+          "name": "Coopersworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000253614",
+          "name": "Coppelius",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000253300", "name": "Ghulion system" }
+        },
+        {
+          "uid": "ASMA0000262822",
+          "name": "Cor Caroli",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012476",
+          "name": "Cor Caroli V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000262822", "name": "Cor Caroli" }
+        },
+        {
+          "uid": "ASMA0000008471",
+          "name": "Cordannas system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000003564",
+          "name": "Coridan",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000009972", "name": "Coridan system" }
+        },
+        {
+          "uid": "ASMA0000229678",
+          "name": "Coridan",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000009972", "name": "Coridan system" }
+        },
+        {
+          "uid": "ASMA0000009972",
+          "name": "Coridan system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 26,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000003565",
+          "name": "Benzar",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000010368", "name": "Benzite system" }
+        },
+        {
+          "uid": "ASMA0000010368",
+          "name": "Benzite system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011024",
+          "name": "Berengaria VII",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000019029", "name": "Berengarius system" }
+        },
+        {
+          "uid": "ASMA0000019029",
+          "name": "Berengarius system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000120912",
+          "name": "Bergman's Planet",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000189528",
+          "name": "Bernay Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000196192",
+          "name": "Bersallin sun",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000167788", "name": "Bersallis system" }
+        },
+        {
+          "uid": "ASMA0000023379",
+          "name": "Bersallis III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000167788", "name": "Bersallis system" }
+        },
+        {
+          "uid": "ASMA0000167788",
+          "name": "Bersallis system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000093222",
+          "name": "Berussian Cluster",
+          "astronomicalObjectType": "CLUSTER",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

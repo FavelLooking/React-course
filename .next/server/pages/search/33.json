@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 32,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000264588",
+          "name": "Beta Zeta",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000273607",
+          "name": "Beta sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000189793",
+          "name": "Beta'Elan Minor",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000000699",
+          "name": "Betazed",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000264588", "name": "Beta Zeta" }
+        },
+        {
+          "uid": "ASMA0000257453",
+          "name": "Betazoid space",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000050814",
+          "name": "Betelgeuse",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000023222",
+          "name": "Beth Delta I",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000008453",
+          "name": "Betreka Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000168956",
+          "name": "Bezride",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000011006", "name": "Pallas 14 system" }
+        },
+        {
+          "uid": "ASMA0000177698",
+          "name": "Biela's Komet",
+          "astronomicalObjectType": "COMET",
+          "location": { "uid": "ASMA0000020577", "name": "Earth" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

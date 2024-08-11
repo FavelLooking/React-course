@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 94,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000288961",
+          "name": "Heathercrist",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000072490",
+          "name": "Hegh'ta",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012332",
+          "name": "Hekaras Corridor",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000050414", "name": "Hekaras sector" }
+        },
+        {
+          "uid": "ASMA0000012361",
+          "name": "Hekaras II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000050414", "name": "Hekaras sector" }
+        },
+        {
+          "uid": "ASMA0000050414",
+          "name": "Hekaras sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000008459",
+          "name": "Helaspont Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000025016",
+          "name": "Hemikek",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025017", "name": "Hemikek system" }
+        },
+        {
+          "uid": "ASMA0000025015",
+          "name": "Hemikek IV",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000025017", "name": "Hemikek system" }
+        },
+        {
+          "uid": "ASMA0000025017",
+          "name": "Hemikek system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000168868",
+          "name": "Hercules",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

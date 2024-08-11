@@ -1,0 +1,82 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 84,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000024563",
+          "name": "Gault",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000144927",
+          "name": "Gavara system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002016", "name": "Gamma Quadrant" }
+        },
+        {
+          "uid": "ASMA0000013191",
+          "name": "Gedi Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000258809",
+          "name": "Gelrak V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000233557",
+          "name": "Gem's planet",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000011981",
+            "name": "Minarian star system"
+          }
+        },
+        {
+          "uid": "ASMA0000008601",
+          "name": "Gema IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000072105", "name": "Gema system" }
+        },
+        {
+          "uid": "ASMA0000072105",
+          "name": "Gema system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000014072",
+          "name": "Gemaris V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000067629",
+          "name": "Gemini",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000027046",
+          "name": "Gemulon V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

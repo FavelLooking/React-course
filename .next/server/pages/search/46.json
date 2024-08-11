@@ -1,0 +1,91 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 45,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000035584",
+          "name": "Centre Minor",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000020418",
+          "name": "Cepheus",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011687",
+          "name": "Cerberus",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000037545", "name": "Cerberus system" }
+        },
+        {
+          "uid": "ASMA0000037544",
+          "name": "Cerberus II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000037545", "name": "Cerberus system" }
+        },
+        {
+          "uid": "ASMA0000037545",
+          "name": "Cerberus system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000249081",
+          "name": "Cestus III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000004603",
+          "name": "Ceti Alpha",
+          "astronomicalObjectType": "STAR",
+          "location": {
+            "uid": "ASMA0000004583",
+            "name": "Ceti Alpha star system"
+          }
+        },
+        {
+          "uid": "ASMA0000271509",
+          "name": "Ceti Alpha IV",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000004583",
+            "name": "Ceti Alpha star system"
+          }
+        },
+        {
+          "uid": "ASMA0000001114",
+          "name": "Ceti Alpha V",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": {
+            "uid": "ASMA0000004583",
+            "name": "Ceti Alpha star system"
+          }
+        },
+        {
+          "uid": "ASMA0000005830",
+          "name": "Ceti Alpha VI",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000004583",
+            "name": "Ceti Alpha star system"
+          }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

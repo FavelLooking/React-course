@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 57,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000280572",
+          "name": "Demilitarized Zone",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000285246",
+          "name": "Denaxi",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000001921",
+          "name": "Deneb",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000264562",
+          "name": "Deneb",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000007550",
+          "name": "Deneb II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000001921", "name": "Deneb" }
+        },
+        {
+          "uid": "ASMA0000059717",
+          "name": "Deneb IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000001921", "name": "Deneb" }
+        },
+        {
+          "uid": "ASMA0000001204",
+          "name": "Deneb V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000001921", "name": "Deneb" }
+        },
+        {
+          "uid": "ASMA0000047466",
+          "name": "Deneb XX",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000001921", "name": "Deneb" }
+        },
+        {
+          "uid": "ASMA0000013088",
+          "name": "Deneva",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000092532", "name": "Deneva system" }
+        },
+        {
+          "uid": "ASMA0000092532",
+          "name": "Deneva system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

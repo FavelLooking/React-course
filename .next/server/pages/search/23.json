@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 22,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000168164",
+          "name": "Bajor IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000168166",
+          "name": "Bajor IX",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000107791",
+          "name": "Bajor V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000168165",
+          "name": "Bajor VI",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000057576",
+          "name": "Bajor VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000009339",
+          "name": "Bajor VIII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000168167",
+          "name": "Bajor X",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000168168",
+          "name": "Bajor XII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000168170",
+          "name": "Bajor XIII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        },
+        {
+          "uid": "ASMA0000168171",
+          "name": "Bajor XIV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000708", "name": "Bajoran system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

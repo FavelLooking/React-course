@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 91,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000042306",
+          "name": "Grid 982",
+          "astronomicalObjectType": "BORG_SPATIAL_DESIGNATION",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000040426",
+          "name": "Grid 986",
+          "astronomicalObjectType": "BORG_SPATIAL_DESIGNATION",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000052605",
+          "name": "Groombridge 34",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000240091",
+          "name": "Guardian of Forever's planet",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000016229",
+          "name": "Guernica system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000120911",
+          "name": "Gullory Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000069771",
+          "name": "Gyrannan system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000229626",
+          "name": "H'atoria",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000267517", "name": "H'atoria system" }
+        },
+        {
+          "uid": "ASMA0000267517",
+          "name": "H'atoria system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000044660",
+          "name": "Ha'Dara",
+          "astronomicalObjectType": "Y_CLASS_PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 10,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000274106",
+          "name": "Alshain IV",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000012213",
+          "name": "Altair III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000013241", "name": "Altair system" }
+        },
+        {
+          "uid": "ASMA0000020884",
+          "name": "Altair IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000013241", "name": "Altair system" }
+        },
+        {
+          "uid": "ASMA0000011020",
+          "name": "Altair VI",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000013241", "name": "Altair system" }
+        },
+        {
+          "uid": "ASMA0000013241",
+          "name": "Altair system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000022852", "name": "Sector 9" }
+        },
+        {
+          "uid": "ASMA0000210680",
+          "name": "Altamid",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000234848", "name": "Altamid system" }
+        },
+        {
+          "uid": "ASMA0000234848",
+          "name": "Altamid system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000210817", "name": "Necro Cloud" }
+        },
+        {
+          "uid": "ASMA0000007451",
+          "name": "Alture VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000170868",
+          "name": "Alvacorn Major",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000008458",
+          "name": "Alwanir Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 95,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000120324",
+          "name": "Hershman's Star",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000280694",
+          "name": "Hetemit IX",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000046966",
+          "name": "Heva VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000261220",
+          "name": "Hima",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000243811",
+          "name": "Hindmar",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000243796", "name": "Kaminar system" }
+        },
+        {
+          "uid": "ASMA0000273750",
+          "name": "Hirogen star system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000015950",
+          "name": "Hispaniola Minor",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000120322",
+          "name": "Hodges Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010397",
+          "name": "Hoek IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000008466", "name": "Lantar Nebula" }
+        },
+        {
+          "uid": "ASMA0000011030",
+          "name": "Holberg 917G",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000013028", "name": "Omega system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

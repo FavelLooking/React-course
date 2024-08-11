@@ -1,0 +1,82 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 19,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000012641",
+          "name": "Atalia VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000091992", "name": "Atalia system" }
+        },
+        {
+          "uid": "ASMA0000091992",
+          "name": "Atalia system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000007889",
+          "name": "Atbar Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000287239",
+          "name": "Athan Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000008413",
+          "name": "Athos IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000003156", "name": "Badlands" }
+        },
+        {
+          "uid": "ASMA0000050009",
+          "name": "Atifs IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000022576",
+          "name": "Atlec",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000014987",
+            "name": "Omega Sagitta system"
+          }
+        },
+        {
+          "uid": "ASMA0000049679",
+          "name": "Atrea IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000251122",
+          "name": "Augris' homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000067630",
+          "name": "Auriga",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

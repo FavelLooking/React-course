@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 86,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000287250",
+          "name": "Glintara",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009439",
+          "name": "Glintara sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009720",
+          "name": "Golana",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000070736",
+          "name": "Golos Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000070742", "name": "Clevari system" }
+        },
+        {
+          "uid": "ASMA0000013642",
+          "name": "Gonal IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000068625",
+          "name": "Goralis III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000010032", "name": "Goralis system" }
+        },
+        {
+          "uid": "ASMA0000010032",
+          "name": "Goralis system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000101036",
+          "name": "Gorath",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000229739", "name": "Gorath system" }
+        },
+        {
+          "uid": "ASMA0000229739",
+          "name": "Gorath system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000094379",
+          "name": "Goren system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

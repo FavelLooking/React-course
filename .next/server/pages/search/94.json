@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 93,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000009609",
+          "name": "Hanoran II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000049874",
+          "name": "Hansen's Planet",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000232198",
+          "name": "Harlak",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000118774",
+          "name": "Harod IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000045394",
+          "name": "Harrakis V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000120325",
+          "name": "Harstedt's Planet",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000283597",
+          "name": "Hasparga system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000050522",
+          "name": "Hatarian system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000008457", "name": "Vodrey Nebula" }
+        },
+        {
+          "uid": "ASMA0000065174",
+          "name": "Haven",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000072019", "name": "Beta Cassius" }
+        },
+        {
+          "uid": "ASMA0000010375",
+          "name": "Hayashi system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": null
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

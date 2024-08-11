@@ -1,0 +1,82 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 78,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000279422",
+          "name": "Galilean moons",
+          "astronomicalObjectType": "MOON",
+          "location": { "uid": "ASMA0000003695", "name": "Jupiter" }
+        },
+        {
+          "uid": "ASMA0000013147",
+          "name": "Gallos II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000189530",
+          "name": "Galloway sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000050874",
+          "name": "Galor IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000047441",
+          "name": "Galorda Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000229675",
+          "name": "Galorndon Core",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000268123",
+            "name": "Galorndon Core system"
+          }
+        },
+        {
+          "uid": "ASMA0000268123",
+          "name": "Galorndon Core system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012633",
+          "name": "Galvin V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000022318",
+          "name": "Gamelan V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000061646", "name": "Gamelan system" }
+        },
+        {
+          "uid": "ASMA0000061648",
+          "name": "Gamelan sun",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000061646", "name": "Gamelan system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

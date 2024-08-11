@@ -1,0 +1,82 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 38,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000003391",
+          "name": "Bryma",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000068445",
+          "name": "Bubble Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000120905",
+          "name": "Buckley's Planet",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000065103",
+          "name": "Burala Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000025600",
+          "name": "Burke",
+          "astronomicalObjectType": "COMET",
+          "location": { "uid": "ASMA0000000243", "name": "Sol system" }
+        },
+        {
+          "uid": "ASMA0000072486",
+          "name": "Buruk",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000014920",
+          "name": "Bynaus",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000009898",
+            "name": "Beta Magellan system"
+          }
+        },
+        {
+          "uid": "ASMA0000011986",
+          "name": "C-111 system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000251123",
+          "name": "Caatati homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000010846",
+          "name": "Cabral sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

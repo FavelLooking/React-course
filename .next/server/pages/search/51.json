@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 50,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000287269",
+          "name": "Cruses",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000056110",
+          "name": "Crux Arm",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000002775", "name": "Milky Way Galaxy" }
+        },
+        {
+          "uid": "ASMA0000015902",
+          "name": "Cuellar system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000015907", "name": "Sector 21505" }
+        },
+        {
+          "uid": "ASMA0000120907",
+          "name": "Cybulski's Planet",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000280331",
+          "name": "Cygnet",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012092",
+          "name": "Cygnet XIV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000280331", "name": "Cygnet" }
+        },
+        {
+          "uid": "ASMA0000060426",
+          "name": "Cygnia Minor",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000042236",
+          "name": "Cygnus",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000174496",
+          "name": "Cygnus Sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000275962",
+          "name": "Cymari homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000275961", "name": "Skeralyx system" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

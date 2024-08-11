@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 43,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000000520",
+          "name": "Cardassian system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011391",
+          "name": "Carema III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000056108",
+          "name": "Carina Arm",
+          "astronomicalObjectType": "REGION",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000068447",
+          "name": "Carina Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000026872",
+          "name": "Carinae Delta V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000211434",
+          "name": "Carpi",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000228529",
+          "name": "Carraya",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000047467", "name": "Carraya system" }
+        },
+        {
+          "uid": "ASMA0000018055",
+          "name": "Carraya IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000047467", "name": "Carraya system" }
+        },
+        {
+          "uid": "ASMA0000020508",
+          "name": "Carraya sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000047467",
+          "name": "Carraya system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000020508", "name": "Carraya sector" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

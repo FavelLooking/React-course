@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 80,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000289002",
+          "name": "Gamma Coronae Australis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000288947",
+          "name": "Gamma Coronae Borealis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000008479",
+          "name": "Gamma Erandi Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000023679",
+          "name": "Gamma Eridon",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000229613",
+          "name": "Gamma Hromi",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000008544", "name": "Hromi Cluster" }
+        },
+        {
+          "uid": "ASMA0000027795",
+          "name": "Gamma Hromi II",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000229613", "name": "Gamma Hromi" }
+        },
+        {
+          "uid": "ASMA0000013461",
+          "name": "Gamma Hydra",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000011527", "name": "Gamma Hydra sector" }
+        },
+        {
+          "uid": "ASMA0000035591",
+          "name": "Gamma Hydra II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000013461", "name": "Gamma Hydra" }
+        },
+        {
+          "uid": "ASMA0000005833",
+          "name": "Gamma Hydra IV",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000011527", "name": "Gamma Hydra sector" }
+        },
+        {
+          "uid": "ASMA0000011527",
+          "name": "Gamma Hydra sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

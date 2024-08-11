@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 53,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000033813",
+          "name": "Danula II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011028",
+          "name": "Daran V",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000259429",
+          "name": "Dark zone",
+          "astronomicalObjectType": "REGION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000072942",
+          "name": "Darla system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000274493",
+          "name": "Davlos",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000015574",
+          "name": "Davlos III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000274493", "name": "Davlos" }
+        },
+        {
+          "uid": "ASMA0000267368",
+          "name": "Dayos",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000035132",
+          "name": "Dayos IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000267368", "name": "Dayos" }
+        },
+        {
+          "uid": "ASMA0000050461",
+          "name": "De Laure belt",
+          "astronomicalObjectType": "REGION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000174466",
+          "name": "De Vico's Komet",
+          "astronomicalObjectType": "COMET",
+          "location": { "uid": "ASMA0000020577", "name": "Earth" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

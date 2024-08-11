@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 65,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000245638",
+          "name": "Edrin II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000253878",
+          "name": "Eightfold Stars",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000013330",
+          "name": "Ekos",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000013162",
+          "name": "El-Adrel IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000010361", "name": "El-Adrel system" }
+        },
+        {
+          "uid": "ASMA0000268160",
+          "name": "El-Adrel sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000010361",
+          "name": "El-Adrel system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000268160", "name": "El-Adrel sector" }
+        },
+        {
+          "uid": "ASMA0000239524",
+          "name": "El-Aurian homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000018697", "name": "El-Aurian system" }
+        },
+        {
+          "uid": "ASMA0000018697",
+          "name": "El-Aurian system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009093",
+          "name": "Elas",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000229694", "name": "Tellun star system" }
+        },
+        {
+          "uid": "ASMA0000029456",
+          "name": "Elaysian homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

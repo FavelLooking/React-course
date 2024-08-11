@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 44,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000010624",
+          "name": "Casperia Prime",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000010625", "name": "Horvian Cluster" }
+        },
+        {
+          "uid": "ASMA0000013473",
+          "name": "Castal I",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000068426",
+          "name": "Cat's Eye Nebula",
+          "astronomicalObjectType": "NEBULA",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000016334",
+          "name": "Catulla",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000288945",
+          "name": "Cebelrai",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000229654",
+          "name": "Celes",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000082672",
+          "name": "Celes II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000229654", "name": "Celes" }
+        },
+        {
+          "uid": "ASMA0000009301",
+          "name": "Celtris III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000266727", "name": "Sector 864" }
+        },
+        {
+          "uid": "ASMA0000271512",
+          "name": "Centauri IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000011461",
+          "name": "Centauri VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

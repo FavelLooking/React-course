@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 83,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000032286",
+          "name": "Garadius IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000168027", "name": "Garadius system" }
+        },
+        {
+          "uid": "ASMA0000168027",
+          "name": "Garadius system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000171348",
+          "name": "Garenor homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000011865", "name": "Grid 005" }
+        },
+        {
+          "uid": "ASMA0000045611",
+          "name": "Gariman sector",
+          "astronomicalObjectType": "SECTOR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000030073",
+          "name": "Garo VII system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000016288",
+          "name": "Garon II",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000050766",
+          "name": "Garth system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000229662",
+          "name": "Gasko system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000092386",
+          "name": "Gaspar VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000120909",
+          "name": "Gauger Star",
+          "astronomicalObjectType": "STAR",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

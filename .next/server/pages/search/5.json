@@ -1,0 +1,82 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 4,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000288807",
+          "name": "Aklion VII",
+          "astronomicalObjectType": "PLANET",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000274325",
+          "name": "Akoszonam homeworld",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009021",
+          "name": "Akritiri",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000006114",
+          "name": "Alastria",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000196014", "name": "Alastria system" }
+        },
+        {
+          "uid": "ASMA0000196014",
+          "name": "Alastria system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000000662", "name": "Delta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000240554",
+          "name": "Alcor IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000240588", "name": "Alcor system" }
+        },
+        {
+          "uid": "ASMA0000240588",
+          "name": "Alcor system",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000012212",
+          "name": "Aldea",
+          "astronomicalObjectType": "PLANET",
+          "location": {
+            "uid": "ASMA0000037360",
+            "name": "Epsilon Mynos system"
+          }
+        },
+        {
+          "uid": "ASMA0000009474",
+          "name": "Aldebaran",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000009476",
+          "name": "Aldebaran III",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000009474", "name": "Aldebaran" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

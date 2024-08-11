@@ -1,0 +1,79 @@
+{
+  "pageProps": {
+    "serversideData": {
+      "page": {
+        "pageNumber": 70,
+        "pageSize": 10,
+        "numberOfElements": 10,
+        "totalElements": 2404,
+        "totalPages": 241,
+        "firstPage": false,
+        "lastPage": false
+      },
+      "sort": { "clauses": [] },
+      "astronomicalObjects": [
+        {
+          "uid": "ASMA0000282015",
+          "name": "Eresa",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000243796", "name": "Kaminar system" }
+        },
+        {
+          "uid": "ASMA0000229116",
+          "name": "Eridani D",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000067628",
+          "name": "Eridanus",
+          "astronomicalObjectType": "CONSTELLATION",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000241206",
+          "name": "Errikang VII",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000002016", "name": "Gamma Quadrant" }
+        },
+        {
+          "uid": "ASMA0000244807",
+          "name": "Essof IV",
+          "astronomicalObjectType": "PLANETOID",
+          "location": null
+        },
+        {
+          "uid": "ASMA0000289001",
+          "name": "Eta Indi",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000002015", "name": "Beta Quadrant" }
+        },
+        {
+          "uid": "ASMA0000288964",
+          "name": "Eta Serpentis",
+          "astronomicalObjectType": "STAR_SYSTEM",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000278407",
+          "name": "Europa",
+          "astronomicalObjectType": "MOON",
+          "location": { "uid": "ASMA0000003695", "name": "Jupiter" }
+        },
+        {
+          "uid": "ASMA0000014951",
+          "name": "Evadne IV",
+          "astronomicalObjectType": "PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        },
+        {
+          "uid": "ASMA0000225069",
+          "name": "Evora homeworld",
+          "astronomicalObjectType": "M_CLASS_PLANET",
+          "location": { "uid": "ASMA0000025892", "name": "Alpha Quadrant" }
+        }
+      ]
+    }
+  },
+  "__N_SSG": true
+}
