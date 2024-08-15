@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './global.scss';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ReactHookFormPage } from './components/ReactHookFormPage/ReactHookFormPage.tsx';
-import { UncontrolledFormPage } from './components/UncontrolledFormPage/UncontrolledFormPage.tsx';
+import { ReactHookForm } from './components/ReactHookForm/ReactHookForm.tsx';
+import { UncontrolledForm } from './components/UncontrolledForm/UncontrolledForm.tsx';
 
 const router = createBrowserRouter([
   {
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/controlled',
-    element: <ReactHookFormPage />,
+    element: <ReactHookForm />,
   },
   {
     path: '/uncontrolled',
-    element: <UncontrolledFormPage />,
+    element: <UncontrolledForm />,
   },
 ]);
 
