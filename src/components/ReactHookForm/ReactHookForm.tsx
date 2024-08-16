@@ -1,10 +1,18 @@
 import styles from './ReactHookForm.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 export function ReactHookForm() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate('/');
+  };
+
   return (
     <div className={styles['form-container']}>
       <h1>React hook form Page</h1>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label>
           Name:
           <input type="text" />
@@ -49,7 +57,7 @@ export function ReactHookForm() {
         </label>
 
         <br />
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

@@ -1,7 +1,10 @@
 import styles from './UncontrolledForm.module.scss';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { save } from '../../store/dataUncontrolledSlice';
+import { validationSchema } from '../../utils/yup/index';
+import * as Yup from 'yup';
 
 export function UncontrolledForm() {
   const inputName = useRef<HTMLInputElement>(null);
@@ -14,12 +17,13 @@ export function UncontrolledForm() {
   const inputCountry = useRef<HTMLSelectElement>(null);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = {
       userName: inputName.current?.value,
-      age: inputAge.current?.value,
+      age: inputAge.current?.value as unknown as number,
       email: inputEmail.current?.value,
       password: inputPassword.current?.value,
       confirmPassword: inputPasswordValidation.current?.value,
@@ -27,7 +31,20 @@ export function UncontrolledForm() {
       file: inputFile.current?.files?.[0].name,
       country: inputCountry.current?.value,
     };
+
+    try {
+      await validationSchema.validate(formData, { abortEarly: false });
+      console.log('Valid data:', formData);
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
+        err.inner.forEach((error) => {
+          console.error(error.path, error.message);
+        });
+      }
+    }
+
     dispatch(save(formData));
+    navigate('/');
   };
 
   return (

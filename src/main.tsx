@@ -5,7 +5,7 @@ import './global.scss';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ReactHookForm } from './components/ReactHookForm/ReactHookForm.tsx';
 import { UncontrolledForm } from './components/UncontrolledForm/UncontrolledForm.tsx';
-import store from './store/store';
+import { store } from './store/store';
 import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
