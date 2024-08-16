@@ -3,7 +3,7 @@ import styles from './ReactHookForm.module.scss';
 export function ReactHookForm() {
   return (
     <div className={styles['form-container']}>
-      <h1>Uncontrolled Form Page</h1>
+      <h1>React hook form Page</h1>
       <form action="">
         <label>
           Name:
@@ -45,8 +45,11 @@ export function ReactHookForm() {
           <select>
             <option>Russia</option>
           </select>
+          <br />
         </label>
+
         <br />
+        <button>Submit</button>
       </form>
     </div>
   );
