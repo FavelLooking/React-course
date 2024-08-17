@@ -1,13 +1,24 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  border: 1px black solid;
-  padding: 40px;
+  padding: 20px;
   font-size: larger;
+  min-width: 50%;
+}
+p {
+  min-height: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 label {
   font-weight: bolder;
   display: flex;
   justify-content: space-between;
+}
+
+.error {
+  color: rgb(192, 24, 24);
+  font-size: medium;
+  box-sizing: border-box;
 }
