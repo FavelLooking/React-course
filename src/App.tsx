@@ -7,15 +7,15 @@ function App() {
     <>
       <div className={style['form-selector']}>
         <h1>Select a Form</h1>
-        <button className={style['selector-button']}>
-          <Link to="/controlled">Controlled Form</Link>
-        </button>
-        <button className={style['selector-button']}>
-          <Link to="/uncontrolled">Uncontrolled Form</Link>
-        </button>
+        <Link className={style['selector-button']} to="/controlled">
+          Controlled Form
+        </Link>
+        <Link className={style['selector-button']} to="/uncontrolled">
+          Uncontrolled Form
+        </Link>
       </div>
       <div className={style['tile-wrapper-uncontrolled']}>
-        <h1>Uncontrolled Forms</h1>
+        <h1 className={style['uncontrolled-title']}>Uncontrolled Forms:</h1>
         <FormTile />
       </div>
     </>

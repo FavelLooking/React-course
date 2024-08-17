@@ -3,9 +3,7 @@ import style from './FormTile.module.scss';
 import { RootState } from '../../store/store';
 
 export function FormTile() {
-  const formData = useSelector(
-    (state: RootState) => state.dataUncontrolledSlice.formData,
-  );
+  const formData = useSelector((state: RootState) => state.dataSlice.formData);
   //console.log(formData);
 
   return (
