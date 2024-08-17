@@ -4,9 +4,17 @@
   padding: 100px;
   border: 1px solid black;
   gap: 10px;
+  width: 30%;
+  align-items: center;
 }
 
 .selector-button {
   color: black;
   padding: 5px;
+}
+
+.tile-wrapper-uncontrolled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

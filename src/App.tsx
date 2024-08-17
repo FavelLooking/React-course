@@ -1,14 +1,8 @@
 import { Link } from 'react-router-dom';
 import style from './App.module.scss';
-// import { useSelector } from 'react-redux';
-// import { RootState } from './store/store';
+import { FormTile } from './components/FormTile/FormTile';
 
 function App() {
-  // const uncontrolledFormsData = useSelector((state: RootState) => {
-  //   state.dataUncontrolledSlice.formData;
-  // });
-  // console.log(uncontrolledFormsData);
-
   return (
     <>
       <div className={style['form-selector']}>
@@ -19,6 +13,10 @@ function App() {
         <button className={style['selector-button']}>
           <Link to="/uncontrolled">Uncontrolled Form</Link>
         </button>
+      </div>
+      <div className={style['tile-wrapper-uncontrolled']}>
+        <h1>Uncontrolled Forms</h1>
+        <FormTile />
       </div>
     </>
   );
