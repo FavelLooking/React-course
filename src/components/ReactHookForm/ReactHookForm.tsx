@@ -1,12 +1,15 @@
 import styles from './ReactHookForm.module.scss';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { DataState } from '../../store/dataSlice';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { useDispatch } from 'react-redux';
+import { save } from '../../store/dataSlice';
 
 export function ReactHookForm() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -21,7 +24,7 @@ export function ReactHookForm() {
 
   // const submit = (event: React.FormEvent<HTMLFormElement>) => {
   //   event.preventDefault();
-  //   navigate('/');
+
   // };
 
   return (
@@ -30,29 +33,31 @@ export function ReactHookForm() {
       <form
         onSubmit={handleSubmit((data) => {
           console.log(data);
+          const reactHookFormData = Object.assign(
+            {
+              isReactHookForm: true,
+            },
+            data,
+          );
+          dispatch(save(reactHookFormData));
+          navigate('/');
         })}
       >
         <label>
           Name:
-          <input
-            {...(register('userName'), { required: true, minLength: 3 })}
-            type="text"
-          />
+          <input {...register('userName')} type="text" />
         </label>
         <p>{errors.userName?.message}</p>
         <br />
         <label>
           Age:
-          <input
-            {...(register('age'), { required: true, min: 0 })}
-            type="number"
-          />
+          <input {...register('age')} type="number" />
         </label>
         <p>{errors.age?.message}</p>
         <br />
         <label>
           Email:
-          <input {...(register('email'), { type: 'email' })} />
+          <input {...register('email')} />
         </label>
         <br />
         <label>
@@ -61,7 +66,7 @@ export function ReactHookForm() {
         </label>
         <br />
         <label>
-          Password:
+          Confirm password:
           <input type="password" />
         </label>
         <br />
@@ -81,7 +86,7 @@ export function ReactHookForm() {
         <br />
         <label>
           Upload picture:
-          <input {...register('file')} type="file" />
+          <input type="file" />
         </label>
         <br />
         <label htmlFor="country">
@@ -89,10 +94,10 @@ export function ReactHookForm() {
           <input
             list="countries"
             id="country"
-            name="country"
             autoComplete="off"
+            {...register('country')}
           />
-          <datalist id="countries" {...register('country')}>
+          <datalist id="countries">
             {countries.map((country) => (
               <option key={country}>{country}</option>
             ))}

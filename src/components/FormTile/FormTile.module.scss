@@ -1,8 +1,27 @@
 .tile-container {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .tile-item {
   border: 3px solid black;
   padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.529);
+  border-radius: 3%;
+  color: rgba(240, 248, 255, 0.795);
+  min-width: 16rem;
+}
+.last-item {
+  background-color: rgba(160, 220, 160, 0.636);
+  color: rgb(8, 12, 15);
+  position: relative;
+}
+.last-item::after {
+  content: 'newest data';
+  bottom: 1%;
+  right: 1%;
+  position: absolute;
+  font-size: smaller;
+  color: rgba(0, 0, 0, 0.595);
 }

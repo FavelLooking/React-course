@@ -14,8 +14,8 @@ function App() {
           Uncontrolled Form
         </Link>
       </div>
-      <div className={style['tile-wrapper-uncontrolled']}>
-        <h1 className={style['uncontrolled-title']}>Uncontrolled Forms:</h1>
+      <div className={style['tile-wrapper']}>
+        <h1 className={style['tile-title']}>Form Data:</h1>
         <FormTile />
       </div>
     </>

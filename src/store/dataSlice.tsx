@@ -16,6 +16,7 @@ export interface DataState {
 }
 
 const initialData: DataState = {
+  isReactHookForm: false,
   userName: undefined,
   age: undefined,
   email: undefined,
@@ -24,7 +25,6 @@ const initialData: DataState = {
   isChecked: undefined,
   file: undefined,
   country: undefined,
-  isReactHookForm: false,
 };
 
 const initialState = {

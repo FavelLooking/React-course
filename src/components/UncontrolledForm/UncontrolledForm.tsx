@@ -14,10 +14,10 @@ export function UncontrolledForm() {
   const inputEmail = useRef<HTMLInputElement>(null);
   const inputPassword = useRef<HTMLInputElement>(null);
   const inputPasswordValidation = useRef<HTMLInputElement>(null);
-  const inputGender = useRef<HTMLInputElement>(null);
+  const inputGender = useRef<HTMLSelectElement>(null);
   const inputCheckbox = useRef<HTMLInputElement>(null);
   const inputFile = useRef<HTMLInputElement>(null);
-  const inputCountry = useRef<HTMLSelectElement>(null);
+  const inputCountry = useRef<HTMLInputElement>(null);
 
   const countries = useSelector(
     (state: RootState) => state.dataSlice.countries,
@@ -29,6 +29,7 @@ export function UncontrolledForm() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = {
+      isReactHookForm: false,
       userName: inputName.current?.value,
       age: inputAge.current?.value as unknown as number,
       email: inputEmail.current?.value,
@@ -38,7 +39,6 @@ export function UncontrolledForm() {
       isChecked: inputCheckbox.current?.checked as boolean,
       file: inputFile.current?.files?.[0].name,
       country: inputCountry.current?.value,
-      isReactHookForm: false,
     };
 
     try {
@@ -90,27 +90,12 @@ export function UncontrolledForm() {
         </label>
         <br />
         <label>
-          Gender:
-          <div>
-            <label>
-              Male
-              <input
-                type="checkbox"
-                ref={inputGender}
-                name="gender"
-                value="male"
-              />
-            </label>
-            <label>
-              Female
-              <input
-                type="checkbox"
-                ref={inputGender}
-                name="gender"
-                value="female"
-              />
-            </label>
-          </div>
+          Select gender:
+          <select ref={inputGender}>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+          <br />
         </label>
         <br />
         <label>
@@ -130,8 +115,9 @@ export function UncontrolledForm() {
             id="country"
             name="country"
             autoComplete="off"
+            ref={inputCountry}
           />
-          <datalist id="countries" ref={inputCountry}>
+          <datalist id="countries">
             {countries.map((country) => (
               <option key={country}>{country}</option>
             ))}
