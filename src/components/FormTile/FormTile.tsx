@@ -16,34 +16,51 @@ export function FormTile() {
           >
             <h3>
               {item.isReactHookForm
-                ? 'React Hook form data'
-                : 'Uncontrolled elements data'}
+                ? 'React Hook Form'
+                : 'Uncontrolled Elements'}
             </h3>
             {Object.entries(item).map(([key, value]) => {
-              if (key === 'file') {
-                return (
-                  <img className={styles.picture} key={key} src={`${value}`} />
-                );
+              switch (key) {
+                case 'file':
+                  return (
+                    <img
+                      className={styles.picture}
+                      key={key}
+                      src={value as string}
+                      alt="Uploaded content"
+                    />
+                  );
+
+                case 'confirmPassword':
+                case 'isReactHookForm':
+                  return null;
+
+                case 'isChecked':
+                  return (
+                    <p key={key}>
+                      <span className={styles['tile-label']}>
+                        terms and conditions:
+                      </span>{' '}
+                      ✅
+                    </p>
+                  );
+
+                case 'userName':
+                  return (
+                    <p key={key}>
+                      <span className={styles['tile-label']}>user name</span>:{' '}
+                      {String(value)}
+                    </p>
+                  );
+
+                default:
+                  return (
+                    <p key={key}>
+                      <span className={styles['tile-label']}>{key}</span>:{' '}
+                      {String(value)}
+                    </p>
+                  );
               }
-              if (key === 'confirmPassword' || key === 'isReactHookForm') {
-                return null;
-              }
-              if (key === 'isChecked') {
-                return (
-                  <p key={key}>
-                    <span className={styles['tile-label']}>
-                      Terms and conditions:
-                    </span>{' '}
-                    ✅
-                  </p>
-                );
-              }
-              return (
-                <p key={key}>
-                  <span className={styles['tile-label']}>{key}</span>:{' '}
-                  {String(value)}
-                </p>
-              );
             })}
           </div>
         ))}

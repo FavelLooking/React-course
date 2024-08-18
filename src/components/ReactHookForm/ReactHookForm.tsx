@@ -8,6 +8,13 @@ import { useDispatch } from 'react-redux';
 import { save } from '../../store/dataSlice';
 import { validationSchema } from '../../utils/yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect, useState } from 'react';
+import {
+  lowercaseRegex,
+  numberRegex,
+  symbolRegex,
+  uppercaseRegex,
+} from '../../utils/regex';
 
 interface FormInput {
   userName: string;
@@ -30,15 +37,49 @@ export function ReactHookForm() {
     reset,
     clearErrors,
     setValue,
+    watch,
     formState: { errors, touchedFields },
   } = useForm<FormInput>({
     resolver: yupResolver(validationSchema),
     mode: 'onChange',
   });
 
+  const [passwordStrength, setPasswordStrength] = useState<string>('');
+  const passwordField = watch('password');
+
+  useEffect(() => {
+    if (passwordField) {
+      const strength = checkStrongPassword(passwordField);
+      setPasswordStrength(strength);
+    } else {
+      setPasswordStrength('');
+    }
+  }, [passwordField]);
+
   const countries = useSelector(
     (state: RootState) => state.dataSlice.countries,
   );
+
+  const checkStrongPassword = (password: string): string => {
+    const hasNumber = numberRegex.test(password);
+    const hasUppercase = uppercaseRegex.test(password);
+    const hasLowercase = lowercaseRegex.test(password);
+    const hasSymbol = symbolRegex.test(password);
+    const strength = +hasNumber + +hasUppercase + +hasLowercase + +hasSymbol;
+
+    switch (strength) {
+      case 1:
+        return 'Weak password';
+      case 2:
+        return 'Average password';
+      case 3:
+        return 'Strong password';
+      case 4:
+        return 'Superb password';
+      default:
+        return '';
+    }
+  };
 
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     clearErrors();
@@ -111,7 +152,7 @@ export function ReactHookForm() {
         </label>
         {(errors.password && (
           <p className={styles['error']}>{errors.password.message}</p>
-        )) || <p></p>}
+        )) || <p className={styles.strength}>{passwordStrength}</p>}
         <label>
           Confirm password:
           <input type="password" {...register('confirmPassword')} />
