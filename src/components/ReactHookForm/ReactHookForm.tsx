@@ -30,7 +30,7 @@ export function ReactHookForm() {
     reset,
     clearErrors,
     setValue,
-    formState: { errors },
+    formState: { errors, touchedFields },
   } = useForm<FormInput>({
     resolver: yupResolver(validationSchema),
     mode: 'onChange',
@@ -168,7 +168,15 @@ export function ReactHookForm() {
         {(errors.country && (
           <p className={styles['error']}>{errors.country.message}</p>
         )) || <p></p>}
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          disabled={
+            Object.keys(errors).length > 0 ||
+            Object.keys(touchedFields).length < 8
+          }
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
