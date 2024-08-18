@@ -1,0 +1,52 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-size: larger;
+  min-width: 50%;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.184);
+  background-color: rgba(240, 248, 255, 0.204);
+  border-radius: 1rem;
+  outline: rgba(0, 0, 0, 0.058) solid 2px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  align-self: center;
+  background-color: rgba(240, 248, 255, 0.204);
+  border-radius: 1rem;
+  width: 10rem;
+  height: 2rem;
+}
+form button:hover {
+  background-color: rgba(240, 248, 255, 0.499);
+}
+p {
+  min-height: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+label {
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  color: rgb(192, 24, 24);
+  font-size: medium;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem auto 3rem;
+}
+
+.strength {
+  color: green;
+}
