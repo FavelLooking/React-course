@@ -18,13 +18,13 @@ export interface DataState {
 const initialData: DataState = {
   isReactHookForm: false,
   userName: undefined,
-  age: undefined,
   email: undefined,
+  age: undefined,
   password: undefined,
   gender: undefined,
   isChecked: undefined,
-  file: undefined,
   country: undefined,
+  file: undefined,
 };
 
 const initialState = {

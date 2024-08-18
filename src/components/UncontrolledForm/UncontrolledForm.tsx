@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { useDispatch } from 'react-redux';
-import { save } from '../../store/dataSlice';
+import { DataState, save } from '../../store/dataSlice';
 import { validationSchema } from '../../utils/yup/index';
 import * as Yup from 'yup';
 
@@ -28,26 +28,54 @@ export function UncontrolledForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const processFormData = async (formData: DataState) => {
+    try {
+      dispatch(save(formData));
+      navigate('/');
+    } catch (err) {
+      console.error('Error processing form data:', err);
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const file = inputFile.current?.files?.[0];
+    let fileBase64 = '';
+
     const formData = {
       isReactHookForm: false,
       userName: inputName.current?.value,
-      age: inputAge.current?.value as unknown as number,
+      age: inputAge.current?.value
+        ? parseInt(inputAge.current.value, 10)
+        : undefined,
       email: inputEmail.current?.value,
       password: inputPassword.current?.value,
       confirmPassword: inputPasswordValidation.current?.value,
       gender: inputGender.current?.value,
-      isChecked: inputCheckbox.current?.checked as boolean,
-      file: inputFile.current?.files?.[0]?.name,
+      isChecked: inputCheckbox.current?.checked ?? false,
+      file: fileBase64,
       country: inputCountry.current?.value,
     };
 
     try {
-      await validationSchema.validate(formData, { abortEarly: false });
-      console.log('Valid data:', formData);
-      dispatch(save(formData));
-      navigate('/');
+      await validationSchema.validate(
+        {
+          ...formData,
+          file: file,
+        },
+        { abortEarly: false },
+      );
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          fileBase64 = reader.result as string;
+          formData.file = fileBase64;
+          await processFormData(formData);
+        };
+        reader.readAsDataURL(file);
+      }
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors: { [key: string]: string } = {};

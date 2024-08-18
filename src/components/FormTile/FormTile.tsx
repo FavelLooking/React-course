@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import style from './FormTile.module.scss';
+import styles from './FormTile.module.scss';
 import { RootState } from '../../store/store';
 
 export function FormTile() {
@@ -7,13 +7,13 @@ export function FormTile() {
   //console.log(formData);
 
   return (
-    <div className={style['tile-container']}>
+    <div className={styles['tile-container']}>
       {formData
         .filter((_, index) => index !== 0)
         .map((item, index) => (
           <div
             key={index}
-            className={`${style['tile-item']} ${formData.length - 2 === index ? style[`last-item`] : ''}`}
+            className={`${styles['tile-item']} ${formData.length - 2 === index ? styles[`last-item`] : ''}`}
           >
             <h3>
               {item.isReactHookForm
@@ -21,6 +21,11 @@ export function FormTile() {
                 : 'Uncontrolled elements data'}
             </h3>
             {Object.entries(item).map(([key, value]) => {
+              if (key === 'file') {
+                return (
+                  <img className={styles.picture} key={key} src={`${value}`} />
+                );
+              }
               if (key === 'confirmPassword' || key === 'isReactHookForm') {
                 return null;
               }

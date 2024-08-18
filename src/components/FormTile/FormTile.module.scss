@@ -11,6 +11,9 @@
   border-radius: 3%;
   color: rgba(240, 248, 255, 0.795);
   min-width: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .last-item {
   background-color: rgba(160, 220, 160, 0.636);
@@ -24,4 +27,9 @@
   position: absolute;
   font-size: smaller;
   color: rgba(0, 0, 0, 0.595);
+}
+
+.picture {
+  width: 10rem;
+  border-radius: 2rem;
 }

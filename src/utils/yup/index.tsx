@@ -20,4 +20,15 @@ export const validationSchema = Yup.object().shape({
   gender: Yup.string().required('Gender is required'),
   isChecked: Yup.boolean().oneOf([true], 'You must accept the terms'),
   country: Yup.string().required('Country is required'),
+  file: Yup.mixed<File>()
+    .required('Image is required')
+    .test('fileSize', 'Size needs to be less than 1MB', (value) => {
+      if (!value) return false;
+      return value.size < 1024 * 1024;
+    })
+    .test('fileType', 'Unsupported file type. Use png or jpg', (value) => {
+      if (!value) return false;
+      const supportedFormats = ['image/jpeg', 'image/png', 'image/gif'];
+      return supportedFormats.includes(value.type);
+    }),
 });
