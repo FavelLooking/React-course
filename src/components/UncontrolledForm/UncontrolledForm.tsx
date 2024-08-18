@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { DataState, save } from '../../store/dataSlice';
 import { validationSchema } from '../../utils/yup/index';
 import * as Yup from 'yup';
+import { checkStrongPassword } from '../../utils/regex';
 
 export function UncontrolledForm() {
   const inputName = useRef<HTMLInputElement>(null);
@@ -20,6 +21,7 @@ export function UncontrolledForm() {
   const inputCountry = useRef<HTMLInputElement>(null);
 
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
+  const [passwordStrength, setPasswordStrength] = useState<string>('');
 
   const countries = useSelector(
     (state: RootState) => state.dataSlice.countries,
@@ -42,6 +44,12 @@ export function UncontrolledForm() {
 
     const file = inputFile.current?.files?.[0];
     let fileBase64 = '';
+
+    const password = inputPassword.current?.value;
+
+    if (password) {
+      setPasswordStrength(checkStrongPassword(password));
+    }
 
     const formData = {
       isReactHookForm: false,
@@ -118,8 +126,11 @@ export function UncontrolledForm() {
           Password:
           <input type="password" ref={inputPassword} name="password" />
         </label>
-        {(formErrors.password && (
+        {formErrors.password && (
           <p className={styles['error']}>{formErrors.password}</p>
+        )}
+        {(passwordStrength && (
+          <p className={styles['strength']}>{passwordStrength}</p>
         )) || <p></p>}
         <label>
           Confirm Password:
