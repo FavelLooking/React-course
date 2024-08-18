@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className={style['form-selector']}>
-        <h1>Select a Form</h1>
+        <h1 className={style['menu-title']}>Select a Form</h1>
         <Link className={style['selector-button']} to="/controlled">
           Controlled Form
         </Link>
@@ -15,7 +15,7 @@ function App() {
         </Link>
       </div>
       <div className={style['tile-wrapper']}>
-        <h1 className={style['tile-title']}>Form Data:</h1>
+        <h1 className={style['menu-title']}>Form Data:</h1>
         <FormTile />
       </div>
     </>

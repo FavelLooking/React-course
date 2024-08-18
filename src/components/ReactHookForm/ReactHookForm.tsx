@@ -57,8 +57,8 @@ export function ReactHookForm() {
       email: data.email,
       password: data.password,
       gender: data.gender,
-      country: data.country,
       isChecked: data.isChecked,
+      country: data.country,
       file: fileString,
     };
 

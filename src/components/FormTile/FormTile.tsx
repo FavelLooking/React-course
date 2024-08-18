@@ -28,9 +28,20 @@ export function FormTile() {
               if (key === 'confirmPassword' || key === 'isReactHookForm') {
                 return null;
               }
+              if (key === 'isChecked') {
+                return (
+                  <p key={key}>
+                    <span className={styles['tile-label']}>
+                      Terms and conditions:
+                    </span>{' '}
+                    ✅
+                  </p>
+                );
+              }
               return (
                 <p key={key}>
-                  {key}: {String(value)}
+                  <span className={styles['tile-label']}>{key}</span>:{' '}
+                  {String(value)}
                 </p>
               );
             })}
