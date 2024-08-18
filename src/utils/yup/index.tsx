@@ -16,9 +16,11 @@ export const validationSchema = Yup.object().shape({
   password: Yup.string().required('Password is required'),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password'), undefined], 'Passwords must match')
-    .required('Confirm Password is required'),
+    .required('Confirm assword is required'),
   gender: Yup.string().required('Gender is required'),
-  isChecked: Yup.boolean().oneOf([true], 'You must accept the terms'),
+  isChecked: Yup.boolean()
+    .oneOf([true], 'You must accept the terms')
+    .required('Check is required'),
   country: Yup.string().required('Country is required'),
   file: Yup.mixed<File>()
     .required('Image is required')

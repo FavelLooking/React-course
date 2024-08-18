@@ -4,7 +4,6 @@ import { RootState } from '../../store/store';
 
 export function FormTile() {
   const formData = useSelector((state: RootState) => state.dataSlice.formData);
-  //console.log(formData);
 
   return (
     <div className={styles['tile-container']}>

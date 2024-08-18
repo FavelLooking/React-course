@@ -54,8 +54,8 @@ export function UncontrolledForm() {
       confirmPassword: inputPasswordValidation.current?.value,
       gender: inputGender.current?.value,
       isChecked: inputCheckbox.current?.checked ?? false,
-      file: fileBase64,
       country: inputCountry.current?.value,
+      file: fileBase64,
     };
 
     try {

@@ -1,11 +1,25 @@
 import styles from './ReactHookForm.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { DataState } from '../../store/dataSlice';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { save } from '../../store/dataSlice';
+import { validationSchema } from '../../utils/yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+interface FormInput {
+  userName: string;
+  age: number;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  gender: string;
+  country: string;
+  isChecked: boolean;
+  file: File;
+}
 
 export function ReactHookForm() {
   const navigate = useNavigate();
@@ -13,82 +27,130 @@ export function ReactHookForm() {
   const {
     register,
     handleSubmit,
+    reset,
+    clearErrors,
+    setValue,
     formState: { errors },
-  } = useForm<DataState>();
-
-  console.log(errors);
+  } = useForm<FormInput>({
+    resolver: yupResolver(validationSchema),
+    mode: 'onChange',
+  });
 
   const countries = useSelector(
     (state: RootState) => state.dataSlice.countries,
   );
 
-  // const submit = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
+  const onSubmit: SubmitHandler<FormInput> = async (data) => {
+    clearErrors();
 
-  // };
+    let fileString: string | undefined;
+
+    if (data.file) {
+      const file = data.file;
+      fileString = await convertFileToBase64(file);
+    }
+
+    const reactHookFormData: DataState = {
+      isReactHookForm: true,
+      userName: data.userName,
+      age: data.age,
+      email: data.email,
+      password: data.password,
+      gender: data.gender,
+      country: data.country,
+      isChecked: data.isChecked,
+      file: fileString,
+    };
+
+    dispatch(save(reactHookFormData));
+    reset();
+    navigate('/');
+  };
+
+  const convertFileToBase64 = (file: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        if (reader.result) {
+          resolve(reader.result as string);
+        } else {
+          reject(new Error('Failed to convert file to base64.'));
+        }
+      };
+      reader.readAsDataURL(file);
+    });
 
   return (
     <div className={styles['form-container']}>
-      <h1>React hook form Page</h1>
-      <form
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-          const reactHookFormData = Object.assign(
-            {
-              isReactHookForm: true,
-            },
-            data,
-          );
-          dispatch(save(reactHookFormData));
-          navigate('/');
-        })}
-      >
+      <h1>React hook form page</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           Name:
           <input {...register('userName')} type="text" />
         </label>
-        <p>{errors.userName?.message}</p>
-        <br />
+        {(errors.userName && (
+          <p className={styles['error']}>{errors.userName.message}</p>
+        )) || <p></p>}
         <label>
           Age:
           <input {...register('age')} type="number" />
         </label>
-        <p>{errors.age?.message}</p>
-        <br />
+        {(errors.age && (
+          <p className={styles['error']}>{errors.age.message}</p>
+        )) || <p></p>}
         <label>
           Email:
           <input {...register('email')} />
         </label>
-        <br />
+        {(errors.email && (
+          <p className={styles['error']}>{errors.email.message}</p>
+        )) || <p></p>}
         <label>
           Password:
           <input {...register('password')} type="password" />
         </label>
-        <br />
+        {(errors.password && (
+          <p className={styles['error']}>{errors.password.message}</p>
+        )) || <p></p>}
         <label>
           Confirm password:
-          <input type="password" />
+          <input type="password" {...register('confirmPassword')} />
         </label>
-        <br />
+        {(errors.password && (
+          <p className={styles['error']}>{errors.password.message}</p>
+        )) || <p></p>}
         <label>
           Select gender:
           <select {...register('gender')}>
+            <option value="">Select Gender</option>
             <option>Male</option>
             <option>Female</option>
           </select>
-          <br />
         </label>
-        <br />
+        {(errors.gender && (
+          <p className={styles['error']}>{errors.gender.message}</p>
+        )) || <p></p>}
         <label>
           Terms and Conditions:
           <input {...register('isChecked')} type="checkbox" />
         </label>
-        <br />
+        {(errors.isChecked && (
+          <p className={styles['error']}>{errors.isChecked.message}</p>
+        )) || <p></p>}
         <label>
           Upload picture:
-          <input type="file" />
+          <input
+            type="file"
+            onChange={(e) => {
+              if (e.target.files?.[0]) {
+                setValue('file', e.target.files[0]);
+              }
+            }}
+          />
         </label>
-        <br />
+        {(errors.file && (
+          <p className={styles['error']}>{errors.file.message}</p>
+        )) || <p></p>}
         <label htmlFor="country">
           Choose your country:
           <input
@@ -102,9 +164,10 @@ export function ReactHookForm() {
               <option key={country}>{country}</option>
             ))}
           </datalist>
-          <br />
         </label>
-        <br />
+        {(errors.country && (
+          <p className={styles['error']}>{errors.country.message}</p>
+        )) || <p></p>}
         <button type="submit">Submit</button>
       </form>
     </div>
